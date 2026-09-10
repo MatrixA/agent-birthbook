@@ -1,0 +1,8 @@
+# Hosts that block automated link checkers or rate-limit aggressively.
+^https?://(www\.)?linkedin\.com
+^https?://(www\.)?x\.com
+^https?://twitter\.com
+^https?://docs\.stripe\.com
+^https?://stripe\.com
+^https?://(www\.)?visa\.com
+^https?://(www\.)?mastercard\.com

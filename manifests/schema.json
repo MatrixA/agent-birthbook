@@ -1,0 +1,283 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-birthbook.github.io/schema/v0/birth-profile.json",
+  "title": "Agent Birth Profile",
+  "description": "A machine-readable statement of what an autonomous agent has been provisioned with, one section per layer of the Agent Birth Stack. Status: experimental seed (v0). Every section is optional; every object accepts additional properties.",
+  "type": "object",
+  "required": ["apiVersion", "kind", "metadata", "spec"],
+  "properties": {
+    "apiVersion": { "const": "birthbook.dev/v0" },
+    "kind": { "const": "BirthProfile" },
+    "metadata": {
+      "type": "object",
+      "required": ["name", "owner"],
+      "properties": {
+        "name": { "type": "string", "description": "Human-readable agent name." },
+        "owner": { "type": "string", "description": "Legal or natural person responsible for the agent. A DID, email, or org handle." },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "purpose": { "type": "string" },
+        "labels": { "type": "object", "additionalProperties": { "type": "string" } }
+      }
+    },
+    "spec": {
+      "type": "object",
+      "properties": {
+        "identity": {
+          "type": "object",
+          "description": "Layer 1 - who the agent is.",
+          "properties": {
+            "did": { "type": "string", "pattern": "^did:[a-z0-9]+:.+" },
+            "keys": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["id", "type", "custody"],
+                "properties": {
+                  "id": { "type": "string" },
+                  "type": { "type": "string", "examples": ["Ed25519", "secp256k1", "P-256"] },
+                  "custody": { "enum": ["self", "owner", "provider", "tee", "mpc"] },
+                  "publicKey": { "type": "string" }
+                }
+              }
+            },
+            "registrations": {
+              "type": "array",
+              "description": "Where this identity is registered or anchored (ERC-8004, agent registry, A2A card URL...).",
+              "items": {
+                "type": "object",
+                "required": ["registry"],
+                "properties": {
+                  "registry": { "type": "string" },
+                  "id": { "type": "string" },
+                  "url": { "type": "string", "format": "uri" }
+                }
+              }
+            }
+          }
+        },
+        "presence": {
+          "type": "object",
+          "description": "Layer 2 - how the agent is reachable.",
+          "properties": {
+            "email": { "type": "string", "format": "email" },
+            "domain": { "type": "string" },
+            "phone": { "type": "string" },
+            "endpoints": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["protocol", "url"],
+                "properties": {
+                  "protocol": { "type": "string", "examples": ["a2a", "mcp", "https", "x402"] },
+                  "url": { "type": "string", "format": "uri" }
+                }
+              }
+            }
+          }
+        },
+        "authentication": {
+          "type": "object",
+          "description": "Layer 3 - how the agent proves itself to services.",
+          "properties": {
+            "credentials": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["service", "type"],
+                "properties": {
+                  "service": { "type": "string" },
+                  "type": { "enum": ["oauth2", "api-key", "jwt", "mtls", "http-signature", "spiffe", "other"] },
+                  "scopes": { "type": "array", "items": { "type": "string" } },
+                  "secretRef": { "type": "string", "description": "Pointer into a secret store, never the secret itself." },
+                  "rotation": { "type": "string", "description": "ISO 8601 duration, e.g. P30D." }
+                }
+              }
+            },
+            "secretStore": { "type": "string" }
+          }
+        },
+        "compute": {
+          "type": "object",
+          "description": "Layer 4 - where the agent runs.",
+          "properties": {
+            "runtime": { "type": "string", "examples": ["e2b", "daytona", "modal", "fly-machines", "cloudflare-sandbox", "local"] },
+            "isolation": { "enum": ["microvm", "container", "process", "none"] },
+            "browser": { "type": "string" },
+            "network": {
+              "type": "object",
+              "properties": {
+                "egress": { "enum": ["open", "allowlist", "none"] },
+                "allow": { "type": "array", "items": { "type": "string" } }
+              }
+            },
+            "storage": { "type": "string" }
+          }
+        },
+        "economy": {
+          "type": "object",
+          "description": "Layer 5 - how the agent holds and spends value.",
+          "properties": {
+            "wallets": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["chain", "address"],
+                "properties": {
+                  "chain": { "type": "string" },
+                  "address": { "type": "string" },
+                  "custody": { "enum": ["self", "owner", "provider", "tee", "mpc"] },
+                  "provider": { "type": "string" }
+                }
+              }
+            },
+            "cards": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["issuer"],
+                "properties": {
+                  "issuer": { "type": "string" },
+                  "last4": { "type": "string", "pattern": "^[0-9]{4}$" },
+                  "controls": { "type": "object", "additionalProperties": true }
+                }
+              }
+            },
+            "budget": {
+              "type": "object",
+              "properties": {
+                "currency": { "type": "string" },
+                "perTransaction": { "type": "number", "minimum": 0 },
+                "perDay": { "type": "number", "minimum": 0 },
+                "perMonth": { "type": "number", "minimum": 0 }
+              }
+            },
+            "paymentProtocols": { "type": "array", "items": { "type": "string", "examples": ["x402", "ap2", "stripe-spt", "mastercard-agent-pay"] } }
+          }
+        },
+        "capabilities": {
+          "type": "object",
+          "description": "Layer 6 - what the agent can do.",
+          "properties": {
+            "models": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["id"],
+                "properties": {
+                  "id": { "type": "string" },
+                  "via": { "type": "string", "description": "Gateway or router, if any." },
+                  "role": { "type": "string", "examples": ["primary", "fallback", "embedding"] }
+                }
+              }
+            },
+            "tools": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["name"],
+                "properties": {
+                  "name": { "type": "string" },
+                  "kind": { "enum": ["mcp", "cli", "http", "sdk", "skill"] },
+                  "source": { "type": "string" }
+                }
+              }
+            },
+            "skills": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "memory": {
+          "type": "object",
+          "description": "Layer 7 - what the agent remembers.",
+          "properties": {
+            "stores": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["kind", "provider"],
+                "properties": {
+                  "kind": { "enum": ["working", "episodic", "semantic", "files", "knowledge-graph"] },
+                  "provider": { "type": "string" },
+                  "retention": { "type": "string", "description": "ISO 8601 duration or 'forever'." }
+                }
+              }
+            },
+            "encryptionAtRest": { "type": "boolean" }
+          }
+        },
+        "authority": {
+          "type": "object",
+          "description": "Layer 8 - what the agent is allowed to do and on whose behalf.",
+          "properties": {
+            "principal": { "type": "string", "description": "Who the agent acts for." },
+            "delegations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["scope"],
+                "properties": {
+                  "scope": { "type": "string" },
+                  "grantedBy": { "type": "string" },
+                  "expires": { "type": "string", "format": "date-time" },
+                  "canSubDelegate": { "type": "boolean", "default": false },
+                  "maxDelegationDepth": { "type": "integer", "minimum": 0 }
+                }
+              }
+            },
+            "approvals": {
+              "type": "array",
+              "description": "Actions that require a human decision before execution.",
+              "items": {
+                "type": "object",
+                "required": ["action"],
+                "properties": {
+                  "action": { "type": "string" },
+                  "approver": { "type": "string" },
+                  "channel": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "trust": {
+          "type": "object",
+          "description": "Layer 9 - why others should believe the agent.",
+          "properties": {
+            "credentials": {
+              "type": "array",
+              "description": "Verifiable credentials or attestations held by the agent.",
+              "items": {
+                "type": "object",
+                "required": ["type", "issuer"],
+                "properties": {
+                  "type": { "type": "string" },
+                  "issuer": { "type": "string" },
+                  "url": { "type": "string", "format": "uri" }
+                }
+              }
+            },
+            "reputation": { "type": "array", "items": { "type": "object", "required": ["registry"], "properties": { "registry": { "type": "string" }, "id": { "type": "string" } } } },
+            "kya": { "type": "string", "description": "Know-Your-Agent verification provider or level." }
+          }
+        },
+        "governance": {
+          "type": "object",
+          "description": "Layer 10 - how the agent is watched, limited, and stopped.",
+          "properties": {
+            "auditLog": { "type": "string", "description": "Where traces and actions are recorded." },
+            "killSwitch": {
+              "type": "object",
+              "required": ["controller"],
+              "properties": {
+                "controller": { "type": "string" },
+                "mechanism": { "type": "string", "examples": ["revoke-keys", "suspend-runtime", "freeze-wallet", "all"] }
+              }
+            },
+            "limits": { "type": "object", "additionalProperties": true },
+            "recovery": { "type": "string", "description": "How control is regained if keys or the owner are lost." },
+            "reviewCadence": { "type": "string", "description": "ISO 8601 duration between human reviews." }
+          }
+        }
+      }
+    }
+  }
+}
