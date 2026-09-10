@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://agent-birthbook.github.io/schema/v0/birth-profile.json",
+  "$id": "https://matrixa.github.io/agent-birthbook/schema/v0/birth-profile.json",
   "title": "Agent Birth Profile",
   "description": "A machine-readable statement of what an autonomous agent has been provisioned with, one section per layer of the Agent Birth Stack. Status: experimental seed (v0). Every section is optional; every object accepts additional properties.",
   "type": "object",
