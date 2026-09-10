@@ -2,10 +2,10 @@
 
 **The reference architecture for autonomous agent provisioning.**
 
-[![Docs](https://img.shields.io/badge/docs-agent--birthbook.github.io-6c5ce7)](https://agent-birthbook.github.io/agent-birthbook/)
+[![Docs](https://img.shields.io/badge/docs-matrixa.github.io-6c5ce7)](https://matrixa.github.io/agent-birthbook/)
 [![License: CC0-1.0](https://img.shields.io/badge/license-CC0--1.0-lightgrey)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-27ae60)](CONTRIBUTING.md)
-[![Check links](https://github.com/agent-birthbook/agent-birthbook/actions/workflows/links.yml/badge.svg)](https://github.com/agent-birthbook/agent-birthbook/actions/workflows/links.yml)
+[![Check links](https://github.com/MatrixA/agent-birthbook/actions/workflows/links.yml/badge.svg)](https://github.com/MatrixA/agent-birthbook/actions/workflows/links.yml)
 
 > **Agent Birthbook is not another agent identity standard.**
 > Identity answers *who an agent is*.
@@ -13,7 +13,7 @@
 
 A living knowledge base of the identities, accounts, credentials, infrastructure, money, capabilities, permissions and safeguards an autonomous agent needs at birth — organised as a ten-layer **Agent Birth Stack**, with the standards and providers that fill each layer, a provisioning lifecycle, and an experimental machine-readable manifest (`birth.yaml`).
 
-Read it as a book: **[agent-birthbook.github.io/agent-birthbook](https://agent-birthbook.github.io/agent-birthbook/)** · or start at [`docs/README.md`](docs/README.md).
+Read it as a book: **[matrixa.github.io/agent-birthbook](https://matrixa.github.io/agent-birthbook/)** · or start at [`docs/README.md`](docs/README.md).
 
 ## The Agent Birth Stack
 

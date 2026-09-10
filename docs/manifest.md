@@ -4,8 +4,8 @@
 
 The Agent Birth Manifest (ABM) is a machine-readable statement of what an agent has been provisioned with, one section per layer of the [Birth Stack](birth-stack.md). One agent's manifest is its **Birth Profile**.
 
-- Schema: [`manifests/schema.json`](https://github.com/agent-birthbook/agent-birthbook/blob/main/manifests/schema.json) (JSON Schema 2020-12)
-- Example: [`manifests/examples/research-agent.birth.yaml`](https://github.com/agent-birthbook/agent-birthbook/blob/main/manifests/examples/research-agent.birth.yaml)
+- Schema: [`manifests/schema.json`](https://github.com/MatrixA/agent-birthbook/blob/main/manifests/schema.json) (JSON Schema 2020-12)
+- Example: [`manifests/examples/research-agent.birth.yaml`](https://github.com/MatrixA/agent-birthbook/blob/main/manifests/examples/research-agent.birth.yaml)
 
 ## Why a file
 

@@ -15,8 +15,8 @@ command = "mdbook-mermaid"
 [output.html]
 default-theme = "light"
 preferred-dark-theme = "ayu"
-git-repository-url = "https://github.com/agent-birthbook/agent-birthbook"
-edit-url-template = "https://github.com/agent-birthbook/agent-birthbook/edit/main/docs/{path}"
+git-repository-url = "https://github.com/MatrixA/agent-birthbook"
+edit-url-template = "https://github.com/MatrixA/agent-birthbook/edit/main/docs/{path}"
 additional-js = ["assets/mermaid.min.js", "assets/mermaid-init.js"]
 no-section-label = true
 
