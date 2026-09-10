@@ -1,0 +1,158 @@
+# Agent Birth Profile - example
+# A research assistant that reads the web, emails digests to its owner, and pays
+# small amounts for API access. Nothing here is a secret: credentials are references.
+apiVersion: birthbook.dev/v0
+kind: BirthProfile
+
+metadata:
+  name: scout
+  owner: did:web:example.com:people:fernando
+  createdAt: "2026-09-10T00:00:00Z"
+  purpose: Daily literature and market research digests.
+  labels:
+    environment: production
+    team: research
+
+spec:
+  identity:
+    did: did:web:agents.example.com:scout
+    keys:
+      - id: signing-2026-09
+        type: Ed25519
+        custody: provider          # held by the wallet/key provider, not on the agent host
+        publicKey: z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK
+    registrations:
+      - registry: erc-8004
+        id: "8453:1042"
+        url: https://basescan.org/token/0x0000000000000000000000000000000000000000?a=1042
+      - registry: a2a-agent-card
+        url: https://agents.example.com/scout/.well-known/agent-card.json
+
+  presence:
+    email: scout@agents.example.com
+    domain: agents.example.com
+    endpoints:
+      - protocol: a2a
+        url: https://agents.example.com/scout/a2a
+      - protocol: https
+        url: https://agents.example.com/scout
+
+  authentication:
+    secretStore: infisical://prod/agents/scout
+    credentials:
+      - service: agentmail
+        type: api-key
+        secretRef: AGENTMAIL_API_KEY
+        rotation: P90D
+      - service: github
+        type: oauth2
+        scopes: [repo:read, issues:write]
+        secretRef: GITHUB_APP_INSTALLATION
+        rotation: P1D
+      - service: openrouter
+        type: api-key
+        secretRef: OPENROUTER_API_KEY
+        rotation: P30D
+
+  compute:
+    runtime: e2b
+    isolation: microvm
+    browser: browserbase
+    network:
+      egress: allowlist
+      allow:
+        - api.openrouter.ai
+        - api.agentmail.to
+        - api.github.com
+        - "*.arxiv.org"
+    storage: r2://agents-scout
+
+  economy:
+    wallets:
+      - chain: base
+        address: "0x0000000000000000000000000000000000000000"
+        custody: provider
+        provider: coinbase-cdp
+    budget:
+      currency: USD
+      perTransaction: 2
+      perDay: 10
+      perMonth: 150
+    paymentProtocols: [x402]
+
+  capabilities:
+    models:
+      - id: anthropic/claude-sonnet-4-6
+        via: openrouter
+        role: primary
+      - id: openai/text-embedding-3-small
+        via: openrouter
+        role: embedding
+    tools:
+      - name: fetch
+        kind: mcp
+        source: https://github.com/modelcontextprotocol/servers
+      - name: arxiv-search
+        kind: http
+        source: https://export.arxiv.org/api
+      - name: agentmail
+        kind: mcp
+        source: https://www.agentmail.to
+    skills:
+      - literature-review
+      - market-brief
+
+  memory:
+    encryptionAtRest: true
+    stores:
+      - kind: working
+        provider: in-context
+        retention: PT0S
+      - kind: episodic
+        provider: mem0
+        retention: P365D
+      - kind: files
+        provider: r2
+        retention: forever
+
+  authority:
+    principal: did:web:example.com:people:fernando
+    delegations:
+      - scope: read:web
+        grantedBy: did:web:example.com:people:fernando
+        canSubDelegate: false
+      - scope: send:email:owner-only
+        grantedBy: did:web:example.com:people:fernando
+        canSubDelegate: false
+      - scope: pay:x402:<=2USD
+        grantedBy: did:web:example.com:people:fernando
+        expires: "2027-09-10T00:00:00Z"
+        canSubDelegate: false
+        maxDelegationDepth: 0
+    approvals:
+      - action: send:email:external
+        approver: did:web:example.com:people:fernando
+        channel: slack:#scout-approvals
+      - action: pay:>2USD
+        approver: did:web:example.com:people:fernando
+        channel: slack:#scout-approvals
+
+  trust:
+    credentials:
+      - type: OwnerAttestation
+        issuer: did:web:example.com
+        url: https://agents.example.com/scout/credentials/owner.json
+    reputation:
+      - registry: erc-8004
+        id: "8453:1042"
+
+  governance:
+    auditLog: langfuse://project/scout
+    killSwitch:
+      controller: did:web:example.com:people:fernando
+      mechanism: all
+    limits:
+      maxRuntimeHoursPerDay: 8
+      maxEmailsPerDay: 5
+    recovery: Owner holds provider recovery share; second share in company password vault.
+    reviewCadence: P30D
