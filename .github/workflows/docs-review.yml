@@ -1,0 +1,84 @@
+name: Review docs
+
+on:
+  pull_request:
+    paths: ["docs/**"]
+  workflow_dispatch:
+    inputs:
+      path:
+        description: "Docs path to review (file or directory)"
+        default: docs
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: docs-review-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    # fork PRs have no secrets; skip rather than fail red
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      NTFY_URL: ${{ secrets.NTFY_URL }}
+      PR: ${{ github.event.pull_request.number }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Collect docs to review
+        run: |
+          if [ -n "$PR" ]; then
+            BASE=${{ github.event.pull_request.base.sha }}
+            { echo "## Diff"; echo '```diff'; git diff "$BASE" HEAD -- docs; echo '```'
+              echo; echo "## Full text of changed files"
+              for f in $(git diff --name-only "$BASE" HEAD -- docs); do
+                [ -f "$f" ] && { echo; echo "### $f"; echo; cat "$f"; }
+              done; } > input.md
+          else
+            for f in $(find "${{ inputs.path }}" -name '*.md' | sort); do echo; echo "### $f"; echo; cat "$f"; done > input.md
+          fi
+          wc -c input.md
+
+      - name: Ask DeepSeek for a review
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: |
+          cat > system.md <<'EOF'
+          You are a technical editor reviewing the Agent Birthbook, an mdBook knowledge base about provisioning autonomous agents.
+          Review the supplied markdown for: factual errors or unsupported claims, internal inconsistencies with other files shown, unclear or ambiguous wording, broken structure (headings, lists, SUMMARY.md links), and missing context a first-time reader would need. Ignore style nits.
+          Output GitHub-flavored markdown. First line must be exactly `Verdict: <one sentence>`. Then a list of findings, each as `- **file.md** — issue — suggested fix`, most important first. If there is nothing worth changing, say so in one line.
+          EOF
+          jq -n --rawfile sys system.md --rawfile doc input.md '{
+            model: "deepseek-chat", max_tokens: 8000,
+            messages: [{role: "system", content: $sys}, {role: "user", content: $doc}]
+          }' > req.json
+          curl -sSf https://api.deepseek.com/chat/completions \
+            -H "Authorization: Bearer $DEEPSEEK_API_KEY" \
+            -H "content-type: application/json" -d @req.json > resp.json
+          jq -r '.choices[0].message.content // empty' resp.json > review.md
+          [ -s review.md ] || { echo "empty review"; jq . resp.json; exit 1; }
+          cat review.md
+
+      - name: Post feedback
+        run: |
+          if [ -n "$PR" ]; then
+            gh pr comment "$PR" --body-file review.md --edit-last --create-if-none
+            TARGET="PR #$PR"; LINK=${{ github.event.pull_request.html_url }}
+          else
+            LINK=$(gh issue create --title "Docs review $(date -u +%F)" --body-file review.md)
+            TARGET="full book"
+          fi
+          echo "LINK=$LINK" >> "$GITHUB_ENV"; echo "TARGET=$TARGET" >> "$GITHUB_ENV"
+
+      - name: Notify ntfy
+        if: env.NTFY_URL != ''
+        run: |
+          curl -sSf -H "Title: Docs review: $TARGET" -H "Click: $LINK" \
+            --data-binary "$(head -c 800 review.md)" "$NTFY_URL"
