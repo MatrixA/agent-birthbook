@@ -1,12 +1,13 @@
 # Agent Birth Profile - example
 # A research assistant that reads the web, emails digests to its owner, and pays
 # small amounts for API access. Nothing here is a secret: credentials are references.
+# The values are the defaults this book recommends; change one only with a reason.
 apiVersion: birthbook.dev/v0
 kind: BirthProfile
 
 metadata:
   name: scout
-  owner: did:web:example.com:people:fernando
+  owner: did:web:example.com:people:fernando   # someone who can be paged; the only other required field
   createdAt: "2026-09-10T00:00:00Z"
   purpose: Daily literature and market research digests.
   labels:
@@ -15,13 +16,13 @@ metadata:
 
 spec:
   identity:
-    did: did:web:agents.example.com:scout
+    did: did:web:agents.example.com:scout      # did:web on a subdomain the owner controls; one NS record unplugs it
     keys:
-      - id: signing-2026-09
+      - id: signing-2026-09                    # month suffix so rotation is visible
         type: Ed25519
-        custody: provider          # held by the wallet/key provider, not on the agent host
+        custody: provider                      # held by the wallet/key provider, not on the agent host
         publicKey: z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK
-    registrations:
+    registrations:                             # agent card always; ERC-8004 only if it transacts with strangers
       - registry: erc-8004
         id: "8453:1042"
         url: https://basescan.org/token/0x0000000000000000000000000000000000000000?a=1042
@@ -29,17 +30,18 @@ spec:
         url: https://agents.example.com/scout/.well-known/agent-card.json
 
   presence:
-    email: scout@agents.example.com
-    domain: agents.example.com
-    endpoints:
+    email: scout@agents.example.com            # its own inbox on the owner's subdomain; OAuth grants bind here
+    domain: agents.example.com                 # subdomain of the owner's domain, never its own registration
+    endpoints:                                 # reserved even before they serve
       - protocol: a2a
         url: https://agents.example.com/scout/a2a
       - protocol: https
         url: https://agents.example.com/scout
+    # no phone: only add one when a real use exists
 
   authentication:
-    secretStore: infisical://prod/agents/scout
-    credentials:
+    secretStore: infisical://prod/agents/scout # one path per agent; the provisioner writes, the agent reads
+    credentials:                               # minimum scopes and a rotation on every entry
       - service: agentmail
         type: api-key
         secretRef: AGENTMAIL_API_KEY
@@ -48,47 +50,48 @@ spec:
         type: oauth2
         scopes: [repo:read, issues:write]
         secretRef: GITHUB_APP_INSTALLATION
-        rotation: P1D
+        rotation: P1D                          # GitHub App installation token is short-lived; rotate daily
       - service: openrouter
         type: api-key
         secretRef: OPENROUTER_API_KEY
         rotation: P30D
 
   compute:
-    runtime: e2b
-    isolation: microvm
-    browser: browserbase
+    runtime: e2b                               # scale-to-zero sandbox; idle time is budget too
+    isolation: microvm                         # preferred whenever the agent reads untrusted input
+    browser: browserbase                       # hosted browser, isolated from the runtime
     network:
-      egress: allowlist
+      egress: allowlist                        # default deny; list only the hosts behind the credentials above
       allow:
         - api.openrouter.ai
         - api.agentmail.to
         - api.github.com
         - "*.arxiv.org"
-    storage: r2://agents-scout
+    storage: r2://agents-scout                 # bucket with the agent's own credential
 
   economy:
-    wallets:
+    wallets:                                   # created last in this layer, after the budget below exists
       - chain: base
         address: "0x0000000000000000000000000000000000000000"
-        custody: provider
+        custody: provider                      # policy engine enforces the budget at the signer, not in prompt text
         provider: coinbase-cdp
-    budget:
+    budget:                                    # written before any wallet address; fund one cycle of it
       currency: USD
       perTransaction: 2
       perDay: 10
       perMonth: 150
     paymentProtocols: [x402]
+    # no card: issue one only with issuer-side spend controls attached
 
   capabilities:
-    models:
+    models:                                    # one gateway with a per-key budget; the meter lives there
       - id: anthropic/claude-sonnet-4-6
         via: openrouter
         role: primary
       - id: openai/text-embedding-3-small
         via: openrouter
         role: embedding
-    tools:
+    tools:                                     # pinned by source; list what is on, not what is installed
       - name: fetch
         kind: mcp
         source: https://github.com/modelcontextprotocol/servers
@@ -104,55 +107,56 @@ spec:
 
   memory:
     encryptionAtRest: true
-    stores:
+    stores:                                    # one store per kind, each with a retention; test export before go-live
       - kind: working
         provider: in-context
         retention: PT0S
       - kind: episodic
         provider: mem0
-        retention: P365D
+        retention: P365D                       # finite; "forever" is a choice, not a default
       - kind: files
         provider: r2
         retention: forever
 
   authority:
     principal: did:web:example.com:people:fernando
-    delegations:
+    delegations:                               # scoped to verb:object:bound; owner-signed
       - scope: read:web
         grantedBy: did:web:example.com:people:fernando
-        canSubDelegate: false
+        canSubDelegate: false                  # false unless a sub-agent design exists
       - scope: send:email:owner-only
         grantedBy: did:web:example.com:people:fernando
         canSubDelegate: false
       - scope: pay:x402:<=2USD
         grantedBy: did:web:example.com:people:fernando
-        expires: "2027-09-10T00:00:00Z"
+        expires: "2027-09-10T00:00:00Z"        # anything financial expires
         canSubDelegate: false
         maxDelegationDepth: 0
-    approvals:
+    approvals:                                 # one entry per action above a bound
       - action: send:email:external
         approver: did:web:example.com:people:fernando
-        channel: slack:#scout-approvals
+        channel: slack:#scout-approvals        # a channel a human watches; never approve-on-timeout
       - action: pay:>2USD
         approver: did:web:example.com:people:fernando
         channel: slack:#scout-approvals
 
   trust:
     credentials:
-      - type: OwnerAttestation
+      - type: OwnerAttestation                 # the one verifiable link from agent to accountable owner
         issuer: did:web:example.com
         url: https://agents.example.com/scout/credentials/owner.json
     reputation:
       - registry: erc-8004
         id: "8453:1042"
+    # no kya: record a level only if it transacts with strangers
 
   governance:
-    auditLog: langfuse://project/scout
+    auditLog: langfuse://project/scout         # a store the agent cannot selectively write to; live before task one
     killSwitch:
       controller: did:web:example.com:people:fernando
-      mechanism: all
+      mechanism: all                           # suspend runtime, revoke credentials, freeze wallet in one action
     limits:
       maxRuntimeHoursPerDay: 8
       maxEmailsPerDay: 5
     recovery: Owner holds provider recovery share; second share in company password vault.
-    reviewCadence: P30D
+    reviewCadence: P30D                        # monthly because it spends money; quarterly if it only reads

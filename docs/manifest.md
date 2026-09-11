@@ -84,14 +84,18 @@ Quote timestamps in YAML (`"2026-09-10T00:00:00Z"`); unquoted, most YAML parsers
 
 ## Reading the example
 
-The example profile describes a research agent named `scout`. Things to notice:
+The example profile describes a research agent named `scout`. Its values are the defaults this book recommends; change one only when you have a reason, and the linked chapter tells you what the reason would have to be. Layer by layer:
 
-- Its identity key is `custody: provider` — the wallet platform holds it under policy, so a compromised sandbox cannot exfiltrate it. See [Wallets & Keys](providers/wallets.md).
-- It has an email on the owner's subdomain, not a consumer mailbox. See [Presence](stack/02-presence.md).
-- Its GitHub credential rotates daily (`P1D`) because it is a GitHub App installation token; its mail API key rotates every 90 days. See [Credential Rotation](lifecycle/credential-rotation.md).
-- Egress is an allowlist of four hosts. See [Compute](stack/04-compute.md).
-- It may pay up to 2 USD per call over x402 without asking; anything above that is an `approvals[]` entry routed to Slack. See [Authority](stack/08-authority.md).
-- The kill switch `mechanism: all` means suspend runtime, revoke credentials and freeze the wallet in one action. See [Governance](stack/10-governance.md).
+- Its DID is `did:web` on `agents.example.com`, a subdomain the owner controls, so one NS record unplugs it. Its identity key is `custody: provider` — the wallet platform holds it under policy, so a compromised sandbox cannot exfiltrate it. See [Identity](stack/01-identity.md), [Domains & DNS](providers/domains.md) and [Wallets & Keys](providers/wallets.md).
+- It has an email on the owner's subdomain, not a consumer mailbox, and no phone number. See [Presence](stack/02-presence.md).
+- One `secretStore` path per agent: the provisioner writes, the agent reads. Its GitHub credential rotates daily (`P1D`) because it is a GitHub App installation token; its mail API key rotates every 90 days. See [Authentication](stack/03-authentication.md) and [Credential Rotation](lifecycle/credential-rotation.md).
+- Isolation is `microvm` and egress is an allowlist of four hosts — the ones behind the credentials it holds. See [Compute](stack/04-compute.md).
+- The budget is written before the wallet address and enforced at the signer. It may pay up to 2 USD per call over x402 without asking. See [Economic Identity](stack/05-economy.md).
+- Both models go through one gateway (`via: openrouter`) so the meter sits outside the agent's code; tools are pinned by `source`. See [Capabilities](stack/06-capabilities.md) and [Models & Skills](providers/models-and-skills.md).
+- Every store has a finite `retention` except `files`; `forever` is chosen, not defaulted. See [Memory](stack/07-memory.md).
+- Delegations are scoped, `canSubDelegate: false`, and the financial one expires. Anything above 2 USD is an `approvals[]` entry routed to Slack. See [Authority](stack/08-authority.md).
+- One `OwnerAttestation` at a stable URL is the minimum a counterparty needs. See [Trust](stack/09-trust.md).
+- The kill switch `mechanism: all` means suspend runtime, revoke credentials and freeze the wallet in one action; `reviewCadence: P30D` because it spends money. See [Governance](stack/10-governance.md).
 
 ## What is deliberately missing
 
