@@ -6,3 +6,6 @@
 ^https?://stripe\.com
 ^https?://(www\.)?visa\.com
 ^https?://(www\.)?mastercard\.com
+^https?://(www\.)?namecheap\.com
+# incomplete TLS chain; lychee's rustls rejects it, browsers don't
+^https?://(www\.)?ctia\.org

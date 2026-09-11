@@ -23,47 +23,38 @@ jobs:
     # fork PRs have no secrets; skip rather than fail red
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     env:
       GH_TOKEN: ${{ github.token }}
       NTFY_URL: ${{ secrets.NTFY_URL }}
       PR: ${{ github.event.pull_request.number }}
+      BASE: ${{ github.event.pull_request.base.sha }}
+      REVIEW_PATH: ${{ inputs.path }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - uses: cargo-bins/cargo-binstall@main
+      - run: cargo binstall -y mdbook mdbook-mermaid
+      - run: npx -y playwright install --with-deps chromium
+      - run: npm i -g @anthropic-ai/claude-code
 
-      - name: Collect docs to review
-        run: |
-          if [ -n "$PR" ]; then
-            BASE=${{ github.event.pull_request.base.sha }}
-            { echo "## Diff"; echo '```diff'; git diff "$BASE" HEAD -- docs; echo '```'
-              echo; echo "## Full text of changed files"
-              for f in $(git diff --name-only "$BASE" HEAD -- docs); do
-                [ -f "$f" ] && { echo; echo "### $f"; echo; cat "$f"; }
-              done; } > input.md
-          else
-            for f in $(find "${{ inputs.path }}" -name '*.md' | sort); do echo; echo "### $f"; echo; cat "$f"; done > input.md
-          fi
-          wc -c input.md
-
-      - name: Ask DeepSeek for a review
+      - name: Review with DeepSeek agent
+        # Claude Code CLI pointed at DeepSeek's Anthropic-compatible endpoint;
+        # env values per https://api-docs.deepseek.com/quick_start/agent_integrations/claude_code
         env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          ANTHROPIC_BASE_URL: https://api.deepseek.com/anthropic
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.DEEPSEEK_API_KEY }}
+          ANTHROPIC_MODEL: deepseek-flash[1m]
+          ANTHROPIC_DEFAULT_OPUS_MODEL: deepseek-flash[1m]
+          ANTHROPIC_DEFAULT_SONNET_MODEL: deepseek-flash[1m]
+          ANTHROPIC_DEFAULT_HAIKU_MODEL: deepseek-flash
+          CLAUDE_CODE_SUBAGENT_MODEL: deepseek-flash
         run: |
-          cat > system.md <<'EOF'
-          You are a technical editor reviewing the Agent Birthbook, an mdBook knowledge base about provisioning autonomous agents.
-          Review the supplied markdown for: factual errors or unsupported claims, internal inconsistencies with other files shown, unclear or ambiguous wording, broken structure (headings, lists, SUMMARY.md links), and missing context a first-time reader would need. Ignore style nits.
-          Output GitHub-flavored markdown. First line must be exactly `Verdict: <one sentence>`. Then a list of findings, each as `- **file.md** — issue — suggested fix`, most important first. If there is nothing worth changing, say so in one line.
-          EOF
-          jq -n --rawfile sys system.md --rawfile doc input.md '{
-            model: "deepseek-chat", max_tokens: 8000,
-            messages: [{role: "system", content: $sys}, {role: "user", content: $doc}]
-          }' > req.json
-          curl -sSf https://api.deepseek.com/chat/completions \
-            -H "Authorization: Bearer $DEEPSEEK_API_KEY" \
-            -H "content-type: application/json" -d @req.json > resp.json
-          jq -r '.choices[0].message.content // empty' resp.json > review.md
-          [ -s review.md ] || { echo "empty review"; jq . resp.json; exit 1; }
+          claude -p "$(cat .github/docs-review.md)" \
+            --allowedTools "Bash,Read,Write,Glob,Grep,WebFetch" \
+            --output-format text
+          [ -s review.md ] || { echo "agent produced no review.md"; exit 1; }
           cat review.md
 
       - name: Post feedback
