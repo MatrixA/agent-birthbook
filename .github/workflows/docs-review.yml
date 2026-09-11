@@ -72,8 +72,8 @@ jobs:
             gh pr comment "$PR" --body-file review.md --edit-last --create-if-none
             TARGET="PR #$PR"; LINK=${{ github.event.pull_request.html_url }}
           else
-            LINK=$(gh issue create --title "Docs review $(date -u +%F)" --body-file review.md)
-            TARGET="full book"
+            LINK=$(gh issue create --title "Docs review: ${{ inputs.path }} ($(date -u +%F))" --body-file review.md)
+            TARGET="${{ inputs.path }}"
           fi
           echo "LINK=$LINK" >> "$GITHUB_ENV"; echo "TARGET=$TARGET" >> "$GITHUB_ENV"
 
