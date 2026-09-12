@@ -8,6 +8,11 @@ src = "docs"
 [build]
 build-dir = "book"
 create-missing = false
+extra-watch-dirs = ["po"]
+
+[preprocessor.gettext]
+after = ["links"]
+before = ["mermaid"]
 
 [preprocessor.mermaid]
 command = "mdbook-mermaid"
@@ -16,8 +21,9 @@ command = "mdbook-mermaid"
 default-theme = "light"
 preferred-dark-theme = "ayu"
 git-repository-url = "https://github.com/MatrixA/agent-birthbook"
-edit-url-template = "https://github.com/MatrixA/agent-birthbook/edit/main/docs/{path}"
-additional-js = ["assets/mermaid.min.js", "assets/mermaid-init.js"]
+edit-url-template = "https://github.com/MatrixA/agent-birthbook/edit/main/{path}"
+additional-css = ["assets/language-switcher.css"]
+additional-js = ["assets/mermaid.min.js", "assets/mermaid-init.js", "assets/language-switcher.js"]
 no-section-label = true
 
 [output.html.fold]

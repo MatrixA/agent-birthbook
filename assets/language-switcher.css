@@ -1,0 +1,27 @@
+.language-switcher {
+    align-items: center;
+    border: 1px solid var(--icons);
+    border-radius: 0.25rem;
+    color: var(--icons);
+    display: inline-flex;
+    font-size: 1.2rem;
+    font-weight: 600;
+    height: 2.8rem;
+    line-height: 1;
+    margin-inline-end: 0.5rem;
+    padding: 0 0.8rem;
+    text-decoration: none;
+}
+
+.language-switcher:hover,
+.language-switcher:focus-visible {
+    border-color: var(--icons-hover);
+    color: var(--icons-hover);
+}
+
+@media only screen and (max-width: 420px) {
+    .language-switcher {
+        font-size: 1rem;
+        padding: 0 0.6rem;
+    }
+}

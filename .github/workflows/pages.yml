@@ -20,8 +20,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: cargo-bins/cargo-binstall@main
-      - run: cargo binstall -y mdbook mdbook-mermaid
-      - run: mdbook build
+      - run: cargo binstall -y mdbook mdbook-mermaid mdbook-i18n-helpers@0.4.0
+      - name: Build English and Simplified Chinese books
+        run: |
+          mdbook build
+          MDBOOK_BOOK__LANGUAGE=zh-CN \
+            MDBOOK_BOOK__DESCRIPTION='自主智能体供给的参考架构。' \
+            MDBOOK_OUTPUT__HTML__SITE_URL=/agent-birthbook/zh-CN/ \
+            mdbook build -d book/zh-CN
       - uses: actions/upload-pages-artifact@v3
         with:
           path: book

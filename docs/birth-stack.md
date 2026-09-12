@@ -59,20 +59,20 @@ The stack is drawn as a column, but the real dependencies form a graph. The impo
 
 ```mermaid
 flowchart LR
-    ID[1 Identity] --> PR[2 Presence]
-    ID --> AU[3 Authentication]
-    ID --> EC[5 Economic Identity]
-    ID --> TR[9 Trust]
+    ID["1 Identity"] --> PR["2 Presence"]
+    ID --> AU["3 Authentication"]
+    ID --> EC["5 Economic Identity"]
+    ID --> TR["9 Trust"]
     PR --> AU
-    AU --> CA[6 Capabilities]
-    CO[4 Compute] --> CA
-    CO --> ME[7 Memory]
+    AU --> CA["6 Capabilities"]
+    CO["4 Compute"] --> CA
+    CO --> ME["7 Memory"]
     EC --> CA
-    ID --> AT[8 Authority]
+    ID --> AT["8 Authority"]
     AT --> CA
     AT --> EC
     CA --> TR
-    AT --> GO[10 Governance]
+    AT --> GO["10 Governance"]
     EC --> GO
     CO --> GO
     TR --> GO
@@ -118,6 +118,12 @@ An agent's stack is not provisioned once and forgotten. Keys rotate, providers c
 
 ```mermaid
 stateDiagram-v2
+    state "Provisioning" as Provisioning
+    state "Active" as Active
+    state "Suspended" as Suspended
+    state "Migrating" as Migrating
+    state "Retired" as Retired
+    state "Destroyed" as Destroyed
     [*] --> Provisioning : birth begins
     Provisioning --> Active : Birth Profile complete
     Active --> Suspended : kill switch / anomaly

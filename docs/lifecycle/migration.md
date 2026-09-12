@@ -6,13 +6,13 @@ An agent migrates when something underneath it changes without the agent itself 
 
 ```mermaid
 flowchart LR
-    A[Active] --> F[Freeze: pause tasks, drain in-flight]
-    F --> S[Snapshot memory, files, secret refs, manifest]
-    S --> P[Provision target layers]
-    P --> R[Re-attest: delegations, owner VC, registrations]
-    R --> V[Verify: resolve DID, test kill switch, replay one task]
-    V --> C[Cut over endpoints, revoke old credentials]
-    C --> A2[Active on new footing]
+    A["Active"] --> F["Freeze: pause tasks, drain in-flight"]
+    F --> S["Snapshot memory, files, secret refs, manifest"]
+    S --> P["Provision target layers"]
+    P --> R["Re-attest: delegations, owner VC, registrations"]
+    R --> V["Verify: resolve DID, test kill switch, replay one task"]
+    V --> C["Cut over endpoints, revoke old credentials"]
+    C --> A2["Active on new footing"]
 ```
 
 The four common migrations, from cheapest to most expensive:

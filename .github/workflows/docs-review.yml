@@ -35,7 +35,7 @@ jobs:
         with:
           fetch-depth: 0
       - uses: cargo-bins/cargo-binstall@main
-      - run: cargo binstall -y mdbook mdbook-mermaid
+      - run: cargo binstall -y mdbook mdbook-mermaid mdbook-i18n-helpers@0.4.0
       - run: npx -y playwright install --with-deps chromium
       - run: npm i -g @anthropic-ai/claude-code
 

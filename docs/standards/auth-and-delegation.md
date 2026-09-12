@@ -62,6 +62,7 @@ OpenID Foundation community group collecting agent identity requirements and dra
 
 ```mermaid
 sequenceDiagram
+    %% "i18n"
     participant U as User (principal)
     participant A as Agent
     participant AS as Authorization Server
