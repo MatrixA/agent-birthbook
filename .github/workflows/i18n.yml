@@ -1,0 +1,142 @@
+name: Check translations
+
+on:
+  pull_request:
+    paths:
+      - "docs/**"
+      - "po/**"
+      - "book.toml"
+      - "assets/language-switcher.*"
+      - ".github/workflows/i18n.yml"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  translations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cargo-bins/cargo-binstall@main
+      - run: cargo binstall -y mdbook mdbook-mermaid mdbook-i18n-helpers@0.4.0
+      - name: Install Gettext
+        run: sudo apt-get update && sudo apt-get install -y gettext
+
+      - name: Check catalog is complete and current
+        run: |
+          set -euo pipefail
+          catalog="$RUNNER_TEMP/agent-birthbook-catalog"
+          MDBOOK_OUTPUT='{"xgettext": {}}' mdbook build -d "$catalog"
+          msgcmp po/zh-CN.po "$catalog/messages.pot"
+
+          msgattrib --untranslated --no-obsolete \
+            -o "$RUNNER_TEMP/untranslated.po" po/zh-CN.po
+          msgattrib --only-fuzzy --no-obsolete \
+            -o "$RUNNER_TEMP/fuzzy.po" po/zh-CN.po
+          msgattrib --only-obsolete \
+            -o "$RUNNER_TEMP/obsolete.po" po/zh-CN.po
+
+          if test -s "$RUNNER_TEMP/untranslated.po"; then
+            echo "po/zh-CN.po contains untranslated messages"
+            exit 1
+          fi
+          if test -s "$RUNNER_TEMP/fuzzy.po"; then
+            echo "po/zh-CN.po contains fuzzy messages"
+            exit 1
+          fi
+          if test -s "$RUNNER_TEMP/obsolete.po"; then
+            echo "po/zh-CN.po contains obsolete messages"
+            exit 1
+          fi
+          msgfmt --check --check-format -o /dev/null po/zh-CN.po
+
+      - name: Build both languages
+        run: |
+          set -euo pipefail
+          site="$RUNNER_TEMP/site"
+          mdbook build -d "$site"
+          MDBOOK_BOOK__LANGUAGE=zh-CN \
+            MDBOOK_BOOK__DESCRIPTION='自主智能体供给的参考架构。' \
+            MDBOOK_OUTPUT__HTML__SITE_URL=/agent-birthbook/zh-CN/ \
+            mdbook build -d "$site/zh-CN"
+
+          SITE="$site" python3 - <<'PY'
+          import os
+          import re
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          site = Path(os.environ["SITE"])
+          summary = Path("docs/SUMMARY.md").read_text()
+          chapters = re.findall(r"\]\(([^)#]+\.md)(?:#[^)]*)?\)", summary)
+          assert len(chapters) == 37, f"expected 37 chapters, found {len(chapters)}"
+          for chapter in chapters:
+              source = Path(chapter)
+              output = (
+                  source.parent / "index.html"
+                  if source.name == "README.md"
+                  else source.with_suffix(".html")
+              )
+              assert (site / output).is_file(), f"missing English page: {output}"
+              assert (site / "zh-CN" / output).is_file(), f"missing Chinese page: {output}"
+
+          assert '<html lang="en"' in (site / "index.html").read_text()
+          chinese_index = (site / "zh-CN" / "index.html").read_text()
+          assert '<html lang="zh-CN"' in chinese_index
+          assert 'content="自主智能体供给的参考架构。"' in chinese_index
+
+          english_search = next(site.glob("searchindex-*.js"))
+          chinese_search = next((site / "zh-CN").glob("searchindex-*.js"))
+          assert english_search.read_bytes() != chinese_search.read_bytes()
+
+          source_mermaid = sum(path.read_text().count("```mermaid") for path in Path("docs").rglob("*.md"))
+          rendered_mermaid = sum(
+              path.read_text().count('class="mermaid"')
+              for path in (site / "zh-CN").rglob("*.html")
+              if path.name != "print.html"
+          )
+          assert source_mermaid == rendered_mermaid == 16
+
+          class VisibleText(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.hidden = 0
+                  self.fragments = []
+              def handle_starttag(self, tag, attrs):
+                  if tag in {"script", "style", "code", "pre"}:
+                      self.hidden += 1
+              def handle_endtag(self, tag):
+                  if tag in {"script", "style", "code", "pre"}:
+                      self.hidden -= 1
+              def handle_data(self, data):
+                  if not self.hidden:
+                      self.fragments.append(data)
+
+          damaged = []
+          for path in (site / "zh-CN").rglob("*.html"):
+              if path.name == "print.html":
+                  continue
+              parser = VisibleText()
+              parser.feed(path.read_text())
+              text = "".join(parser.fragments)
+              if "**" in text or re.search(r"(?<!_)_[^_\n]+_(?!_)", text):
+                  damaged.append(str(path.relative_to(site)))
+          assert not damaged, f"raw Markdown emphasis in rendered Chinese pages: {damaged}"
+          PY
+
+      - name: Validate manifest schema compatibility
+        run: |
+          python3 -m pip install --disable-pip-version-check pyyaml jsonschema
+          python3 - <<'PY'
+          import json
+          import jsonschema
+          import yaml
+
+          with open("manifests/schema.json") as schema_file:
+              schema = json.load(schema_file)
+          with open("manifests/examples/research-agent.birth.yaml") as manifest_file:
+              manifest = yaml.safe_load(manifest_file)
+          jsonschema.validate(manifest, schema)
+          PY

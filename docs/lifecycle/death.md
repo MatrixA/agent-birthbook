@@ -6,6 +6,12 @@ An agent that can be born must be able to die cleanly. Death is the reverse of t
 
 ```mermaid
 stateDiagram-v2
+    state "Provisioning" as Provisioning
+    state "Active" as Active
+    state "Suspended" as Suspended
+    state "Migrating" as Migrating
+    state "Retired" as Retired
+    state "Destroyed" as Destroyed
     [*] --> Provisioning : birth begins
     Provisioning --> Active : Birth Profile complete, first heartbeat logged
     Provisioning --> Destroyed : birth abandoned, partial resources torn down

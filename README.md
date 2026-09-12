@@ -13,7 +13,7 @@
 
 A living knowledge base of the identities, accounts, credentials, infrastructure, money, capabilities, permissions and safeguards an autonomous agent needs at birth — organised as a ten-layer **Agent Birth Stack**, with the standards and providers that fill each layer, a provisioning lifecycle, and an experimental machine-readable manifest (`birth.yaml`).
 
-Read it as a book: **[matrixa.github.io/agent-birthbook](https://matrixa.github.io/agent-birthbook/)** · or start at [`docs/README.md`](docs/README.md).
+Read it as a book: **[English](https://matrixa.github.io/agent-birthbook/)** · **[简体中文](https://matrixa.github.io/agent-birthbook/zh-CN/)** · or start at [`docs/README.md`](docs/README.md).
 
 ## The Agent Birth Stack
 
@@ -153,6 +153,7 @@ Build the book locally:
 
 ```sh
 cargo install mdbook mdbook-mermaid
+cargo install mdbook-i18n-helpers --version 0.4.0
 mdbook serve --open
 ```
 
@@ -160,7 +161,7 @@ The same `docs/` tree also syncs to GitBook via [`.gitbook.yaml`](.gitbook.yaml)
 
 ## Roadmap
 
-- Chinese translation (`mdbook-i18n-helpers`).
+- [x] Chinese translation (`mdbook-i18n-helpers`).
 - Signed, versioned Birth Profiles.
 - A provider driver interface and a `birthctl` that provisions from a profile.
 

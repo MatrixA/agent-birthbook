@@ -14,6 +14,7 @@ Trust is why a stranger should believe the agent is what it says it is, is run b
 
 ```mermaid
 sequenceDiagram
+    %% "i18n"
     participant C as Counterparty
     participant A as Agent
     participant V as Verifier (KYA)

@@ -6,6 +6,7 @@ The Birth Procedure is the ordered provisioning of the ten layers of the [Agent 
 
 ```mermaid
 sequenceDiagram
+    %% "i18n"
     participant O as Owner
     participant P as Provisioner (human or script)
     participant V as Providers (email / compute / wallet / secret store)

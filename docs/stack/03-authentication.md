@@ -10,6 +10,7 @@ The dominant protocol is OAuth. The [MCP authorization spec](https://modelcontex
 
 ```mermaid
 sequenceDiagram
+    %% "i18n"
     participant A as Agent
     participant RS as MCP server (resource)
     participant AS as Authorization server

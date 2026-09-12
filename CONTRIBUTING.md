@@ -39,12 +39,49 @@ Every PR runs a link check (`lychee`). Locally:
 
 ```sh
 cargo install mdbook mdbook-mermaid lychee
+cargo install mdbook-i18n-helpers --version 0.4.0
 mdbook build            # docs must build with zero warnings
 lychee --exclude-mail './**/*.md'
 python3 -c "import json,yaml,jsonschema; jsonschema.validate(yaml.safe_load(open('manifests/examples/research-agent.birth.yaml')), json.load(open('manifests/schema.json')))"
 ```
 
 Every chapter must be reachable from `docs/SUMMARY.md`.
+
+## Translations
+
+The Simplified Chinese book is maintained in `po/zh-CN.po` with
+[`mdbook-i18n-helpers`](https://github.com/google/mdbook-i18n-helpers). The
+English Markdown in `docs/` remains the source of truth. Any pull request that
+changes it must update the Chinese catalog in the same pull request; CI rejects
+untranslated, fuzzy, or obsolete messages.
+
+Install the translation tools:
+
+```sh
+cargo install mdbook-i18n-helpers --version 0.4.0
+brew install gettext # macOS; install the gettext package on other platforms
+```
+
+Refresh the catalog after editing English documentation:
+
+```sh
+catalog="$(mktemp -d)/agent-birthbook-catalog"
+MDBOOK_OUTPUT='{"xgettext": {}}' mdbook build -d "$catalog"
+msgmerge --update --backup=none po/zh-CN.po "$catalog/messages.pot"
+```
+
+Translate every new or fuzzy entry, then validate and preview it:
+
+```sh
+msgfmt --check --check-format -o /dev/null po/zh-CN.po
+MDBOOK_BOOK__LANGUAGE=zh-CN \
+  MDBOOK_BOOK__DESCRIPTION='自主智能体供给的参考架构。' \
+  mdbook serve -d book/zh-CN
+```
+
+Do not edit `msgid` values: fix the English Markdown and refresh the catalog
+instead. Keep code, URLs, product and protocol names, manifest fields, and enum
+values unchanged in `msgstr`.
 
 ## License
 
