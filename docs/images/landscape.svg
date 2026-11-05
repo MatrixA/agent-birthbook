@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+  <!-- Sky gradient -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f2027"/>
+      <stop offset="60%" stop-color="#203a43"/>
+      <stop offset="100%" stop-color="#2c5364"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2a1a"/>
+      <stop offset="100%" stop-color="#0d1a0d"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f7971e"/>
+      <stop offset="100%" stop-color="#ffd200"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f7971e" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#f7971e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1200" height="400" fill="url(#sky)"/>
+
+  <!-- Stars -->
+  <circle cx="100" cy="40" r="1.2" fill="white" opacity="0.8"/>
+  <circle cx="200" cy="20" r="1" fill="white" opacity="0.7"/>
+  <circle cx="350" cy="55" r="1.5" fill="white" opacity="0.9"/>
+  <circle cx="450" cy="15" r="1" fill="white" opacity="0.6"/>
+  <circle cx="600" cy="30" r="1.2" fill="white" opacity="0.8"/>
+  <circle cx="750" cy="10" r="1" fill="white" opacity="0.7"/>
+  <circle cx="900" cy="50" r="1.5" fill="white" opacity="0.9"/>
+  <circle cx="1050" cy="25" r="1" fill="white" opacity="0.6"/>
+  <circle cx="1150" cy="45" r="1.2" fill="white" opacity="0.8"/>
+  <circle cx="80" cy="80" r="0.8" fill="white" opacity="0.5"/>
+  <circle cx="300" cy="90" r="0.8" fill="white" opacity="0.5"/>
+  <circle cx="520" cy="70" r="0.8" fill="white" opacity="0.5"/>
+  <circle cx="680" cy="85" r="1" fill="white" opacity="0.6"/>
+  <circle cx="820" cy="60" r="0.8" fill="white" opacity="0.5"/>
+  <circle cx="1000" cy="80" r="1" fill="white" opacity="0.6"/>
+  <circle cx="1100" cy="35" r="0.8" fill="white" opacity="0.5"/>
+
+  <!-- Sun glow -->
+  <ellipse cx="600" cy="230" rx="200" ry="80" fill="url(#glow)"/>
+  <!-- Sun -->
+  <circle cx="600" cy="240" r="38" fill="url(#sun)" opacity="0.9"/>
+
+  <!-- Horizon reflection on water -->
+  <rect x="0" y="260" width="1200" height="10" fill="#f7971e" opacity="0.15"/>
+
+  <!-- Mountains far -->
+  <polygon points="0,260 150,160 300,230 450,140 600,200 750,130 900,210 1050,155 1200,220 1200,260" fill="#1c3a3a" opacity="0.9"/>
+  <!-- Mountains near -->
+  <polygon points="0,280 100,210 220,260 380,185 520,250 680,175 820,245 950,195 1100,255 1200,210 1200,280" fill="#122a22"/>
+
+  <!-- Ground / water -->
+  <rect x="0" y="280" width="1200" height="120" fill="url(#ground)"/>
+
+  <!-- Water shimmer lines -->
+  <line x1="0" y1="295" x2="1200" y2="295" stroke="#2c5364" stroke-width="1" opacity="0.4"/>
+  <line x1="0" y1="310" x2="1200" y2="310" stroke="#2c5364" stroke-width="1" opacity="0.3"/>
+  <line x1="0" y1="325" x2="1200" y2="325" stroke="#2c5364" stroke-width="1" opacity="0.2"/>
+
+  <!-- Sun reflection on water -->
+  <ellipse cx="600" cy="310" rx="80" ry="20" fill="#f7971e" opacity="0.2"/>
+  <ellipse cx="600" cy="335" rx="50" ry="10" fill="#f7971e" opacity="0.12"/>
+
+  <!-- Pine trees left -->
+  <polygon points="60,280 75,230 90,280" fill="#0a1f0a"/>
+  <polygon points="85,280 100,225 115,280" fill="#0d2a0d"/>
+  <polygon points="30,280 48,245 66,280" fill="#0a1f0a"/>
+
+  <!-- Pine trees right -->
+  <polygon points="1110,280 1125,230 1140,280" fill="#0a1f0a"/>
+  <polygon points="1130,280 1148,225 1166,280" fill="#0d2a0d"/>
+  <polygon points="1085,280 1100,245 1115,280" fill="#0a1f0a"/>
+</svg>
