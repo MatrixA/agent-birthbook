@@ -42,7 +42,7 @@ Read the stack bottom-up. The three bands tell the story:
 **Action (4–7):** It has somewhere to run, something to spend, things it can do, and continuity between runs.  
 **Safety (8–10):** Its power is bounded, others have reason to believe it, and a human can see, limit, and stop it.
 
-The full model, with dependency edges between layers, is in [The Agent Birth Stack](birth-stack.md).
+The full model, with dependency edges between layers, is in [The Agent Birth Stack](birth-stack.md). For terms such as Model Context Protocol (MCP), Agent2Agent (A2A), JSON Web Signature (JWS), and verifiable credential (VC), see the [Glossary](glossary.md).
 
 ---
 
@@ -76,7 +76,7 @@ The practical guidance is: provision the email address on a domain the owner con
 
 The credentials the agent presents to other systems: OAuth grants, API keys, HTTP request signatures, workload identity certificates, and the **secret store** that holds them.
 
-The critical rule: credentials are referenced, never embedded. A key that lives in a configuration file is a key that will eventually leak. A key in a secret store with a rotation schedule, an audit trail, and a scope limit is a key that can be recovered from.
+The critical rule: credentials are referenced, never embedded. A key that lives in a configuration file is a key that will eventually leak. A key in a secret store with a rotation schedule, an audit trail, and a scope limit can be rotated safely after a compromise.
 
 Scope matters as much as secrecy. An API key that can read and write everything is a liability. An API key scoped to one endpoint and one operation is a containment boundary.
 
@@ -146,7 +146,7 @@ Delegations should attenuate: a delegation can only grant permissions the granto
 
 Why a third party should believe the agent is what it claims: verifiable credentials, attestations, reputation, Know-Your-Agent (KYA) checks.
 
-Registrations — in a DID registry, an on-chain identity system, a signed A2A agent card published at `/.well-known/agent-card.json` — provide verifiable evidence that the agent is who it says it is (a card with a JWS operator signature is verifiable; an unsigned self-published card proves only domain control). These public registrations should be made *after* the kill switch (layer 10) is wired and tested, so that any party relying on the registration can follow the owner attestation to find the control surface.
+Registrations — in a DID registry, an on-chain identity system, a signed A2A agent card published at `/.well-known/agent-card.json` — provide verifiable evidence that the agent is who it says it is (a card with a JWS operator signature is verifiable; an unsigned self-published card proves only domain control). These public registrations should be made *after* the kill switch (layer 10) is wired and tested, because strangers may start relying on the agent as soon as a registration is live, so a tested way to stop it must already exist. The [Birth Procedure's gotcha](lifecycle/birth.md#gotchas) makes this dependency explicit; layer numbers describe resource categories, not a strict execution order.
 
 → [9. Trust](stack/09-trust.md)
 
@@ -185,7 +185,7 @@ The Birthbook does not advocate for one standard over another. It places each st
 | Identity (layer 1) | W3C DID + VC, A2A Agent Card, ERC-8004, AIMS/Agent Manifest, HCS-14, Microsoft Entra Agent ID |
 | Authentication (layer 3) | MCP Authorization (OAuth 2.1 based), RFC 8693 Token Exchange, GNAP, SPIFFE, Web Bot Auth / RFC 9421 |
 | Economic Identity (layer 5) | x402, Google AP2, Visa Trusted Agent Protocol, Mastercard Agent Pay, Agentic Commerce Protocol (OpenAI + Stripe), Stripe Shared Payment Tokens |
-| Discovery (layers 2, 6, 9) | `/.well-known/agent-card.json`, agents.txt, llms.txt, MCP Registry, NANDA |
+| Discovery (layers 1, 2, 6, 9) | `/.well-known/agent-card.json`, agents.txt, llms.txt, MCP Registry, NANDA |
 | Security & Governance (layers 1, 3, 8–10) | OWASP Top 10 for Agentic Applications, CSA Agentic IAM, NIST CAISI, EU AI Act |
 
 The [standards map](standards/) shows maturity, overlap, and where each spec fits in the stack.
@@ -245,7 +245,7 @@ The [standards map](standards/) places each spec in the layer it fills, states i
 
 ## Quick-reference checklist
 
-The shortest version. The full version, with three to six items per layer, is in [Birth](lifecycle/birth.md). Choose the kill-switch controller and mechanism early; wire and test the switch before public registration or consequential action, then finish the remaining governance controls last, before the first task runs.
+The shortest version. The full version, with three or four items per layer, is in [Birth](lifecycle/birth.md). Choose the kill-switch controller and mechanism early; wire and test the switch before public registration or consequential action, then finish the remaining governance controls last, before the first task runs.
 
 - [ ] **Identity** — a named owner, a DID or registry entry, a signing key with a chosen custody model
 - [ ] **Presence** — an email on a domain the owner controls; endpoints published where counterparties look

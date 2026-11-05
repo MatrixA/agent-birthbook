@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Agent Birthbook\n"
-"POT-Creation-Date: 2026-11-06T00:50:40+08:00\n"
+"POT-Creation-Date: 2026-11-06T01:01:45+08:00\n"
 "PO-Revision-Date: 2026-09-12T15:16:39+08:00\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: Simplified Chinese\n"
@@ -522,9 +522,10 @@ msgstr "**存在（1–3）：** 智能体 *具有身份* 、 *能够被联系�
 #: docs/guide.md:45
 msgid ""
 "The full model, with dependency edges between layers, is in [The Agent Birth "
-"Stack](birth-stack.md)."
-msgstr ""
-"包含各层之间依赖关系边的完整模型，详见 [Agent Birth Stack](birth-stack.md)。"
+"Stack](birth-stack.md). For terms such as Model Context Protocol (MCP), "
+"Agent2Agent (A2A), JSON Web Signature (JWS), and verifiable credential (VC), "
+"see the [Glossary](glossary.md)."
+msgstr "包含各层之间依赖关系边的完整模型，见[智能体诞生栈](birth-stack.md)。模型上下文协议（Model Context Protocol，MCP）、Agent2Agent（A2A）、JSON Web 签名（JSON Web Signature，JWS）和可验证凭证（verifiable credential，VC）等术语，见[术语表](glossary.md)。"
 
 #: docs/guide.md:49
 msgid "What each layer means"
@@ -618,12 +619,9 @@ msgstr "agent 向其他系统出示的凭证：OAuth 授权、API key、HTTP 请
 msgid ""
 "The critical rule: credentials are referenced, never embedded. A key that "
 "lives in a configuration file is a key that will eventually leak. A key in a "
-"secret store with a rotation schedule, an audit trail, and a scope limit is "
-"a key that can be recovered from."
-msgstr ""
-"关键规则：凭证只能被引用，绝不能被嵌入。存在于配置文件中的密钥终究会泄露。存"
-"在于具有轮换计划、审计追踪和范围限制的密钥库中的密钥，才是可以从中恢复的密"
-"钥。"
+"secret store with a rotation schedule, an audit trail, and a scope limit can "
+"be rotated safely after a compromise."
+msgstr "关键规则：凭证只能被引用，绝不能被嵌入。存放在配置文件中的密钥终究会泄露。存放在具备轮换计划、审计追踪和权限范围限制的密钥库中的密钥，可以在失陷后安全地轮换。"
 
 #: docs/guide.md:81
 msgid ""
@@ -825,9 +823,12 @@ msgid ""
 "evidence that the agent is who it says it is (a card with a JWS operator "
 "signature is verifiable; an unsigned self-published card proves only domain "
 "control). These public registrations should be made _after_ the kill switch "
-"(layer 10) is wired and tested, so that any party relying on the "
-"registration can follow the owner attestation to find the control surface."
-msgstr "注册——在 DID 注册表、链上身份系统中注册，或在 `/.well-known/agent-card.json` 发布已签名的 A2A 智能体卡片——提供了可验证的证据，证明该智能体确实是其所声称的身份（带有 JWS 运营方签名的卡片可被验证；未签名、自行发布的卡片只能证明域名控制权）。这些公开注册应在终止开关（第 10 层）完成连接和测试 *之后* 进行，以便任何依赖该注册的一方都能循着所有者证明找到控制面。"
+"(layer 10) is wired and tested, because strangers may start relying on the "
+"agent as soon as a registration is live, so a tested way to stop it must "
+"already exist. The [Birth Procedure's gotcha](lifecycle/birth.md#gotchas) "
+"makes this dependency explicit; layer numbers describe resource categories, "
+"not a strict execution order."
+msgstr "注册——在 DID 注册表、链上身份系统中注册，或在 `/.well-known/agent-card.json` 发布已签名的 A2A 智能体卡片——提供了可验证的证据，证明该智能体确实是其所声称的身份（带有 JWS 运营方签名的卡片可被验证；未签名、自行发布的卡片只能证明域名控制权）。这些公开注册应在终止开关（第 10 层）完成连接和测试 *之后* 进行，因为注册一经生效，陌生的第三方就可能开始依赖该智能体，因此必须事先具备经过测试的停止手段。[诞生流程中的注意事项](lifecycle/birth.md#gotchas)明确说明了这一依赖关系；层级编号描述的是资源类别，而非严格的执行顺序。"
 
 #: docs/guide.md:151
 msgid "→ [9. Trust](stack/09-trust.md)"
@@ -973,8 +974,8 @@ msgstr ""
 "Commerce Protocol（OpenAI + Stripe）、Stripe Shared Payment Tokens"
 
 #: docs/guide.md:188
-msgid "Discovery (layers 2, 6, 9)"
-msgstr "发现（第 2、6、9 层）"
+msgid "Discovery (layers 1, 2, 6, 9)"
+msgstr "发现（第 1、2、6、9 层）"
 
 #: docs/guide.md:188
 msgid ""
@@ -1196,12 +1197,12 @@ msgstr "快速参考清单"
 
 #: docs/guide.md:248
 msgid ""
-"The shortest version. The full version, with three to six items per layer, "
+"The shortest version. The full version, with three or four items per layer, "
 "is in [Birth](lifecycle/birth.md). Choose the kill-switch controller and "
 "mechanism early; wire and test the switch before public registration or "
 "consequential action, then finish the remaining governance controls last, "
 "before the first task runs."
-msgstr "最简版本。完整版本（每层三到六项）见[诞生](lifecycle/birth.md)。尽早选定终止开关的控制方和机制；在公开注册或重大行动之前完成开关的连接和测试，然后在最后、首次任务运行之前完成其余治理控制。"
+msgstr "最简版本。完整版本（每层三到四项）见[诞生](lifecycle/birth.md)。尽早选定终止开关的控制方和机制；在公开注册或重大行动之前完成开关的连接和测试，然后在最后、首次任务运行之前完成其余治理控制。"
 
 #: docs/guide.md:250
 msgid ""
