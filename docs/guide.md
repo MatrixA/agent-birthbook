@@ -64,7 +64,7 @@ Key custody — where the private key lives — decides how autonomous and how r
 
 The addresses at which the agent can be found and contacted: an email address, a domain, a phone number, protocol endpoints.
 
-This layer contains the most underestimated bootstrap problem in agent provisioning. Many services verify an agent account by sending a verification email or SMS. If the agent does not control the inbox or the phone number *at the moment of signup*, it cannot complete verification, and no other layer can proceed. The sequence matters: Presence before Authentication, Authentication before everything else.
+This layer contains the most underestimated bootstrap problem in agent provisioning. Many services verify an agent account by sending a verification email or SMS. If the agent does not control the inbox or the phone number *at the moment of signup*, it cannot complete verification. Presence is a hard dependency for Authentication and all credential-dependent layers above it; Identity remains the root of the whole stack and comes before Presence.
 
 The practical guidance is: provision the email address on a domain the owner controls. Do not use a free webmail account for a production agent. If a phone number is needed for OTP receipt, budget for it; it is the hardest resource to provision at scale.
 
@@ -102,7 +102,7 @@ The agent's ability to hold and move value: wallets, cards, a budget, and the pa
 
 The critical principle: **the owner passes KYC, not the agent**. An agent cannot be a legal counterparty. The economic identity layer is about giving the agent access to financial instruments that are owned, funded, and monitored by a human entity.
 
-Budget limits are not optional niceties. A wallet with no spend cap and a runaway loop is a financial incident. The minimum viable configuration is a hard per-transaction limit and a hard daily limit, with a human alert at 50% of the daily budget.
+Budget limits are not optional niceties. A wallet with no spend cap and a runaway loop is a financial incident. The minimum viable configuration is a provider-side spend cap on one account. Full production adds hard per-transaction, per-day, and per-month limits enforced at the custodian, plus soft alerts at 50% and 80% of the daily budget.
 
 → [5. Economic Identity](stack/05-economy.md)
 
@@ -146,7 +146,7 @@ Delegations should attenuate: a delegation can only grant permissions the granto
 
 Why a third party should believe the agent is what it claims: verifiable credentials, attestations, reputation, Know-Your-Agent (KYA) checks.
 
-Registrations — in a DID registry, an on-chain identity system, an A2A agent card directory — provide independently verifiable evidence that the agent is who it says it is. These registrations should be made *after* the kill switch exists (layer 10), so that any party relying on the registration can follow the owner attestation to find the control surface.
+Registrations — in a DID registry, an on-chain identity system, a signed A2A agent card published at `/.well-known/agent-card.json` — provide verifiable evidence that the agent is who it says it is (a card with a JWS operator signature is verifiable; an unsigned self-published card proves only domain control). These registrations should be made *after* the kill switch exists (layer 10), so that any party relying on the registration can follow the owner attestation to find the control surface.
 
 → [9. Trust](stack/09-trust.md)
 
@@ -156,9 +156,7 @@ Registrations — in a DID registry, an on-chain identity system, an A2A agent c
 
 How the owner watches, limits, recovers, and if needed kills the agent: an audit log, spend and rate limits, a kill switch, a recovery path.
 
-The kill switch is the most urgent item in the stack and the most commonly skipped. Before the agent takes any consequential action, the owner should be able to answer: "If this agent starts doing something wrong, how do I stop it in under two minutes?" If that question has no answer, the agent should not be in production.
-
-The audit log is the second most important item: without a log, post-incident investigation is impossible and human oversight is theatrical.
+Governance is the last layer provisioned — it has to reach into all the others: the audit log records what Capabilities did, the limits cap Economic Identity and Compute, and the kill switch must be able to revoke Authentication and Authority even if the agent's own runtime is compromised. Decide the controller and mechanism early, but wire and test the switch at this layer, before the agent takes any consequential action. The audit log is equally important: without it, post-incident investigation is impossible and human oversight is theatrical.
 
 → [10. Governance](stack/10-governance.md)
 
@@ -173,7 +171,7 @@ The order matters because of the bootstrap dependencies. Email must come before 
 The lifecycle also covers what happens after birth:
 
 - **[Credential Rotation](lifecycle/credential-rotation.md):** Every credential issued at birth will expire or should be rotated. The plan for rotation is part of the provisioning design, not an afterthought.
-- **[Migration](lifecycle/migration.md):** Agents move — between compute providers, between model providers, between owners. What is portable (the DID, the keypair, the reputation) and what must be re-attested (platform-specific verifications, OAuth grants) determines migration cost.
+- **[Migration](lifecycle/migration.md):** Agents move — between compute providers, between model providers, between owners. The rule of thumb from the migration chapter: state is portable, credentials are re-provisioned, and anything that binds identity to a party is re-attested. Memory, capabilities and economic identity generally migrate; trust credentials and owner-bound keys must be re-attested; OAuth grants and platform verifications are re-provisioned; a domain move re-provisions the DID.
 - **[Death](lifecycle/death.md):** A decommissioned agent that retains live credentials, an open inbox, and an active wallet is a security liability. The wind-down sequence — revoke credentials, close inboxes, drain and close wallets, publish the death event — is as important as the birth sequence.
 
 ---
@@ -182,21 +180,21 @@ The lifecycle also covers what happens after birth:
 
 The Birthbook does not advocate for one standard over another. It places each standard in the layer it fills and notes what it competes with.
 
-| Layer | Active standards |
+| Area | Active standards |
 |---|---|
-| Identity | W3C DID + VC, A2A Agent Card, ERC-8004, AIMS/Agent Manifest, HCS-14, Microsoft Entra Agent ID |
-| Authentication | MCP Authorization (OAuth 2.1 based), RFC 8693 Token Exchange, GNAP, SPIFFE, Web Bot Auth / RFC 9421 |
-| Economic Identity | x402, Google AP2, Visa Trusted Agent Protocol, Mastercard Agent Pay, Stripe Agentic Commerce |
-| Discovery | `/.well-known/agent-card.json`, agents.json, llms.txt, MCP Registry, NANDA |
-| Security | OWASP Top 10 for Agentic Applications, CSA Agentic IAM, NIST CAISI, EU AI Act |
+| Identity (layer 1) | W3C DID + VC, A2A Agent Card, ERC-8004, AIMS/Agent Manifest, HCS-14, Microsoft Entra Agent ID |
+| Authentication (layer 3) | MCP Authorization (OAuth 2.1 based), RFC 8693 Token Exchange, GNAP, SPIFFE, Web Bot Auth / RFC 9421 |
+| Economic Identity (layer 5) | x402, Google AP2, Visa Trusted Agent Protocol, Mastercard Agent Pay, Agentic Commerce Protocol (OpenAI + Stripe), Stripe Shared Payment Tokens |
+| Discovery (layers 2 + 6) | `/.well-known/agent-card.json`, agents.txt, llms.txt, MCP Registry, NANDA |
+| Security & Governance (layers 8–10) | OWASP Top 10 for Agentic Applications, CSA Agentic IAM, NIST CAISI, EU AI Act |
 
-The [standards map](standards/README.md) shows maturity, overlap, and where each spec fits in the stack.
+The [standards map](https://matrixa.github.io/agent-birthbook/standards/index.html) shows maturity, overlap, and where each spec fits in the stack.
 
 ---
 
 ## Birth providers
 
-For each layer there is a curated set of providers — services that actually hand an agent the resource the layer requires. The [provider chapters](providers/README.md) each start with the interface requirements, then give a comparison table (agent-native support, open-source availability, pricing model, notes), then links.
+For each layer there is a curated set of providers — services that actually hand an agent the resource the layer requires. The [provider chapters](https://matrixa.github.io/agent-birthbook/providers/index.html) each start with the interface requirements, then give a comparison table (agent-native support, open-source availability, pricing model, notes), then links.
 
 | Resource | Where to look |
 |---|---|
@@ -216,29 +214,29 @@ For each layer there is a curated set of providers — services that actually ha
 
 ## The Agent Birth Manifest
 
-`birth.yaml` is an experimental machine-readable Birth Profile — one section per layer, no secrets, owner required. It is designed to be version-controlled alongside the agent and to serve as the living checklist of what has been provisioned and what has not.
+`birth.yaml` is the experimental machine-readable Agent Birth Manifest (ABM) format; each agent's file is a Birth Profile. It has one section per layer, no secrets, owner required. It is designed to be version-controlled alongside the agent and to serve as the living checklist of what has been provisioned and what has not.
 
 A minimal manifest that passes schema validation is not the same as a complete provisioning. The manifest captures intent; the provisioning checklist in [Birth](lifecycle/birth.md) captures verification.
 
-A worked example — a research agent with provider-custodied keys, own-domain email, an E2B sandbox, a Coinbase CDP wallet with layered budget limits, Slack approvals, and Langfuse audit log — is at [`manifests/examples/research-agent.birth.yaml`](../manifests/examples/research-agent.birth.yaml).
+A worked example — a research agent with provider-custodied keys, own-domain email, an E2B sandbox, a Coinbase CDP wallet with layered budget limits, Slack approvals, and Langfuse audit log — is at [`manifests/examples/research-agent.birth.yaml`](https://github.com/MatrixA/agent-birthbook/blob/main/manifests/examples/research-agent.birth.yaml).
 
-→ [birth.yaml walkthrough](manifest.md) · [JSON Schema](../manifests/schema.json)
+→ [birth.yaml walkthrough](manifest.md) · [JSON Schema](https://github.com/MatrixA/agent-birthbook/blob/main/manifests/schema.json)
 
 ---
 
 ## How to use this book
 
 **Designing a new agent?**  
-Read [The Agent Birth Stack](birth-stack.md) end to end. Walk through the [Birth checklist](lifecycle/birth.md) layer by layer. Fill in a [Birth Profile](manifest.md) as you go; the gaps in the manifest are your to-do list. Start with the kill switch.
+Read [The Agent Birth Stack](birth-stack.md) end to end. Walk through the [Birth checklist](lifecycle/birth.md) layer by layer. Fill in a [Birth Profile](manifest.md) as you go; the gaps in the manifest are your to-do list. Decide the kill-switch controller and mechanism early, even though Governance is provisioned last.
 
 **Choosing a provider for one thing?**  
-Go to the matching [provider chapter](providers/README.md). Each one starts with the interface requirements, so you can check whether a candidate provider actually satisfies the layer, not just whether it has a relevant-sounding product name.
+Go to the matching [provider chapter](https://matrixa.github.io/agent-birthbook/providers/index.html). Each one starts with the interface requirements, so you can check whether a candidate provider actually satisfies the layer, not just whether it has a relevant-sounding product name.
 
 **Auditing an existing agent?**  
 Start at [Governance](stack/10-governance.md) and work down. The two questions that matter most: "Who can stop this agent and how?" and "What has the agent done in the last 30 days?" If either has no answer, that is the first gap to close.
 
 **Evaluating a standard?**  
-The [standards map](standards/README.md) places each spec in the layer it fills, states its maturity, and identifies what it competes with or complements.
+The [standards map](https://matrixa.github.io/agent-birthbook/standards/index.html) places each spec in the layer it fills, states its maturity, and identifies what it competes with or complements.
 
 **Planning decommission?**  
 [Death](lifecycle/death.md) covers the wind-down order, what to retain for compliance purposes, and how to handle orphaned agents whose owner is no longer reachable.
