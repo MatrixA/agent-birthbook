@@ -1,5 +1,7 @@
 # Agent Birthbook
 
+![A twilight mountain landscape with a glowing horizon, mirrored on still water — the terrain an autonomous agent must navigate to exist.](images/landscape.svg)
+
 **The reference architecture for autonomous agent provisioning.**
 
 > **Agent Birthbook is not another agent identity standard.**
