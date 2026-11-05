@@ -1,6 +1,7 @@
 # Summary
 
 [Introduction](README.md)
+[High-Level Guide](guide.md)
 
 # Concept
 

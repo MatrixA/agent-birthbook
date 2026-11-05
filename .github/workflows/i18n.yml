@@ -71,7 +71,7 @@ jobs:
           site = Path(os.environ["SITE"])
           summary = Path("docs/SUMMARY.md").read_text()
           chapters = re.findall(r"\]\(([^)#]+\.md)(?:#[^)]*)?\)", summary)
-          assert len(chapters) == 37, f"expected 37 chapters, found {len(chapters)}"
+          assert len(chapters) == 38, f"expected 38 chapters, found {len(chapters)}"
           for chapter in chapters:
               source = Path(chapter)
               output = (

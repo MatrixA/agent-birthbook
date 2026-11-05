@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Agent Birthbook\n"
-"POT-Creation-Date: 2026-09-12T23:26:50+08:00\n"
+"POT-Creation-Date: 2026-11-06T01:01:45+08:00\n"
 "PO-Revision-Date: 2026-09-12T15:16:39+08:00\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: Simplified Chinese\n"
@@ -17,174 +17,175 @@ msgid "Summary"
 msgstr "摘要"
 
 #: docs/SUMMARY.md:3
-msgid "Introduction"
-msgstr "引言"
+msgid "Introduction High-Level Guide"
+msgstr "引言与高层指南"
 
-#: docs/SUMMARY.md:5
+#: docs/SUMMARY.md:6
 msgid "Concept"
 msgstr "概念"
 
-#: docs/SUMMARY.md:7 docs/birth-stack.md:1
+#: docs/SUMMARY.md:8 docs/birth-stack.md:1
 msgid "The Agent Birth Stack"
 msgstr "智能体诞生栈（Agent Birth Stack）"
 
-#: docs/SUMMARY.md:8 docs/glossary.md:1
+#: docs/SUMMARY.md:9 docs/glossary.md:1
 msgid "Glossary"
 msgstr "术语表"
 
-#: docs/SUMMARY.md:10
+#: docs/SUMMARY.md:11
 msgid "The Stack, layer by layer"
 msgstr "逐层解析诞生栈"
 
-#: docs/SUMMARY.md:12 docs/stack/01-identity.md:1
+#: docs/SUMMARY.md:13 docs/stack/01-identity.md:1
 msgid "1. Identity"
 msgstr "1. 身份"
 
-#: docs/SUMMARY.md:13 docs/stack/02-presence.md:1
+#: docs/SUMMARY.md:14 docs/stack/02-presence.md:1
 msgid "2. Presence"
 msgstr "2. 在线存在"
 
-#: docs/SUMMARY.md:14 docs/stack/03-authentication.md:1
+#: docs/SUMMARY.md:15 docs/stack/03-authentication.md:1
 msgid "3. Authentication"
 msgstr "3. 身份验证"
 
-#: docs/SUMMARY.md:15 docs/stack/04-compute.md:1
+#: docs/SUMMARY.md:16 docs/stack/04-compute.md:1
 msgid "4. Compute"
 msgstr "4. 计算资源"
 
-#: docs/SUMMARY.md:16 docs/stack/05-economy.md:1
+#: docs/SUMMARY.md:17 docs/stack/05-economy.md:1
 msgid "5. Economic Identity"
 msgstr "5. 经济身份"
 
-#: docs/SUMMARY.md:17 docs/stack/06-capabilities.md:1
+#: docs/SUMMARY.md:18 docs/stack/06-capabilities.md:1
 msgid "6. Capabilities"
 msgstr "6. 能力"
 
-#: docs/SUMMARY.md:18 docs/stack/07-memory.md:1
+#: docs/SUMMARY.md:19 docs/stack/07-memory.md:1
 msgid "7. Memory"
 msgstr "7. 记忆"
 
-#: docs/SUMMARY.md:19 docs/stack/08-authority.md:1
+#: docs/SUMMARY.md:20 docs/stack/08-authority.md:1
 msgid "8. Authority"
 msgstr "8. 权限"
 
-#: docs/SUMMARY.md:20 docs/stack/09-trust.md:1
+#: docs/SUMMARY.md:21 docs/stack/09-trust.md:1
 msgid "9. Trust"
 msgstr "9. 信任"
 
-#: docs/SUMMARY.md:21 docs/stack/10-governance.md:1
+#: docs/SUMMARY.md:22 docs/stack/10-governance.md:1
 msgid "10. Governance"
 msgstr "10. 治理"
 
-#: docs/SUMMARY.md:23
+#: docs/SUMMARY.md:24
 msgid "Standards & Protocols"
 msgstr "标准与协议"
 
-#: docs/SUMMARY.md:25 docs/standards/index.md:1
+#: docs/SUMMARY.md:26 docs/standards/index.md:1
 msgid "Standards map"
 msgstr "标准地图"
 
-#: docs/SUMMARY.md:26
+#: docs/SUMMARY.md:27
 msgid "Identity"
 msgstr "身份"
 
-#: docs/SUMMARY.md:27
+#: docs/SUMMARY.md:28
 msgid "Authentication & Delegation"
 msgstr "身份验证与委托授权"
 
-#: docs/SUMMARY.md:28
+#: docs/SUMMARY.md:29
 msgid "Payments"
 msgstr "支付"
 
-#: docs/SUMMARY.md:29
+#: docs/SUMMARY.md:30
 msgid "Discovery"
 msgstr "发现"
 
-#: docs/SUMMARY.md:30
+#: docs/SUMMARY.md:31
 msgid "Security & Governance"
 msgstr "安全与治理"
 
-#: docs/SUMMARY.md:32
+#: docs/SUMMARY.md:33
 msgid "Birth Providers"
 msgstr "诞生服务提供方（Birth Providers）"
 
-#: docs/SUMMARY.md:34 docs/providers/index.md:1
+#: docs/SUMMARY.md:35 docs/providers/index.md:1
 msgid "Provider model"
 msgstr "提供方模型"
 
-#: docs/SUMMARY.md:35 docs/stack/02-presence.md:19 docs/providers/email.md:1
+#: docs/SUMMARY.md:36 docs/guide.md:201 docs/stack/02-presence.md:19
+#: docs/providers/email.md:1
 msgid "Email"
 msgstr "电子邮件"
 
-#: docs/SUMMARY.md:36 docs/providers/phone.md:1
+#: docs/SUMMARY.md:37 docs/providers/phone.md:1
 msgid "Phone, SMS & Voice"
 msgstr "电话、短信与语音"
 
-#: docs/SUMMARY.md:37 docs/providers/domains.md:1
+#: docs/SUMMARY.md:38 docs/providers/domains.md:1
 msgid "Domains & DNS"
 msgstr "域名与 DNS"
 
-#: docs/SUMMARY.md:38 docs/providers/compute-and-browsers.md:1
+#: docs/SUMMARY.md:39 docs/providers/compute-and-browsers.md:1
 msgid "Compute & Browsers"
 msgstr "计算资源与浏览器"
 
-#: docs/SUMMARY.md:39 docs/providers/wallets.md:1
+#: docs/SUMMARY.md:40 docs/providers/wallets.md:1
 msgid "Wallets & Keys"
 msgstr "钱包与密钥"
 
-#: docs/SUMMARY.md:40 docs/providers/payments-and-cards.md:1
+#: docs/SUMMARY.md:41 docs/providers/payments-and-cards.md:1
 msgid "Payments & Cards"
 msgstr "支付与银行卡"
 
-#: docs/SUMMARY.md:41 docs/providers/credentials-and-tool-auth.md:1
+#: docs/SUMMARY.md:42 docs/providers/credentials-and-tool-auth.md:1
 msgid "Credentials & Tool Auth"
 msgstr "凭证与工具授权"
 
-#: docs/SUMMARY.md:42 docs/providers/memory-and-storage.md:1
+#: docs/SUMMARY.md:43 docs/providers/memory-and-storage.md:1
 msgid "Memory & Storage"
 msgstr "记忆与存储"
 
-#: docs/SUMMARY.md:43 docs/providers/models-and-skills.md:1
+#: docs/SUMMARY.md:44 docs/providers/models-and-skills.md:1
 msgid "Models & Skills"
 msgstr "模型与技能"
 
-#: docs/SUMMARY.md:44 docs/providers/observability-and-hitl.md:1
+#: docs/SUMMARY.md:45 docs/providers/observability-and-hitl.md:1
 msgid "Observability & Human-in-the-loop"
 msgstr "可观测性与人在回路"
 
-#: docs/SUMMARY.md:45 docs/providers/accounts-and-legal-entity.md:1
+#: docs/SUMMARY.md:46 docs/providers/accounts-and-legal-entity.md:1
 msgid "Accounts & Legal Entity"
 msgstr "账户与法律实体"
 
-#: docs/SUMMARY.md:47
+#: docs/SUMMARY.md:48
 msgid "Lifecycle (Birth Procedure)"
 msgstr "生命周期（诞生流程 / Birth Procedure）"
 
-#: docs/SUMMARY.md:49 docs/lifecycle/birth.md:1
+#: docs/SUMMARY.md:50 docs/lifecycle/birth.md:1
 msgid "Birth"
 msgstr "诞生"
 
-#: docs/SUMMARY.md:50 docs/lifecycle/credential-rotation.md:1
+#: docs/SUMMARY.md:51 docs/lifecycle/credential-rotation.md:1
 msgid "Credential Rotation"
 msgstr "凭证轮换"
 
-#: docs/SUMMARY.md:51 docs/lifecycle/migration.md:1
+#: docs/SUMMARY.md:52 docs/lifecycle/migration.md:1
 msgid "Migration"
 msgstr "迁移"
 
-#: docs/SUMMARY.md:52 docs/lifecycle/death.md:1
+#: docs/SUMMARY.md:53 docs/lifecycle/death.md:1
 msgid "Death"
 msgstr "死亡"
 
-#: docs/SUMMARY.md:54
+#: docs/SUMMARY.md:55
 msgid "Agent Birth Manifest"
 msgstr "智能体诞生清单（Agent Birth Manifest）"
 
-#: docs/SUMMARY.md:56
+#: docs/SUMMARY.md:57
 msgid "birth.yaml"
 msgstr "birth.yaml"
 
-#: docs/SUMMARY.md:60 docs/related.md:1
+#: docs/SUMMARY.md:61 docs/related.md:1
 msgid "Related Projects"
 msgstr "相关项目"
 
@@ -438,6 +439,877 @@ msgstr ""
 "持续更新的文档。各层定义已稳定；提供方表格和标准成熟度评级会不断变化，在重要之处均标注了日期。清单是实验性的雏形，并非规范。贡献流程见仓库的 "
 "`CONTRIBUTING.md`；内容采用 CC0 协议。"
 
+#: docs/guide.md:1
+msgid "High-Level Guide to the Agent Birthbook"
+msgstr "Agent Birthbook 高层指南"
+
+#: docs/guide.md:3
+msgid ""
+"This guide is the fastest way to understand what the Birthbook is, why it "
+"exists, and how to use it — whether you are designing a new agent, auditing "
+"an existing one, evaluating a provider, or just trying to understand why "
+"autonomous agents fail."
+msgstr ""
+"本指南是了解 Birthbook 是什么、为何存在以及如何使用的最快途径——无论您是在设计"
+"新 agent、审计现有 agent、评估提供商，还是仅仅想弄清楚自主 agent 为何会失败。"
+
+#: docs/guide.md:7
+msgid "Why agents fail at provisioning, not at reasoning"
+msgstr "Agent 为何在供给环节而非推理环节失败"
+
+#: docs/guide.md:9
+msgid ""
+"When an autonomous agent stops working, the cause is usually not the model. "
+"It is a provisioning gap: the agent cannot receive the verification email "
+"sent to an inbox it does not control, the API key it was given is scoped too "
+"broadly and gets revoked after the first suspicious call, the wallet has "
+"funds but no spending limit so the guardrail layer refuses every "
+"transaction, or nobody wrote down how to switch it off."
+msgstr ""
+"当一个自主 agent 停止工作时，根本原因通常不在于模型本身，而在于供给缺口："
+"agent 无法接收发送到其不受控收件箱的验证邮件；被分配的 API key 权限范围过广，"
+"在首次可疑调用后即遭撤销；钱包有余额但没有支出上限，导致防护层拒绝所有交易；"
+"或者没有人记录如何将其关闭。"
+
+#: docs/guide.md:11
+msgid ""
+"These are not edge cases. They are the default outcome of deploying an agent "
+"whose existence was designed around the prompt and not around what the agent "
+"needs in order to _act in the world as a persistent, accountable digital "
+"actor_."
+msgstr "这些并非边缘情况。如果一个智能体的存在仅围绕提示词设计，而不是围绕它需要什么才能 *作为持久、可问责的数字行动者在世界中行动* 来设计，那么部署它后，这些就是默认结果。"
+
+#: docs/guide.md:13
+msgid ""
+"The Agent Birthbook maps that territory. It is not a framework, an SDK, or a "
+"protocol. It is a knowledge base organized around a single question:"
+msgstr ""
+"Agent Birthbook 绘制了这片领域的地图。它不是一个框架、SDK 或协议，而是一个围"
+"绕单一问题组织的知识库："
+
+#: docs/guide.md:15
+msgid ""
+"**What must an autonomous agent be given in order to exist and act in the "
+"digital world?**"
+msgstr "**一个自主 agent 需要被赋予什么，才能在数字世界中存在并行动？**"
+
+#: docs/guide.md:19
+msgid "The Agent Birth Stack: ten layers"
+msgstr "Agent Birth Stack：十个层级"
+
+#: docs/guide.md:21
+msgid ""
+"The Birthbook answers that question with a ten-layer model called the "
+"**Agent Birth Stack**. Each layer is a _kind of thing_ the agent needs — not "
+"a product, not a protocol. Products and protocols live one level down as "
+"providers and standards that satisfy a layer."
+msgstr "Birthbook 用一个名为 **智能体诞生栈（Agent Birth Stack）** 的十层模型来回答这个问题。每一层代表智能体所需的一 *类事物* ，而不是某种产品或协议。产品和协议位于下一层级，作为满足某一层需求的提供方和标准而存在。"
+
+#: docs/guide.md:39
+msgid "Read the stack bottom-up. The three bands tell the story:"
+msgstr "从底部向上阅读。三个区间讲述了完整的故事："
+
+#: docs/guide.md:41
+msgid ""
+"**Existence (1–3):** The agent _is_ someone, _can be reached_, and _can "
+"prove it_.  \n"
+"**Action (4–7):** It has somewhere to run, something to spend, things it can "
+"do, and continuity between runs.  \n"
+"**Safety (8–10):** Its power is bounded, others have reason to believe it, "
+"and a human can see, limit, and stop it."
+msgstr "**存在（1–3）：** 智能体 *具有身份* 、 *能够被联系到* ，并且 *能够证明自身身份* 。  \n**行动（4–7）：** 它有运行的地方、可使用的资金、能做的事情，以及各次运行之间的连续性。  \n**安全（8–10）：** 它的权力受到约束，其他人有理由相信它，人类能够观察、限制并停止它。"
+
+#: docs/guide.md:45
+msgid ""
+"The full model, with dependency edges between layers, is in [The Agent Birth "
+"Stack](birth-stack.md). For terms such as Model Context Protocol (MCP), "
+"Agent2Agent (A2A), JSON Web Signature (JWS), and verifiable credential (VC), "
+"see the [Glossary](glossary.md)."
+msgstr "包含各层之间依赖关系边的完整模型，见[智能体诞生栈](birth-stack.md)。模型上下文协议（Model Context Protocol，MCP）、Agent2Agent（A2A）、JSON Web 签名（JSON Web Signature，JWS）和可验证凭证（verifiable credential，VC）等术语，见[术语表](glossary.md)。"
+
+#: docs/guide.md:49
+msgid "What each layer means"
+msgstr "各层级的含义"
+
+#: docs/guide.md:51
+msgid "1 · Identity"
+msgstr "1 · 身份"
+
+#: docs/guide.md:53
+msgid ""
+"A stable answer to _who is this agent and who is responsible for it_: a "
+"name, a resolvable identifier (usually a [W3C DID](https://www.w3.org/TR/did-"
+"core/)), signing keys, and an **owner**."
+msgstr "对 *这个智能体是谁、由谁负责* 这一问题的稳定答案：一个名称、一个可解析的标识符（通常是 [W3C DID](https://www.w3.org/TR/did-core/)）、签名密钥，以及一位 **所有者** 。"
+
+#: docs/guide.md:55
+msgid ""
+"The owner is the part that is different from service identity. An agent is "
+"not a legal person; nothing it signs is binding unless a human or company "
+"stands behind it. The owner holds the kill switch, passes KYC checks, and "
+"grants delegations. An agent with no owner is unverifiable by design."
+msgstr ""
+"所有者是与服务身份不同的部分。Agent 不是法律主体；它签署的任何内容都不具有约"
+"束力，除非有人类或公司在其背后作担保。所有者持有终止开关、通过 KYC 检查并授予"
+"委托权限。没有所有者的 agent 在设计上是不可验证的。"
+
+#: docs/guide.md:57
+msgid ""
+"Key custody — where the private key lives — decides how autonomous and how "
+"recoverable the agent is. Provider custody under a policy engine is the "
+"common middle: the agent signs freely within policy bounds, and the owner "
+"can revoke with a single API call."
+msgstr ""
+"密钥托管——私钥存放的位置——决定了 agent 的自主程度和可恢复程度。在策略引擎下由"
+"提供商托管是常见的中间方案：agent 在策略范围内自由签名，所有者只需一次 API 调"
+"用即可撤销。"
+
+#: docs/guide.md:59
+msgid "→ [1. Identity](stack/01-identity.md)"
+msgstr "→ [1. 身份](stack/01-identity.md)"
+
+#: docs/guide.md:63
+msgid "2 · Presence"
+msgstr "2 · 在线存在"
+
+#: docs/guide.md:65
+msgid ""
+"The addresses at which the agent can be found and contacted: an email "
+"address, a domain, a phone number, protocol endpoints."
+msgstr "agent 可被找到和联系的地址：电子邮件地址、域名、电话号码、协议端点。"
+
+#: docs/guide.md:67
+msgid ""
+"This layer contains the most underestimated bootstrap problem in agent "
+"provisioning. Many services verify an agent account by sending a "
+"verification email or SMS. If the agent does not control the inbox or the "
+"phone number _at the moment of signup_, it cannot complete verification. "
+"Presence is a hard dependency for Authentication and all credential-"
+"dependent layers above it; Identity remains the root of the whole stack and "
+"comes before Presence."
+msgstr "这一层包含智能体供给中最被低估的引导问题。许多服务通过发送验证邮件或短信来验证智能体账户。如果智能体在 *注册时* 不控制该收件箱或电话号码，就无法完成验证。在线存在是身份验证层及其上方所有依赖凭证的层的硬性依赖；身份仍然是整个诞生栈的根，先于在线存在。"
+
+#: docs/guide.md:69
+msgid ""
+"The practical guidance is: provision the email address on a domain the owner "
+"controls. Do not use a free webmail account for a production agent. If a "
+"phone number is needed for OTP receipt, budget for it; it is the hardest "
+"resource to provision at scale."
+msgstr ""
+"实践建议是：在所有者控制的域名上供给电子邮件地址。不要为生产 agent 使用免费的"
+"网页邮件账户。如果需要电话号码来接收 OTP，请为此预算；这是大规模供给时最难获"
+"取的资源。"
+
+#: docs/guide.md:71
+msgid "→ [2. Presence](stack/02-presence.md)"
+msgstr "→ [2. 在线存在](stack/02-presence.md)"
+
+#: docs/guide.md:75
+msgid "3 · Authentication"
+msgstr "3 · 认证"
+
+#: docs/guide.md:77
+msgid ""
+"The credentials the agent presents to other systems: OAuth grants, API keys, "
+"HTTP request signatures, workload identity certificates, and the **secret "
+"store** that holds them."
+msgstr "agent 向其他系统出示的凭证：OAuth 授权、API key、HTTP 请求签名、工作负载身份证书，以及存储这些凭证的 **密钥库** 。"
+
+#: docs/guide.md:79
+msgid ""
+"The critical rule: credentials are referenced, never embedded. A key that "
+"lives in a configuration file is a key that will eventually leak. A key in a "
+"secret store with a rotation schedule, an audit trail, and a scope limit can "
+"be rotated safely after a compromise."
+msgstr "关键规则：凭证只能被引用，绝不能被嵌入。存放在配置文件中的密钥终究会泄露。存放在具备轮换计划、审计追踪和权限范围限制的密钥库中的密钥，可以在失陷后安全地轮换。"
+
+#: docs/guide.md:81
+msgid ""
+"Scope matters as much as secrecy. An API key that can read and write "
+"everything is a liability. An API key scoped to one endpoint and one "
+"operation is a containment boundary."
+msgstr ""
+"范围与保密性同等重要。一个可以读写一切的 API key 是一种负担。一个仅限于一个端"
+"点和一个操作的 API key 才是一个遏制边界。"
+
+#: docs/guide.md:83
+msgid "→ [3. Authentication](stack/03-authentication.md)"
+msgstr "→ [3. 身份验证](stack/03-authentication.md)"
+
+#: docs/guide.md:87
+msgid "4 · Compute"
+msgstr "4 · 计算"
+
+#: docs/guide.md:89
+msgid ""
+"Where the agent's code executes and what it can touch: a sandbox or VM, a "
+"browser, network egress rules, disk."
+msgstr ""
+"agent 代码执行的位置以及它可以访问的内容：沙箱或虚拟机、浏览器、网络出口规"
+"则、磁盘。"
+
+#: docs/guide.md:91
+msgid ""
+"The key design decisions are isolation and egress. An agent that runs in a "
+"shared process or on a bare host without egress restrictions can reach any "
+"network endpoint and affect any file. An agent in an isolated sandbox with "
+"an egress allowlist can only reach what it needs. The sandbox is not a "
+"performance consideration; it is a blast radius decision."
+msgstr ""
+"关键设计决策是隔离和出口控制。在没有出口限制的共享进程或裸机主机上运行的 "
+"agent 可以访问任何网络端点并影响任何文件。在具有出口允许列表的隔离沙箱中运行"
+"的 agent 只能访问其所需的内容。沙箱不是性能方面的考虑，而是爆炸半径决策。"
+
+#: docs/guide.md:93
+msgid ""
+"Storage deserves separate attention: persistent agent state should not live "
+"on the same filesystem as the runtime. Losing the runtime should not mean "
+"losing the memory."
+msgstr ""
+"存储值得单独关注：持久化 agent 状态不应与运行时存储在同一文件系统上。失去运行"
+"时不应意味着失去记忆。"
+
+#: docs/guide.md:95
+msgid "→ [4. Compute](stack/04-compute.md)"
+msgstr "→ [4. 计算资源](stack/04-compute.md)"
+
+#: docs/guide.md:99
+msgid "5 · Economic Identity"
+msgstr "5 · 经济身份"
+
+#: docs/guide.md:101 docs/birth-stack.md:49
+msgid ""
+"The agent's ability to hold and move value: wallets, cards, a budget, and "
+"the payment protocols it speaks."
+msgstr "智能体持有和转移价值的能力：钱包、卡片、预算，以及它所使用的支付协议。"
+
+#: docs/guide.md:103
+msgid ""
+"The critical principle: **the owner passes KYC, not the agent**. An agent "
+"cannot be a legal counterparty. The economic identity layer is about giving "
+"the agent access to financial instruments that are owned, funded, and "
+"monitored by a human entity."
+msgstr "关键原则： **所有者通过 KYC，而非 agent** 。Agent 不能成为法律交易方。经济身份层的目的是赋予 agent 访问金融工具的权限，而这些工具由人类实体拥有、充值和监控。"
+
+#: docs/guide.md:105
+msgid ""
+"Budget limits are not optional niceties. A wallet with no spend cap and a "
+"runaway loop is a financial incident. The minimum viable configuration is a "
+"provider-side spend cap on one account. Full production adds hard per-"
+"transaction, per-day, and per-month limits enforced at the custodian, plus "
+"soft alerts at 50% and 80% of the daily budget."
+msgstr ""
+"预算限制不是可选的附加功能。一个没有支出上限且陷入失控循环的钱包会引发财务事"
+"故。最低可行配置是在一个账户上设置提供商侧支出上限。完整的生产配置还需要在托"
+"管方强制执行硬性的单笔交易、每日和每月限额，以及在每日预算达到 50% 和 80% 时"
+"触发软性警报。"
+
+#: docs/guide.md:107
+msgid "→ [5. Economic Identity](stack/05-economy.md)"
+msgstr "→ [5. 经济身份](stack/05-economy.md)"
+
+#: docs/guide.md:111
+msgid "6 · Capabilities"
+msgstr "6 · 能力"
+
+#: docs/guide.md:113
+msgid ""
+"What the agent can actually do: model access, tools (MCP servers, CLI tools, "
+"HTTP endpoints), and packaged skills."
+msgstr ""
+"agent 实际能做什么：模型访问、工具（MCP 服务器、CLI 工具、HTTP 端点），以及打"
+"包好的技能。"
+
+#: docs/guide.md:115
+msgid ""
+"Tool supply-chain risk is the dominant concern at this layer. A tool is code "
+"the agent will execute with its own credentials on its own compute. An "
+"unvetted MCP server is not a convenience; it is an untrusted code execution "
+"surface. Treat tool sources the way you treat npm packages: pin versions, "
+"review changes, prefer known registries."
+msgstr ""
+"工具供应链风险是这一层的主要关注点。工具是 agent 将使用自身凭证在自身计算资源"
+"上执行的代码。一个未经审查的 MCP 服务器不是便利功能，而是一个不受信任的代码执"
+"行面。像对待 npm 包一样对待工具来源：锁定版本、审查变更、优先使用已知注册表。"
+
+#: docs/guide.md:117
+msgid ""
+"Model access should go through a gateway with a budget cap, not directly to "
+"a provider with an unbounded key."
+msgstr ""
+"模型访问应通过带有预算上限的网关进行，而不是直接使用无上限的密钥访问提供商。"
+
+#: docs/guide.md:119
+msgid "→ [6. Capabilities](stack/06-capabilities.md)"
+msgstr "→ [6. 能力](stack/06-capabilities.md)"
+
+#: docs/guide.md:123
+msgid "7 · Memory"
+msgstr "7 · 记忆"
+
+#: docs/guide.md:125
+msgid ""
+"What persists between runs: working context in the prompt window, episodic "
+"memory of past actions, semantic memory in a vector store, files, knowledge "
+"graphs."
+msgstr ""
+"在各次运行之间持久化的内容：提示词窗口中的工作上下文、过去操作的情节记忆、向"
+"量库中的语义记忆、文件、知识图谱。"
+
+#: docs/guide.md:127
+msgid ""
+"Memory is an attack surface. Prompt injection via retrieved memory — where "
+"an adversarial string stored in a past interaction surfaces in a future "
+"retrieval and hijacks the agent's reasoning — is a real and documented "
+"attack class. Retention policies, access controls on memory stores, and "
+"encryption at rest are not academic; they are operational hygiene."
+msgstr ""
+"记忆是攻击面。通过检索到的记忆进行提示注入——其中存储在过去交互中的对抗性字符"
+"串在未来的检索中浮现并劫持 agent 的推理——是一种真实且有据可查的攻击类别。对记"
+"忆存储的保留策略、访问控制以及静态加密不是学术性讨论，而是操作卫生的基本要"
+"求。"
+
+#: docs/guide.md:129
+msgid "→ [7. Memory](stack/07-memory.md)"
+msgstr "→ [7. 记忆](stack/07-memory.md)"
+
+#: docs/guide.md:133
+msgid "8 · Authority"
+msgstr "8 · 权限"
+
+#: docs/guide.md:135
+msgid ""
+"What the agent is permitted to do, on whose behalf, how far it may delegate, "
+"and which actions require a human in the loop."
+msgstr ""
+"agent 被允许做什么、代表谁、可以委托到何种程度，以及哪些操作需要人类介入。"
+
+#: docs/guide.md:137
+msgid ""
+"Capability is not permission. An agent with a wallet does not thereby have "
+"permission to spend. The authority layer is where \"has access to\" becomes "
+"\"is authorized to\", with explicit scope, an expiry, and an audit trail."
+msgstr ""
+"能力不等于许可。拥有钱包的 agent 并不因此获得消费的许可。权限层将\"拥有访问权"
+"\"转变为\"被授权执行\"，并附带明确的范围、有效期和审计追踪。"
+
+#: docs/guide.md:139
+msgid ""
+"Delegations should attenuate: a delegation can only grant permissions the "
+"grantor has, and it should grant fewer than all of them. An agent delegated "
+"`read:/reports` must not be able to sub-delegate `write:/reports`."
+msgstr "委托授权应逐级收窄：委托只能授予授权方自身拥有的权限，而且应只授予其中一部分。获得 `read:/reports` 委托权限的智能体不得将 `write:/reports` 权限再委托给其他方。"
+
+#: docs/guide.md:141
+msgid "→ [8. Authority](stack/08-authority.md)"
+msgstr "→ [8. 权限](stack/08-authority.md)"
+
+#: docs/guide.md:145
+msgid "9 · Trust"
+msgstr "9 · 信任"
+
+#: docs/guide.md:147
+msgid ""
+"Why a third party should believe the agent is what it claims: verifiable "
+"credentials, attestations, reputation, Know-Your-Agent (KYA) checks."
+msgstr ""
+"第三方为何应相信该 agent 就是其所声称的：可验证凭证、证明、声誉、了解你的 "
+"Agent（KYA）检查。"
+
+#: docs/guide.md:149
+msgid ""
+"Registrations — in a DID registry, an on-chain identity system, a signed A2A "
+"agent card published at `/.well-known/agent-card.json` — provide verifiable "
+"evidence that the agent is who it says it is (a card with a JWS operator "
+"signature is verifiable; an unsigned self-published card proves only domain "
+"control). These public registrations should be made _after_ the kill switch "
+"(layer 10) is wired and tested, because strangers may start relying on the "
+"agent as soon as a registration is live, so a tested way to stop it must "
+"already exist. The [Birth Procedure's gotcha](lifecycle/birth.md#gotchas) "
+"makes this dependency explicit; layer numbers describe resource categories, "
+"not a strict execution order."
+msgstr "注册——在 DID 注册表、链上身份系统中注册，或在 `/.well-known/agent-card.json` 发布已签名的 A2A 智能体卡片——提供了可验证的证据，证明该智能体确实是其所声称的身份（带有 JWS 运营方签名的卡片可被验证；未签名、自行发布的卡片只能证明域名控制权）。这些公开注册应在终止开关（第 10 层）完成连接和测试 *之后* 进行，因为注册一经生效，陌生的第三方就可能开始依赖该智能体，因此必须事先具备经过测试的停止手段。[诞生流程中的注意事项](lifecycle/birth.md#gotchas)明确说明了这一依赖关系；层级编号描述的是资源类别，而非严格的执行顺序。"
+
+#: docs/guide.md:151
+msgid "→ [9. Trust](stack/09-trust.md)"
+msgstr "→ [9. 信任](stack/09-trust.md)"
+
+#: docs/guide.md:155
+msgid "10 · Governance"
+msgstr "10 · 治理"
+
+#: docs/guide.md:157
+msgid ""
+"How the owner watches, limits, recovers, and if needed kills the agent: an "
+"audit log, spend and rate limits, a kill switch, a recovery path."
+msgstr ""
+"所有者如何观察、限制、恢复并在必要时终止 agent：审计日志、支出和速率限制、终"
+"止开关、恢复路径。"
+
+#: docs/guide.md:159
+msgid ""
+"Governance reaches into all the other layers: the audit log records what "
+"Capabilities did, the limits cap Economic Identity and Compute, and the kill "
+"switch must be able to revoke Authentication and Authority even if the "
+"agent's own runtime is compromised. Choose the kill-switch controller and "
+"mechanism early, wire and test the switch before any public registration or "
+"consequential action, and complete the rest of Governance — audit sink, "
+"recovery, review cadence — last, before the first task runs. The audit log "
+"is equally important: without it, post-incident investigation is impossible "
+"and human oversight is theatrical."
+msgstr "治理贯穿其他所有层：审计日志记录能力层执行的操作，限额约束经济身份和计算资源，终止开关必须能够撤销身份验证凭证和权限，即使智能体自身的运行时已被攻陷。尽早选定终止开关的控制方和机制，在任何公开注册或重大行动之前完成开关的连接和测试，并在最后、首次任务运行之前完成治理的其余部分——审计日志接收端、恢复机制和审查周期。审计日志同样重要：没有它，事后调查就无从开展，人类监督也只是走过场。"
+
+#: docs/guide.md:161
+msgid "→ [10. Governance](stack/10-governance.md)"
+msgstr "→ [10. 治理](stack/10-governance.md)"
+
+#: docs/guide.md:165
+msgid "The provisioning lifecycle"
+msgstr "供给生命周期"
+
+#: docs/guide.md:167
+msgid ""
+"The stack describes _what_ the agent needs. The [Birth Procedure](lifecycle/"
+"birth.md) describes _when_ to provision it and in what order."
+msgstr "诞生栈描述智能体需要 *什么* 。[诞生流程](lifecycle/birth.md)描述 *何时* 供给，以及按什么顺序供给。"
+
+#: docs/guide.md:169
+msgid ""
+"The order matters because of the bootstrap dependencies. Email must come "
+"before account signups. A secret store must come before credentials are "
+"issued. Choose the kill-switch controller and mechanism early; wire and test "
+"the switch before public registrations or consequential actions, then finish "
+"the remaining governance controls before the first task runs."
+msgstr "顺序至关重要，因为存在引导依赖关系。电子邮件必须先于账户注册就绪。密钥库必须在凭证签发之前就绪。尽早选定终止开关的控制方和机制；在公开注册或重大行动之前完成开关的连接和测试，然后在首次任务运行之前完成其余治理控制。"
+
+#: docs/guide.md:171
+msgid "The lifecycle also covers what happens after birth:"
+msgstr "生命周期还涵盖出生之后发生的事情："
+
+#: docs/guide.md:173
+msgid ""
+"**[Credential Rotation](lifecycle/credential-rotation.md):** Every "
+"credential issued at birth will expire or should be rotated. The plan for "
+"rotation is part of the provisioning design, not an afterthought."
+msgstr ""
+"**[凭证轮换](lifecycle/credential-rotation.md)：** 出生时签发的每个凭证都会过"
+"期或应该被轮换。轮换计划是供给设计的一部分，而非事后补救。"
+
+#: docs/guide.md:174
+msgid ""
+"**[Migration](lifecycle/migration.md):** Agents move — between compute "
+"providers, between model providers, between owners. The rule of thumb from "
+"the migration chapter: state is portable, credentials are re-provisioned, "
+"and anything that binds identity to a party is re-attested. Memory, "
+"capabilities and economic identity generally migrate; trust credentials and "
+"owner-bound keys must be re-attested; OAuth grants and platform "
+"verifications are re-provisioned; a domain move re-mints the DID or "
+"publishes a redirect."
+msgstr "**[迁移](lifecycle/migration.md)：** 智能体会迁移——在计算资源提供方之间、模型提供方之间、所有者之间迁移。迁移章节的经验法则是：状态可移植，凭证需重新供给，任何将身份绑定到某一方的内容都需重新证明。记忆、能力和经济身份通常可迁移；信任凭证和绑定所有者的密钥必须重新证明；OAuth 授权和平台验证需重新供给；域名迁移时需重新生成 DID 或发布重定向。"
+
+#: docs/guide.md:175
+msgid ""
+"**[Death](lifecycle/death.md):** A decommissioned agent that retains live "
+"credentials, an open inbox, and an active wallet is a security liability. "
+"The wind-down sequence — trigger the kill switch, revoke credentials, freeze "
+"then sweep wallets (keeping the addresses on record), close accounts, mark "
+"registrations revoked, export then purge memory, and publish a signed final "
+"attestation — is as important as the birth sequence."
+msgstr "**[死亡](lifecycle/death.md)：** 已停用却仍保留有效凭证、开放收件箱和活跃钱包的智能体是安全隐患。关闭顺序——触发终止开关、撤销凭证、先冻结再清空钱包（保留地址记录）、关闭账户、将注册标记为已撤销、先导出再清除记忆、发布已签名的最终证明——与诞生顺序同样重要。"
+
+#: docs/guide.md:179
+msgid "Standards and protocols"
+msgstr "标准与协议"
+
+#: docs/guide.md:181
+msgid ""
+"The Birthbook does not advocate for one standard over another. It places "
+"each standard in the layer it fills and notes what it competes with."
+msgstr ""
+"Birthbook 不主张某一标准优于另一标准。它将每个标准置于其所填补的层级中，并说"
+"明其竞争对手。"
+
+#: docs/guide.md:183
+msgid "Area"
+msgstr "领域"
+
+#: docs/guide.md:183
+msgid "Active standards"
+msgstr "现行标准"
+
+#: docs/guide.md:185
+msgid "Identity (layer 1)"
+msgstr "身份（第 1 层）"
+
+#: docs/guide.md:185
+msgid ""
+"W3C DID + VC, A2A Agent Card, ERC-8004, AIMS/Agent Manifest, HCS-14, "
+"Microsoft Entra Agent ID"
+msgstr ""
+"W3C DID + VC、A2A Agent Card、ERC-8004、AIMS/Agent Manifest、HCS-14、"
+"Microsoft Entra Agent ID"
+
+#: docs/guide.md:186
+msgid "Authentication (layer 3)"
+msgstr "认证（第 3 层）"
+
+#: docs/guide.md:186
+msgid ""
+"MCP Authorization (OAuth 2.1 based), RFC 8693 Token Exchange, GNAP, SPIFFE, "
+"Web Bot Auth / RFC 9421"
+msgstr ""
+"MCP Authorization（基于 OAuth 2.1）、RFC 8693 Token Exchange、GNAP、SPIFFE、"
+"Web Bot Auth / RFC 9421"
+
+#: docs/guide.md:187
+msgid "Economic Identity (layer 5)"
+msgstr "经济身份（第 5 层）"
+
+#: docs/guide.md:187
+msgid ""
+"x402, Google AP2, Visa Trusted Agent Protocol, Mastercard Agent Pay, Agentic "
+"Commerce Protocol (OpenAI + Stripe), Stripe Shared Payment Tokens"
+msgstr ""
+"x402、Google AP2、Visa Trusted Agent Protocol、Mastercard Agent Pay、Agentic "
+"Commerce Protocol（OpenAI + Stripe）、Stripe Shared Payment Tokens"
+
+#: docs/guide.md:188
+msgid "Discovery (layers 1, 2, 6, 9)"
+msgstr "发现（第 1、2、6、9 层）"
+
+#: docs/guide.md:188
+msgid ""
+"`/.well-known/agent-card.json`, agents.txt, llms.txt, MCP Registry, NANDA"
+msgstr ""
+"`/.well-known/agent-card.json`、agents.txt、llms.txt、MCP Registry、NANDA"
+
+#: docs/guide.md:189
+msgid "Security & Governance (layers 1, 3, 8–10)"
+msgstr "安全与治理（第 1、3、8–10 层）"
+
+#: docs/guide.md:189
+msgid ""
+"OWASP Top 10 for Agentic Applications, CSA Agentic IAM, NIST CAISI, EU AI Act"
+msgstr ""
+"OWASP Top 10 for Agentic Applications、CSA Agentic IAM、NIST CAISI、EU AI Act"
+
+#: docs/guide.md:191
+msgid ""
+"The [standards map](standards/) shows maturity, overlap, and where each spec "
+"fits in the stack."
+msgstr "[标准地图](standards/)展示了各规范的成熟度、重叠情况，以及每个规范在诞生栈中的位置。"
+
+#: docs/guide.md:195
+msgid "Birth providers"
+msgstr "出生提供商"
+
+#: docs/guide.md:197
+msgid ""
+"For each layer there is a curated set of providers — services that actually "
+"hand an agent the resource the layer requires. The [provider "
+"chapters](providers/) explain the requirements and interfaces, compare "
+"providers in tables (agent-native support, open-source availability, pricing "
+"model, notes), and link to official resources."
+msgstr "每一层都有一组精选的提供方——真正向智能体提供该层所需资源的服务。[提供方章节](providers/)解释要求和接口，通过表格比较提供方（智能体原生支持、开源可用性、定价模型、备注），并链接至官方资源。"
+
+#: docs/guide.md:199
+msgid "Resource"
+msgstr "资源"
+
+#: docs/guide.md:199
+msgid "Where to look"
+msgstr "查阅位置"
+
+#: docs/guide.md:201
+msgid "[Email providers](providers/email.md)"
+msgstr "[电子邮件提供商](providers/email.md)"
+
+#: docs/guide.md:202
+msgid "Phone / OTP receipt"
+msgstr "电话 / OTP 接收"
+
+#: docs/guide.md:202
+msgid "[Phone providers](providers/phone.md)"
+msgstr "[电话提供商](providers/phone.md)"
+
+#: docs/guide.md:203
+msgid "Domain + DNS"
+msgstr "域名 + DNS"
+
+#: docs/guide.md:203
+msgid "[Domain providers](providers/domains.md)"
+msgstr "[域名提供商](providers/domains.md)"
+
+#: docs/guide.md:204
+msgid "Sandboxes + browsers"
+msgstr "沙箱 + 浏览器"
+
+#: docs/guide.md:204
+msgid "[Compute & Browsers](providers/compute-and-browsers.md)"
+msgstr "[计算与浏览器](providers/compute-and-browsers.md)"
+
+#: docs/guide.md:205
+msgid "Wallets + signing keys"
+msgstr "钱包 + 签名密钥"
+
+#: docs/guide.md:205
+msgid "[Wallets & Keys](providers/wallets.md)"
+msgstr "[钱包与密钥](providers/wallets.md)"
+
+#: docs/guide.md:206
+msgid "Cards + payment rails"
+msgstr "卡片 + 支付通道"
+
+#: docs/guide.md:206
+msgid "[Payments & Cards](providers/payments-and-cards.md)"
+msgstr "[支付与卡片](providers/payments-and-cards.md)"
+
+#: docs/guide.md:207
+msgid "OAuth + secret stores"
+msgstr "OAuth + 密钥库"
+
+#: docs/guide.md:207
+msgid "[Credentials & Tool Auth](providers/credentials-and-tool-auth.md)"
+msgstr "[凭证与工具认证](providers/credentials-and-tool-auth.md)"
+
+#: docs/guide.md:208
+msgid "Vector stores + episodic memory"
+msgstr "向量库 + 情节记忆"
+
+#: docs/guide.md:208
+msgid "[Memory & Storage](providers/memory-and-storage.md)"
+msgstr "[记忆与存储](providers/memory-and-storage.md)"
+
+#: docs/guide.md:209
+msgid "Model gateways + MCP registries"
+msgstr "模型网关 + MCP 注册表"
+
+#: docs/guide.md:209
+msgid "[Models & Skills](providers/models-and-skills.md)"
+msgstr "[模型与技能](providers/models-and-skills.md)"
+
+#: docs/guide.md:210
+msgid "Tracing + human-in-the-loop"
+msgstr "追踪 + 人在回路"
+
+#: docs/guide.md:210
+msgid "[Observability & HITL](providers/observability-and-hitl.md)"
+msgstr "[可观测性与 HITL](providers/observability-and-hitl.md)"
+
+#: docs/guide.md:211
+msgid "Bot accounts + legal wrappers"
+msgstr "机器人账户 + 法律实体包装"
+
+#: docs/guide.md:211
+msgid "[Accounts & Legal Entity](providers/accounts-and-legal-entity.md)"
+msgstr "[账户与法律实体](providers/accounts-and-legal-entity.md)"
+
+#: docs/guide.md:215
+msgid "The Agent Birth Manifest"
+msgstr "Agent Birth Manifest"
+
+#: docs/guide.md:217
+msgid ""
+"`birth.yaml` is the experimental machine-readable Agent Birth Manifest (ABM) "
+"format; each agent's file is a Birth Profile. It has one section per layer, "
+"no secrets, owner required. It is designed to be version-controlled "
+"alongside the agent and to serve as the living checklist of what has been "
+"provisioned and what has not."
+msgstr ""
+"`birth.yaml` 是实验性的机器可读 Agent Birth Manifest（ABM）格式；每个 agent "
+"的文件是一个 Birth Profile。它每个层级一个章节，不含密钥，所有者为必填项。其"
+"设计目标是与 agent 一起进行版本控制，并作为已供给内容和未供给内容的活跃清单。"
+
+#: docs/guide.md:219
+msgid ""
+"A minimal manifest that passes schema validation is not the same as a "
+"complete provisioning. The manifest captures intent; the provisioning "
+"checklist in [Birth](lifecycle/birth.md) captures verification."
+msgstr ""
+"通过 schema 验证的最小 manifest 并不等同于完整的供给。manifest 记录意图；[出"
+"生](lifecycle/birth.md)中的供给清单记录验证。"
+
+#: docs/guide.md:221
+msgid ""
+"A worked example — a research agent with provider-custodied keys, email on "
+"an owner-controlled subdomain, an E2B sandbox, a Coinbase CDP wallet with "
+"layered budget limits, Slack approvals, and Langfuse audit log — is at "
+"[`manifests/examples/research-agent.birth.yaml`](https://github.com/MatrixA/agent-birthbook/blob/main/manifests/examples/research-agent.birth.yaml)."
+msgstr "一个完整示例——使用提供方托管密钥、所有者控制的子域名上的电子邮件、E2B 沙箱、带有分层预算限额的 Coinbase CDP 钱包、Slack 审批和 Langfuse 审计日志的研究智能体——见 [`manifests/examples/research-agent.birth.yaml`](https://github.com/MatrixA/agent-birthbook/blob/main/manifests/examples/research-agent.birth.yaml)。"
+
+#: docs/guide.md:223
+msgid ""
+"→ [birth.yaml walkthrough](manifest.md) · [JSON Schema](https://github.com/"
+"MatrixA/agent-birthbook/blob/main/manifests/schema.json)"
+msgstr "→ [birth.yaml 详解](manifest.md) · [JSON Schema](https://github.com/MatrixA/agent-birthbook/blob/main/manifests/schema.json)"
+
+#: docs/guide.md:227
+msgid "How to use this book"
+msgstr "如何使用本书"
+
+#: docs/guide.md:229
+msgid ""
+"**Designing a new agent?**  \n"
+"Read [The Agent Birth Stack](birth-stack.md) end to end. Walk through the "
+"[Birth checklist](lifecycle/birth.md) layer by layer. Fill in a [Birth "
+"Profile](manifest.md) as you go; the gaps in the manifest are your to-do "
+"list. Choose the kill-switch controller and mechanism early, wire and test "
+"the switch before public registration or consequential action, and finish "
+"the remaining governance controls last, before the first task runs."
+msgstr "**正在设计新智能体？**  \n从头到尾阅读[智能体诞生栈](birth-stack.md)。逐层完成[诞生清单](lifecycle/birth.md)。在此过程中填写[诞生档案](manifest.md)；清单中的空白就是您的待办事项。尽早选定终止开关的控制方和机制，在公开注册或重大行动之前完成开关的连接和测试，并在最后、首次任务运行之前完成其余治理控制。"
+
+#: docs/guide.md:232
+msgid ""
+"**Choosing a provider for one thing?**  \n"
+"Go to the matching [provider chapter](providers/). Use its requirements and "
+"interface descriptions to check whether a candidate provider actually "
+"satisfies the layer, not just whether it has a relevant-sounding product "
+"name."
+msgstr "**为某项需求选择提供方？**  \n前往对应的[提供方章节](providers/)。根据其中的要求和接口说明，检查候选提供方是否真正满足该层的要求，而不只是产品名称听起来相关。"
+
+#: docs/guide.md:235
+msgid ""
+"**Auditing an existing agent?**  \n"
+"Start at [Governance](stack/10-governance.md) and work down. The two "
+"questions that matter most: \"Who can stop this agent and how?\" and \"What "
+"has the agent done in the last 30 days?\" If either has no answer, that is "
+"the first gap to close."
+msgstr "**正在审计现有智能体？**  \n从[治理](stack/10-governance.md)开始，向下逐层审查。最重要的两个问题是：“谁能停止这个智能体，如何停止？”以及“这个智能体在过去 30 天内做了什么？”如果任一问题没有答案，那就是首先需要填补的缺口。"
+
+#: docs/guide.md:238
+msgid ""
+"**Evaluating a standard?**  \n"
+"The [standards map](standards/) places each spec in the layer it fills, "
+"states its maturity, and identifies what it competes with or complements."
+msgstr "**正在评估某个标准？**  \n[标准地图](standards/)将每个规范置于它所满足的层，说明其成熟度，并指出它与哪些标准竞争或互补。"
+
+#: docs/guide.md:241
+msgid ""
+"**Planning decommission?**  \n"
+"[Death](lifecycle/death.md) covers the wind-down order, what to retain for "
+"compliance purposes, and how to handle orphaned agents whose owner is no "
+"longer reachable."
+msgstr "**正在规划停用？**  \n[死亡](lifecycle/death.md)涵盖关闭顺序、为满足合规要求应保留的内容，以及如何处理已无法联系到所有者的孤儿智能体。"
+
+#: docs/guide.md:246
+msgid "Quick-reference checklist"
+msgstr "快速参考清单"
+
+#: docs/guide.md:248
+msgid ""
+"The shortest version. The full version, with three or four items per layer, "
+"is in [Birth](lifecycle/birth.md). Choose the kill-switch controller and "
+"mechanism early; wire and test the switch before public registration or "
+"consequential action, then finish the remaining governance controls last, "
+"before the first task runs."
+msgstr "最简版本。完整版本（每层三到四项）见[诞生](lifecycle/birth.md)。尽早选定终止开关的控制方和机制；在公开注册或重大行动之前完成开关的连接和测试，然后在最后、首次任务运行之前完成其余治理控制。"
+
+#: docs/guide.md:250
+msgid ""
+"**Identity** — a named owner, a DID or registry entry, a signing key with a "
+"chosen custody model"
+msgstr ""
+"**身份** —— 一位具名所有者、一个 DID 或注册表条目、一个采用所选托管模型的签名"
+"密钥"
+
+#: docs/guide.md:251
+msgid ""
+"**Presence** — an email on a domain the owner controls; endpoints published "
+"where counterparties look"
+msgstr ""
+"**在线存在** —— 一个在所有者控制的域名上的电子邮件；端点发布在交易方查找的位"
+"置"
+
+#: docs/guide.md:252
+msgid ""
+"**Authentication** — a secret store; every credential scoped, referenced not "
+"embedded, with a rotation period"
+msgstr ""
+"**认证** —— 一个密钥库；每个凭证均有范围限定，引用而非嵌入，并设有轮换周期"
+
+#: docs/guide.md:253
+msgid ""
+"**Compute** — an isolated runtime; egress allowlisted; storage separate from "
+"the runtime"
+msgstr "**计算** —— 一个隔离的运行时；出口已加入允许列表；存储与运行时分离"
+
+#: docs/guide.md:254
+msgid ""
+"**Economic Identity** — a wallet or card under policy; hard per-transaction "
+"and daily limits"
+msgstr "**经济身份** —— 受策略约束的钱包或卡片；硬性单笔交易和每日限额"
+
+#: docs/guide.md:255
+msgid ""
+"**Capabilities** — model access through a gateway with a budget; tools from "
+"known sources only"
+msgstr "**能力** —— 通过带有预算的网关访问模型；工具仅来自已知来源"
+
+#: docs/guide.md:256
+msgid "**Memory** — stores named, retention set, encrypted at rest"
+msgstr "**记忆** —— 存储已命名，保留策略已设置，静态加密"
+
+#: docs/guide.md:257
+msgid ""
+"**Authority** — delegations scoped and expiring; actions that need a human "
+"listed explicitly"
+msgstr "**权限** —— 委托有范围且设有有效期；需要人类介入的操作已明确列出"
+
+#: docs/guide.md:258
+msgid ""
+"**Trust** — owner attestation published; public registrations made _after_ "
+"the kill switch is wired and tested"
+msgstr "**信任** —— 所有者证明已发布；公开注册在终止开关完成连接和测试 *之后* 进行"
+
+#: docs/guide.md:259
+msgid ""
+"**Governance** — controller and mechanism chosen early; switch wired and "
+"tested before public registration or consequential action; audit log, "
+"recovery path, and review cadence completed last, before the first task runs"
+msgstr "**治理** —— 尽早选定控制方和机制；在公开注册或重大行动之前完成开关的连接和测试；在最后、首次任务运行之前完成审计日志、恢复路径和审查周期的配置"
+
+#: docs/guide.md:263
+msgid "What this book does not cover"
+msgstr "本书未涵盖的内容"
+
+#: docs/guide.md:265
+msgid ""
+"**Agent frameworks and orchestration.** How you build the agent's reasoning "
+"loop, choose prompts, structure its tools, or evaluate its outputs is out of "
+"scope. Those topics are covered well elsewhere; see [Related "
+"Projects](related.md) for lists of agent frameworks and MCP servers."
+msgstr "**智能体框架与编排。** 如何构建智能体的推理循环、选择提示词、组织工具结构或评估输出，不在本书范围之内。这些主题在其他地方已有充分介绍；智能体框架和 MCP 服务器列表见[相关项目](related.md)。"
+
+#: docs/guide.md:267
+msgid ""
+"**Model selection.** Which model to use for which task is not a provisioning "
+"question. The Birthbook cares only that model access is provisioned through "
+"a gateway with a budget cap and that the model endpoint is reachable from "
+"the agent's compute environment."
+msgstr ""
+"**模型选择。** 为哪项任务选择哪个模型不是供给问题。Birthbook 只关心模型访问是"
+"否通过带有预算上限的网关进行供给，以及模型端点是否可从 agent 的计算环境访问。"
+
+#: docs/guide.md:269
+msgid ""
+"**Security in the agent's reasoning.** Prompt injection via the prompt "
+"window is an important topic, but it is distinct from provisioning-layer "
+"security. The Birthbook covers memory as an attack surface and tool supply-"
+"chain risk, which are provisioning decisions; it does not cover how to "
+"design a reasoning loop that resists manipulation."
+msgstr ""
+"**Agent 推理中的安全性。** 通过提示词窗口进行的提示注入是一个重要话题，但它与"
+"供给层安全性是不同的问题。Birthbook 涵盖了作为攻击面的记忆和工具供应链风险，"
+"这些是供给决策；它不涵盖如何设计能够抵抗操控的推理循环。"
+
+#: docs/guide.md:271
+msgid ""
+"The boundary is deliberate: Birthbook is a map of the territory between _the "
+"agent's first line of code_ and _the world the agent acts in_. Everything "
+"inside the agent — its logic, its prompts, its training — is out of scope by "
+"design."
+msgstr "这一边界是有意设定的：Birthbook 描绘的是 *智能体的第一行代码* 与 *智能体采取行动的世界* 之间的领域。智能体内部的一切——其逻辑、提示词、训练——都被有意排除在范围之外。"
+
 #: docs/birth-stack.md:3
 msgid ""
 "The Birth Stack is the concept model behind this book. It answers one "
@@ -591,8 +1463,8 @@ msgstr "一句话定义"
 msgid "Chapter"
 msgstr "章节"
 
-#: docs/birth-stack.md:45 docs/standards/index.md:76
-#: docs/standards/index.md:82 docs/standards/index.md:85
+#: docs/birth-stack.md:45 docs/standards/index.md:76 docs/standards/index.md:82
+#: docs/standards/index.md:85
 msgid "1"
 msgstr "1"
 
@@ -629,9 +1501,8 @@ msgstr "可以找到并联系该智能体的地址：电子邮件、域名、电
 msgid "[stack/02-presence.md](stack/02-presence.md)"
 msgstr "[stack/02-presence.md](stack/02-presence.md)"
 
-#: docs/birth-stack.md:47 docs/standards/index.md:87
-#: docs/standards/index.md:94 docs/standards/index.md:95
-#: docs/standards/index.md:96
+#: docs/birth-stack.md:47 docs/standards/index.md:87 docs/standards/index.md:94
+#: docs/standards/index.md:95 docs/standards/index.md:96
 msgid "3"
 msgstr "3"
 
@@ -678,12 +1549,6 @@ msgid "**Economic Identity**"
 msgstr "<strong>经济身份</strong>"
 
 #: docs/birth-stack.md:49
-msgid ""
-"The agent's ability to hold and move value: wallets, cards, a budget, and "
-"the payment protocols it speaks."
-msgstr "智能体持有和转移价值的能力：钱包、卡片、预算，以及它所使用的支付协议。"
-
-#: docs/birth-stack.md:49
 msgid "[stack/05-economy.md](stack/05-economy.md)"
 msgstr "[stack/05-economy.md](stack/05-economy.md)"
 
@@ -724,9 +1589,8 @@ msgstr "在多次运行之间持久保留的内容：工作上下文、情景记
 msgid "[stack/07-memory.md](stack/07-memory.md)"
 msgstr "[stack/07-memory.md](stack/07-memory.md)"
 
-#: docs/birth-stack.md:52 docs/standards/index.md:90
-#: docs/standards/index.md:93 docs/standards/index.md:97
-#: docs/standards/index.md:98
+#: docs/birth-stack.md:52 docs/standards/index.md:90 docs/standards/index.md:93
+#: docs/standards/index.md:97 docs/standards/index.md:98
 msgid "8"
 msgstr "8"
 
@@ -2037,8 +2901,7 @@ msgstr "did:web:example.com:people:fernando"
 msgid "spec"
 msgstr "spec"
 
-#: docs/stack/01-identity.md:83 docs/lifecycle/birth.md:122
-#: docs/manifest.md:35
+#: docs/stack/01-identity.md:83 docs/lifecycle/birth.md:122 docs/manifest.md:35
 msgid "identity"
 msgstr "identity"
 
@@ -9068,8 +9931,7 @@ msgstr ""
 #: docs/providers/domains.md:7 docs/providers/compute-and-browsers.md:7
 #: docs/providers/wallets.md:16 docs/providers/payments-and-cards.md:7
 #: docs/providers/credentials-and-tool-auth.md:15
-#: docs/providers/memory-and-storage.md:7
-#: docs/providers/models-and-skills.md:7
+#: docs/providers/memory-and-storage.md:7 docs/providers/models-and-skills.md:7
 #: docs/providers/observability-and-hitl.md:7
 #: docs/providers/accounts-and-legal-entity.md:7
 msgid "Interfaces"
