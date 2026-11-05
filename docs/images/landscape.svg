@@ -42,9 +42,9 @@
   <circle cx="1100" cy="35" r="0.8" fill="white" opacity="0.5"/>
 
   <!-- Sun glow -->
-  <ellipse cx="600" cy="230" rx="200" ry="80" fill="url(#glow)"/>
+  <ellipse cx="600" cy="150" rx="200" ry="80" fill="url(#glow)"/>
   <!-- Sun -->
-  <circle cx="600" cy="240" r="38" fill="url(#sun)" opacity="0.9"/>
+  <circle cx="600" cy="160" r="38" fill="url(#sun)" opacity="0.9"/>
 
   <!-- Horizon reflection on water -->
   <rect x="0" y="260" width="1200" height="10" fill="#f7971e" opacity="0.15"/>
