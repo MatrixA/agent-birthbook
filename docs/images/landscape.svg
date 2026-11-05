@@ -75,8 +75,4 @@
   <polygon points="1110,280 1125,230 1140,280" fill="#0a1f0a"/>
   <polygon points="1130,280 1148,225 1166,280" fill="#0d2a0d"/>
   <polygon points="1085,280 1100,245 1115,280" fill="#0a1f0a"/>
-
-  <!-- Caption bar -->
-  <rect x="0" y="360" width="1200" height="40" fill="#0a0a0a" opacity="0.5"/>
-  <text x="600" y="385" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#b0c4c4" letter-spacing="3">AGENT BIRTHBOOK — Mapping the Territory of Autonomous Agent Provisioning</text>
 </svg>
