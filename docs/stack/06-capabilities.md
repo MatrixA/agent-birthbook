@@ -65,6 +65,8 @@ spec:
     models:
       - { id: anthropic/claude-sonnet-4-6, via: openrouter, role: primary }
     tools:
-      - { name: fetch, kind: mcp, source: "https://github.com/modelcontextprotocol/servers" }
+      - name: fetch
+        kind: mcp
+        source: "https://github.com/modelcontextprotocol/servers"
     skills: [literature-review]
 ```

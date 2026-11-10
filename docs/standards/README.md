@@ -15,7 +15,7 @@ A spec can be Production while its governing document is still Draft (ERC-8004 i
 ## Specs on the stack
 
 ```mermaid
-flowchart LR
+flowchart TB
     subgraph L1["1 Identity"]
         DID[DID Core]
         A2A[A2A Agent Card]
@@ -39,6 +39,7 @@ flowchart LR
     end
     subgraph L5["5 Economic Identity"]
         X402[x402]
+        MPP[MPP]
         AP2[AP2]
         CARD[Visa TAP · Mastercard Agent Pay]
         ACP[ACP / Shared Payment Tokens]
@@ -65,6 +66,7 @@ flowchart LR
         OWASP[OWASP Agentic Top 10]
         NIST[NIST CAISI · AI 800-4 · IR 8596]
         IMDA[IMDA · EU AI Act]
+        ISO[ISO/IEC 42001]
     end
     L1 --> L2 --> L3 --> L4 --> L5 --> L6 --> L7 --> L8 --> L9 --> L10
 ```

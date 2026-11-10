@@ -86,5 +86,6 @@ spec:
       - { id: signing-2026-09, type: Ed25519, custody: provider, publicKey: z6Mk... }
     registrations:
       - { registry: erc-8004, id: "8453:1042" }
-      - { registry: a2a-agent-card, url: "https://agents.example.com/scout/.well-known/agent-card.json" }
+      - registry: a2a-agent-card
+        url: "https://agents.example.com/scout/.well-known/agent-card.json"
 ```

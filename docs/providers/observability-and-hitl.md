@@ -41,7 +41,7 @@ The traps: tracing captures prompts and tool arguments, which means it captures 
 - [AgentOps docs](https://docs.agentops.ai) · [agentops repository](https://github.com/AgentOps-AI/agentops) - Session tracking.
 - [OpenTelemetry GenAI semantic conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/) - Span, event and metric definitions.
 - [Lakera docs](https://docs.lakera.ai) - Guard API.
-- [Guardrails AI docs](https://docs.guardrailsai.com/) · [guardrails repository](https://github.com/guardrails-ai/guardrails) - Validators.
+- [guardrails repository](https://github.com/guardrails-ai/guardrails) - Validators.
 - [NeMo Guardrails docs](https://docs.nvidia.com/nemo/guardrails/) - Colang and rail configuration.
 - [OpenMeter docs](https://openmeter.io/docs) · [openmeter repository](https://github.com/openmeterio/openmeter) - Meters and entitlements.
 - [HumanLayer repository](https://github.com/humanlayer/humanlayer) - SDK and approval flows.

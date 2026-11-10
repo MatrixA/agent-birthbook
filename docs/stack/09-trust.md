@@ -78,7 +78,9 @@ sequenceDiagram
 spec:
   trust:
     credentials:
-      - { type: OwnerAttestation, issuer: "did:web:example.com", url: "https://agents.example.com/scout/credentials/owner.json" }
+      - type: OwnerAttestation
+        issuer: "did:web:example.com"
+        url: "https://agents.example.com/scout/credentials/owner.json"
     reputation:
       - { registry: erc-8004, id: "8453:1042" }
     kya: skyfire:verified

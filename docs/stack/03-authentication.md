@@ -78,6 +78,13 @@ spec:
   authentication:
     secretStore: infisical://prod/agents/scout
     credentials:
-      - { service: github, type: oauth2, scopes: ["repo:read", "issues:write"], secretRef: GITHUB_APP_INSTALLATION, rotation: P1D }
-      - { service: web-bot-auth, type: http-signature, secretRef: SIGNING_KEY_2026_09, rotation: P90D }
+      - service: github
+        type: oauth2
+        scopes: ["repo:read", "issues:write"]
+        secretRef: GITHUB_APP_INSTALLATION
+        rotation: P1D
+      - service: web-bot-auth
+        type: http-signature
+        secretRef: SIGNING_KEY_2026_09
+        rotation: P90D
 ```

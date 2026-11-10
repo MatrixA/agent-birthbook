@@ -18,7 +18,7 @@ Three uses, in order of how soon they are realistic:
 ## Rules
 
 - **No secrets.** `secretRef` fields point into `spec.authentication.secretStore`. The profile is safe to commit.
-- **Owner is mandatory.** `metadata.owner` is the only field besides `name` that is required. An agent without a responsible party is not born, it is loose.
+- **Owner is mandatory.** Within `metadata`, `name` and `owner` are required, and `apiVersion`, `kind`, `metadata` and `spec` are required at the top level. An agent without a responsible party is not born, it is loose.
 - **Layer names are fixed.** The ten keys under `spec` match the stack. Put anything that does not fit under the closest layer with an extra key rather than inventing an eleventh.
 
 ## Shape

@@ -78,5 +78,7 @@ spec:
         canSubDelegate: false
         maxDelegationDepth: 0
     approvals:
-      - { action: "pay:>2USD", approver: "did:web:example.com:people:fernando", channel: "slack:#scout-approvals" }
+      - action: "pay:>2USD"
+        approver: "did:web:example.com:people:fernando"
+        channel: "slack:#scout-approvals"
 ```

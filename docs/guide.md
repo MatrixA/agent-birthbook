@@ -184,9 +184,9 @@ The Birthbook does not advocate for one standard over another. It places each st
 |---|---|
 | Identity (layer 1) | W3C DID + VC, A2A Agent Card, ERC-8004, AIMS/Agent Manifest, HCS-14, Microsoft Entra Agent ID |
 | Authentication (layer 3) | MCP Authorization (OAuth 2.1 based), RFC 8693 Token Exchange, GNAP, SPIFFE, Web Bot Auth / RFC 9421 |
-| Economic Identity (layer 5) | x402, Google AP2, Visa Trusted Agent Protocol, Mastercard Agent Pay, Agentic Commerce Protocol (OpenAI + Stripe), Stripe Shared Payment Tokens |
+| Economic Identity (layer 5) | x402, MPP (Tempo + Stripe), Google AP2, Visa Trusted Agent Protocol, Mastercard Agent Pay, Agentic Commerce Protocol (OpenAI + Stripe), Stripe Shared Payment Tokens |
 | Discovery (layers 1, 2, 6, 9) | `/.well-known/agent-card.json`, agents.txt, llms.txt, MCP Registry, NANDA |
-| Security & Governance (layers 1, 3, 8–10) | OWASP Top 10 for Agentic Applications, CSA Agentic IAM, NIST CAISI, EU AI Act |
+| Security & Governance (layers 1, 3, 8–10) | OWASP Top 10 for Agentic Applications, CSA Agentic IAM, NIST CAISI, EU AI Act, ISO/IEC 42001 |
 
 The [standards map](standards/) shows maturity, overlap, and where each spec fits in the stack.
 
