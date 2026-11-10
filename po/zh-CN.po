@@ -14500,10 +14500,10 @@ msgstr "[Lakera 文档](https://docs.lakera.ai) - Guard API。"
 
 #: docs/providers/observability-and-hitl.md:44
 msgid ""
-"[Guardrails AI docs](https://www.guardrailsai.com/docs) · [guardrails "
+"[Guardrails AI docs](https://docs.guardrailsai.com/) · [guardrails "
 "repository](https://github.com/guardrails-ai/guardrails) - Validators."
 msgstr ""
-"[Guardrails AI 文档](https://www.guardrailsai.com/docs) · [guardrails 代码仓"
+"[Guardrails AI 文档](https://docs.guardrailsai.com/) · [guardrails 代码仓"
 "库](https://github.com/guardrails-ai/guardrails) - 校验器。"
 
 #: docs/providers/observability-and-hitl.md:45
