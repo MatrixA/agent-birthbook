@@ -75,10 +75,13 @@ sequenceDiagram
 `spec.trust.credentials[]` lists held credentials by `type`, `issuer` and `url`; `spec.trust.reputation[]` points to registries by `registry` and `id`; `spec.trust.kya` names the KYA provider or level. The corresponding identity anchors live in [`spec.identity.registrations[]`](01-identity.md); keep the two consistent.
 
 ```yaml
-trust:
-  credentials:
-    - { type: OwnerAttestation, issuer: did:web:example.com, url: https://agents.example.com/scout/credentials/owner.json }
-  reputation:
-    - { registry: erc-8004, id: "8453:1042" }
-  kya: skyfire:verified
+spec:
+  trust:
+    credentials:
+      - type: OwnerAttestation
+        issuer: "did:web:example.com"
+        url: "https://agents.example.com/scout/credentials/owner.json"
+    reputation:
+      - { registry: erc-8004, id: "8453:1042" }
+    kya: skyfire:verified
 ```

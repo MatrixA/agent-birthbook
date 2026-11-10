@@ -6,13 +6,13 @@ Discovery is how a stranger finds an agent and learns how to call it. It straddl
 
 | Standard | Layer | Maturity | Backed by | Link |
 |---|---|---|---|---|
-| A2A `/.well-known/agent-card.json` | 2 Presence, 6 Capabilities | Production | Linux Foundation | [a2a-protocol.org](https://a2a-protocol.org/latest/topics/agent-discovery/) |
+| A2A `/.well-known/agent-card.json` | 1 Identity, 2 Presence, 6 Capabilities | Production | Linux Foundation | [a2a-protocol.org](https://a2a-protocol.org/latest/topics/agent-discovery/) |
 | agents.txt | 2 Presence | Draft | community (MIT licence) | [github.com/asturwebs/agents-txt](https://github.com/asturwebs/agents-txt) |
 | llms.txt | 6 Capabilities (content) | Adopted | community (Answer.AI-originated) | [llmstxt.org](https://llmstxt.org/) |
-| MCP Registry | 6 Capabilities | Production | MCP project | [github.com/modelcontextprotocol/registry](https://github.com/modelcontextprotocol/registry) |
+| MCP Registry | 6 Capabilities | Adopted (preview) | MCP project | [github.com/modelcontextprotocol/registry](https://github.com/modelcontextprotocol/registry) |
 | NANDA | 2 Presence, 9 Trust | Draft | MIT Media Lab | [media.mit.edu/groups/nanda](https://www.media.mit.edu/groups/nanda/overview/) · [github](https://github.com/projnanda/projnanda) |
 | Agent Name Service (ANS) | 2 Presence | Draft (paper) | academic (Huang et al.) | [arxiv.org/abs/2505.10609](https://arxiv.org/abs/2505.10609) |
-| ERC-8004 Identity Registry | 1 Identity, 2 Presence | Production | Ethereum community | [eips.ethereum.org/EIPS/eip-8004](https://eips.ethereum.org/EIPS/eip-8004) |
+| ERC-8004 Identity Registry | 1 Identity, 2 Presence, 9 Trust | Production | Ethereum community | [eips.ethereum.org/EIPS/eip-8004](https://eips.ethereum.org/EIPS/eip-8004) |
 | DNS-based (`did:web`, `did:dns`, SRV/TXT) | 2 Presence | Adopted (DNS) / Draft (agent use) | W3C, IETF | [did-core](https://www.w3.org/TR/did-core/) |
 
 ## Notes per standard
@@ -27,7 +27,7 @@ A Markdown-with-YAML file at the site root (with a JSON mirror at `/api/agents`)
 A Markdown file at `/llms.txt` giving language models a curated map of a site's content. Widely adopted by documentation sites (including the MCP spec itself). It is about content, not agents, but it is how an agent's [Capabilities](../stack/06-capabilities.md) discover tool documentation.
 
 ### MCP Registry
-Open-source service and hosted instance ([registry.modelcontextprotocol.io](https://registry.modelcontextprotocol.io)) listing published MCP servers with metadata and install details. Discovers *tools* for an agent, not agents for a caller. Third-party mirrors (Smithery, Glama, PulseMCP) index the same data; see [Models & Skills](../providers/models-and-skills.md).
+Open-source service and hosted instance ([registry.modelcontextprotocol.io](https://registry.modelcontextprotocol.io)) listing published MCP servers with metadata and install details. Discovers *tools* for an agent, not agents for a caller. Third-party mirrors (Smithery, Glama, PulseMCP) index the same data; see [Models & Skills](../providers/models-and-skills.md). The hosted instance is still labelled preview; the open-source service can be self-hosted.
 
 ### NANDA
 MIT project for an "Internet of AI Agents": a decentralised index plus adaptive resolvers that map an agent name to current endpoints and bridge A2A, MCP and plain HTTPS. Includes AgentFacts, a signed metadata format that also underpins Know-Your-Agent ([Security & Governance](security-and-governance.md)). Research-stage with reference code.

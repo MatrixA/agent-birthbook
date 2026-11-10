@@ -56,10 +56,11 @@ Memory is what persists between runs. Without it, every invocation is a new agen
 `spec.memory.stores[]` lists each store with `kind` (`working | episodic | semantic | files | knowledge-graph`), `provider` and `retention`; `spec.memory.encryptionAtRest` is a single boolean. If a store holds personal data, say so in `retention` policy terms and make sure [`spec.governance.recovery`](10-governance.md) covers the encryption keys.
 
 ```yaml
-memory:
-  encryptionAtRest: true
-  stores:
-    - { kind: working, provider: in-context, retention: PT0S }
-    - { kind: episodic, provider: mem0, retention: P365D }
-    - { kind: files, provider: git+r2, retention: forever }
+spec:
+  memory:
+    encryptionAtRest: true
+    stores:
+      - { kind: working, provider: in-context, retention: PT0S }
+      - { kind: episodic, provider: mem0, retention: P365D }
+      - { kind: files, provider: git+r2, retention: forever }
 ```

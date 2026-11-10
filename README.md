@@ -77,7 +77,7 @@ Where each spec sits in the stack, its maturity, and what it competes with. Star
 - [Identity](docs/standards/identity.md) - W3C DID & VC, A2A Agent Card, ERC-8004, AIMS / Agent Manifest, Agent Passport Standard, HCS-14, Microsoft Entra Agent ID, DIF KYA-OS.
 - [Authentication & Delegation](docs/standards/auth-and-delegation.md) - MCP Authorization, OAuth 2.0 Token Exchange (RFC 8693), GNAP, IETF on-behalf-of and transaction-token drafts, SPIFFE, Web Bot Auth / RFC 9421, UCAN, ZCAP.
 - [Payments](docs/standards/payments.md) - x402, Google AP2, Visa Trusted Agent Protocol, Mastercard Agent Pay, Stripe Agentic Commerce Protocol & Shared Payment Tokens, PayPal agent toolkit, Skyfire.
-- [Discovery](docs/standards/discovery.md) - `/.well-known/agent-card.json`, agents.json, llms.txt, MCP Registry, NANDA.
+- [Discovery](docs/standards/discovery.md) - `/.well-known/agent-card.json`, agents.txt, llms.txt, MCP Registry, NANDA.
 - [Security & Governance](docs/standards/security-and-governance.md) - OWASP Top 10 for Agentic Applications mapped to the stack, CSA Agentic IAM, NIST CAISI, Know Your Agent, EU AI Act touchpoints.
 
 ## Birth Providers

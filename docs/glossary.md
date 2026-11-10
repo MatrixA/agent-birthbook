@@ -12,7 +12,7 @@ Terms the book coins are marked **(Birthbook)**. Everything else is borrowed, wi
 
 **Birth Profile (Birthbook)** — One agent's manifest; an instance of the ABM.
 
-**Birth Provider (Birthbook)** — Any party that provisions a resource to an agent: an inbox, a number, a domain, a sandbox, a wallet, a card, a secret store, memory, model access, tools, observability, a legal wrapper. See [Provider model](providers/README.md).
+**Birth Provider (Birthbook)** — Any party that provisions a resource to an agent: an inbox, a number, a domain, a sandbox, a wallet, a card, a secret store, memory, model access, tools, observability, a legal wrapper. See [Provider model](providers/).
 
 **Birth Procedure (Birthbook)** — The provisioning lifecycle: [birth](lifecycle/birth.md), [credential rotation](lifecycle/credential-rotation.md), [migration](lifecycle/migration.md), [death](lifecycle/death.md).
 
@@ -52,9 +52,9 @@ Terms the book coins are marked **(Birthbook)**. Everything else is borrowed, wi
 
 **Secret store** — The system that holds credentials and hands them to the agent at runtime. A Birth Profile contains `secretRef` pointers, never secret values.
 
-**OAuth 2.1** — The consolidated OAuth profile (PKCE mandatory, implicit grant removed) that the [MCP authorization spec](https://modelcontextprotocol.io/specification/draft/basic/authorization) builds on.
+**OAuth 2.1** — The consolidated OAuth profile (PKCE mandatory, implicit grant removed) that the [MCP authorization spec](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization) builds on.
 
-**Token exchange / on-behalf-of** — Swapping one token for another so a downstream service knows both *who* is acting (`sub`) and *through whom* (`act`). [RFC 8693](https://www.rfc-editor.org/rfc/rfc8693). The agent-specific extension is the IETF [OBO for AI agents draft](https://www.ietf.org/archive/id/draft-oauth-ai-agents-on-behalf-of-user-00.html).
+**Token exchange / on-behalf-of** — Swapping one token for another so a downstream service knows both *who* is acting (`sub`) and *through whom* (`act`). [RFC 8693](https://www.rfc-editor.org/rfc/rfc8693). The agent-specific extension is the IETF [OBO for AI agents draft](https://www.ietf.org/archive/id/draft-oauth-ai-agents-on-behalf-of-user-00.html), an expired individual draft kept as vocabulary.
 
 **Delegation** — A grant from a principal to an agent (or agent to sub-agent) of a bounded authority: scope, expiry, whether it can be re-delegated, and to what depth. Layer 8.
 

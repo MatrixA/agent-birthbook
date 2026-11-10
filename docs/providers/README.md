@@ -51,7 +51,7 @@ Links point only to the provider's own site, documentation, or repository, or to
 
 - [Email](email.md) - Inboxes an agent can send from, receive into, and complete signups with.
 - [Phone, SMS & Voice](phone.md) - Numbers, OTP receipt, A2P messaging, and voice; the hardest resource to obtain honestly.
-- [Domains & DNS](domains.md) - Registrar and DNS APIs, `_well-known` and TXT records, and why a subdomain of the owner's domain is the default.
+- [Domains & DNS](domains.md) - Registrar and DNS APIs, `/.well-known` and TXT records, and why a subdomain of the owner's domain is the default.
 - [Compute & Browsers](compute-and-browsers.md) - Sandboxes and runtimes where agent code executes, and browsers it can drive.
 - [Wallets & Keys](wallets.md) - Custody archetypes for on-chain keys: provider-held with policy, MPC/TEE, smart accounts with session keys.
 - [Payments & Cards](payments-and-cards.md) - Fiat virtual cards, stablecoin cards, and agent-payment rails; KYC/KYB is always passed by the owner.
@@ -64,6 +64,6 @@ Links point only to the provider's own site, documentation, or repository, or to
 ## Related
 
 - [The Agent Birth Stack](../birth-stack.md) - Layer definitions the chapters map onto.
-- [Standards map](../standards/README.md) - The protocol side of the same graph.
+- [Standards map](../standards/) - The protocol side of the same graph.
 - [Birth](../lifecycle/birth.md) - The procedure that walks the provider chapters in order.
 - [birth.yaml](../manifest.md) - Where the chosen providers are recorded.

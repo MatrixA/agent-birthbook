@@ -5,6 +5,7 @@ on:
     paths:
       - "docs/**"
       - "po/**"
+      - "manifests/**"
       - "book.toml"
       - "assets/language-switcher.*"
       - ".github/workflows/i18n.yml"
@@ -20,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: cargo-bins/cargo-binstall@main
-      - run: cargo binstall -y mdbook mdbook-mermaid mdbook-i18n-helpers@0.4.0
+      - run: cargo binstall -y mdbook@0.5.4 mdbook-mermaid@0.17.1 mdbook-i18n-helpers@0.4.0
       - name: Install Gettext
         run: sudo apt-get update && sudo apt-get install -y gettext
 
@@ -66,12 +67,24 @@ jobs:
           import os
           import re
           from html.parser import HTMLParser
-          from pathlib import Path
+          from pathlib import Path, PurePosixPath
 
           site = Path(os.environ["SITE"])
           summary = Path("docs/SUMMARY.md").read_text()
           chapters = re.findall(r"\]\(([^)#]+\.md)(?:#[^)]*)?\)", summary)
-          assert len(chapters) == 38, f"expected 38 chapters, found {len(chapters)}"
+          referenced = [PurePosixPath(chapter).as_posix() for chapter in chapters]
+          duplicates = sorted({c for c in referenced if referenced.count(c) > 1})
+          assert not duplicates, f"docs/SUMMARY.md lists chapters more than once: {duplicates}"
+          assert len(referenced) >= 30, f"docs/SUMMARY.md looks truncated: {len(referenced)} chapters"
+          on_disk = {
+              path.relative_to("docs").as_posix()
+              for path in Path("docs").rglob("*.md")
+              if path.name != "SUMMARY.md"
+          }
+          unreferenced = sorted(on_disk - set(referenced))
+          assert not unreferenced, f"chapters on disk but absent from docs/SUMMARY.md: {unreferenced}"
+          dangling = sorted(set(referenced) - on_disk)
+          assert not dangling, f"docs/SUMMARY.md points at chapters that do not exist: {dangling}"
           for chapter in chapters:
               source = Path(chapter)
               output = (
@@ -97,7 +110,11 @@ jobs:
               for path in (site / "zh-CN").rglob("*.html")
               if path.name != "print.html"
           )
-          assert source_mermaid == rendered_mermaid == 16
+          assert source_mermaid > 0, "no ```mermaid blocks found in docs/"
+          assert source_mermaid == rendered_mermaid, (
+              f"mermaid blocks not all rendered: {source_mermaid} in docs sources, "
+              f"{rendered_mermaid} in the Chinese pages"
+          )
 
           class VisibleText(HTMLParser):
               def __init__(self):
@@ -128,7 +145,7 @@ jobs:
 
       - name: Validate manifest schema compatibility
         run: |
-          python3 -m pip install --disable-pip-version-check pyyaml jsonschema
+          python3 -m pip install --disable-pip-version-check pyyaml 'jsonschema[format]'
           python3 - <<'PY'
           import json
           import jsonschema
@@ -138,5 +155,28 @@ jobs:
               schema = json.load(schema_file)
           with open("manifests/examples/research-agent.birth.yaml") as manifest_file:
               manifest = yaml.safe_load(manifest_file)
-          jsonschema.validate(manifest, schema)
+          validator = jsonschema.Draft202012Validator(
+              schema, format_checker=jsonschema.FormatChecker()
+          )
+          validator.validate(manifest)
+          print("manifest validates against manifests/schema.json (formats checked)")
+
+          import re
+          from pathlib import Path
+
+          failures = []
+          blocks = 0
+          for path in sorted(Path("docs").rglob("*.md")):
+              text = path.read_text()
+              for index, block in enumerate(
+                  re.findall(r"^```yaml\n(.*?)^```", text, re.S | re.M), start=1
+              ):
+                  blocks += 1
+                  try:
+                      yaml.safe_load(block)
+                  except yaml.YAMLError as error:
+                      failures.append(f"{path} block {index}: {error}")
+          assert blocks > 0, "no ```yaml examples found in docs/"
+          assert not failures, "documentation YAML examples do not parse:\n" + "\n".join(failures)
+          print(f"all {blocks} YAML examples in docs/ parse")
           PY

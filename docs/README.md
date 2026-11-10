@@ -16,16 +16,16 @@ This book is a map of that territory.
 |---|---|
 | [The Agent Birth Stack](birth-stack.md) | The ten-layer concept model: Identity, Presence, Authentication, Compute, Economic Identity, Capabilities, Memory, Authority, Trust, Governance. |
 | [The Stack, layer by layer](stack/01-identity.md) | One chapter per layer: what the agent needs, minimum vs full provisioning, failure modes, which standards and providers fill it. |
-| [Standards & Protocols](standards/README.md) | DIDs and VCs, A2A Agent Cards, ERC-8004, AIMS, MCP authorization, OAuth token exchange, x402, AP2, Web Bot Auth, OWASP Agentic Top 10 — where each one sits in the stack and how they overlap. |
-| [Birth Providers](providers/README.md) | Curated tables of who actually hands an agent an inbox, a phone number, a domain, a sandbox, a wallet, a card, a secret store, memory, model access, tools, observability, or a legal wrapper. |
+| [Standards & Protocols](standards/) | DIDs and VCs, A2A Agent Cards, ERC-8004, AIMS, MCP authorization, OAuth token exchange, x402, AP2, Web Bot Auth, OWASP Agentic Top 10 — where each one sits in the stack and how they overlap. |
+| [Birth Providers](providers/) | Curated tables of who actually hands an agent an inbox, a phone number, a domain, a sandbox, a wallet, a card, a secret store, memory, model access, tools, observability, or a legal wrapper. |
 | [Lifecycle](lifecycle/birth.md) | The Birth Procedure as a checklist, plus credential rotation, migration between providers or owners, and death — revocation and wind-down. |
 | [Agent Birth Manifest](manifest.md) | `birth.yaml`: an experimental machine-readable Birth Profile, with a JSON Schema and a worked example. |
 
 ## How to read it
 
 - **Designing a new agent?** Read [The Agent Birth Stack](birth-stack.md), then walk the [Birth checklist](lifecycle/birth.md). Fill in a [Birth Profile](manifest.md) as you go; the gaps are your to-do list.
-- **Choosing a vendor for one thing?** Go straight to the matching [provider chapter](providers/README.md). Each starts with the interfaces, then a comparison table.
-- **Evaluating a standard?** The [standards map](standards/README.md) shows which layer it fills and what it competes with.
+- **Choosing a vendor for one thing?** Go straight to the matching [provider chapter](providers/). Each starts with the interfaces, then a comparison table.
+- **Evaluating a standard?** The [standards map](standards/) shows which layer it fills and what it competes with.
 - **Auditing an existing agent?** Use [Governance](stack/10-governance.md) and [Death](lifecycle/death.md): if you cannot answer "who can stop it, and how", start there.
 
 ## Vocabulary
@@ -49,4 +49,4 @@ Out: how to build the agent itself. Frameworks, orchestration, prompting, evalua
 
 ## Status
 
-Living document. Layer definitions are stable; provider tables and standard maturity ratings will churn and are dated where it matters. The manifest is an experimental seed, not a spec. Contributions go through the repository's `CONTRIBUTING.md`; content is CC0.
+Living document. Layer definitions are stable; provider tables and standard maturity ratings will churn; both are current as of 2026-11. The manifest is an experimental seed, not a spec. Contributions go through the repository's `CONTRIBUTING.md`; content is CC0.
