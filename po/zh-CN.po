@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Agent Birthbook\n"
-"POT-Creation-Date: 2026-11-11T03:37:36+08:00\n"
-"PO-Revision-Date: 2026-11-11 03:38+0800\n"
+"POT-Creation-Date: 2026-11-11T04:04:32+08:00\n"
+"PO-Revision-Date: 2026-11-11 04:05+0800\n"
 "Last-Translator: DeepSeek agent (automated) <agent@deepseek.com>\n"
 "Language-Team: Agent Birthbook zh-CN maintainers <noreply@github.com>\n"
 "Language: zh-CN\n"
@@ -1053,11 +1053,13 @@ msgstr "经济身份（第 5 层）"
 
 #: docs/guide.md:187
 msgid ""
-"x402, Google AP2, Visa Trusted Agent Protocol, Mastercard Agent Pay, Agentic "
-"Commerce Protocol (OpenAI + Stripe), Stripe Shared Payment Tokens"
+"x402, MPP (Tempo + Stripe), Google AP2, Visa Trusted Agent Protocol, "
+"Mastercard Agent Pay, Agentic Commerce Protocol (OpenAI + Stripe), Stripe "
+"Shared Payment Tokens"
 msgstr ""
-"x402、Google AP2、Visa Trusted Agent Protocol、Mastercard Agent Pay、Agentic "
-"Commerce Protocol（OpenAI + Stripe）、Stripe Shared Payment Tokens"
+"x402、MPP（Tempo + Stripe）、Google AP2、Visa Trusted Agent Protocol、"
+"Mastercard Agent Pay、Agentic Commerce Protocol（OpenAI + Stripe）、Stripe "
+"Shared Payment Tokens"
 
 #: docs/guide.md:188
 msgid "Discovery (layers 1, 2, 6, 9)"
@@ -1075,9 +1077,11 @@ msgstr "安全与治理（第 1、3、8–10 层）"
 
 #: docs/guide.md:189
 msgid ""
-"OWASP Top 10 for Agentic Applications, CSA Agentic IAM, NIST CAISI, EU AI Act"
+"OWASP Top 10 for Agentic Applications, CSA Agentic IAM, NIST CAISI, EU AI "
+"Act, ISO/IEC 42001"
 msgstr ""
-"OWASP Top 10 for Agentic Applications、CSA Agentic IAM、NIST CAISI、EU AI Act"
+"OWASP Top 10 for Agentic Applications、CSA Agentic IAM、NIST CAISI、EU AI "
+"Act、ISO/IEC 42001"
 
 #: docs/guide.md:191
 msgid ""
@@ -1588,7 +1592,7 @@ msgstr "十层结构"
 msgid "\\#"
 msgstr "\\#"
 
-#: docs/birth-stack.md:43 docs/standards/index.md:74
+#: docs/birth-stack.md:43 docs/standards/index.md:76
 #: docs/standards/identity.md:7 docs/standards/auth-and-delegation.md:7
 #: docs/standards/payments.md:7 docs/standards/discovery.md:7
 #: docs/standards/security-and-governance.md:7 docs/lifecycle/birth.md:94
@@ -1601,12 +1605,12 @@ msgstr "层"
 msgid "One-line definition"
 msgstr "一句话定义"
 
-#: docs/birth-stack.md:43 docs/standards/index.md:74 docs/manifest.md:51
+#: docs/birth-stack.md:43 docs/standards/index.md:76 docs/manifest.md:51
 msgid "Chapter"
 msgstr "章节"
 
-#: docs/birth-stack.md:45 docs/standards/index.md:76 docs/standards/index.md:82
-#: docs/standards/index.md:85
+#: docs/birth-stack.md:45 docs/standards/index.md:78 docs/standards/index.md:84
+#: docs/standards/index.md:87
 msgid "1"
 msgstr "1"
 
@@ -1626,8 +1630,8 @@ msgstr ""
 msgid "[stack/01-identity.md](stack/01-identity.md)"
 msgstr "[stack/01-identity.md](stack/01-identity.md)"
 
-#: docs/birth-stack.md:46 docs/standards/index.md:110
-#: docs/standards/index.md:114 docs/standards/index.md:115
+#: docs/birth-stack.md:46 docs/standards/index.md:112
+#: docs/standards/index.md:116 docs/standards/index.md:117
 msgid "2"
 msgstr "2"
 
@@ -1645,8 +1649,8 @@ msgstr "可以找到并联系该智能体的地址：电子邮件、域名、电
 msgid "[stack/02-presence.md](stack/02-presence.md)"
 msgstr "[stack/02-presence.md](stack/02-presence.md)"
 
-#: docs/birth-stack.md:47 docs/standards/index.md:87 docs/standards/index.md:94
-#: docs/standards/index.md:95 docs/standards/index.md:96
+#: docs/birth-stack.md:47 docs/standards/index.md:89 docs/standards/index.md:96
+#: docs/standards/index.md:97 docs/standards/index.md:98
 msgid "3"
 msgstr "3"
 
@@ -1686,10 +1690,10 @@ msgstr ""
 msgid "[stack/04-compute.md](stack/04-compute.md)"
 msgstr "[stack/04-compute.md](stack/04-compute.md)"
 
-#: docs/birth-stack.md:49 docs/standards/index.md:100
-#: docs/standards/index.md:101 docs/standards/index.md:105
-#: docs/standards/index.md:106 docs/standards/index.md:107
-#: docs/standards/index.md:109
+#: docs/birth-stack.md:49 docs/standards/index.md:102
+#: docs/standards/index.md:103 docs/standards/index.md:107
+#: docs/standards/index.md:108 docs/standards/index.md:109
+#: docs/standards/index.md:111
 msgid "5"
 msgstr "5"
 
@@ -1701,8 +1705,8 @@ msgstr "<strong>经济身份</strong>"
 msgid "[stack/05-economy.md](stack/05-economy.md)"
 msgstr "[stack/05-economy.md](stack/05-economy.md)"
 
-#: docs/birth-stack.md:50 docs/standards/index.md:111
-#: docs/standards/index.md:112
+#: docs/birth-stack.md:50 docs/standards/index.md:113
+#: docs/standards/index.md:114
 msgid "6"
 msgstr "6"
 
@@ -1740,8 +1744,8 @@ msgstr ""
 msgid "[stack/07-memory.md](stack/07-memory.md)"
 msgstr "[stack/07-memory.md](stack/07-memory.md)"
 
-#: docs/birth-stack.md:52 docs/standards/index.md:90 docs/standards/index.md:93
-#: docs/standards/index.md:97 docs/standards/index.md:98
+#: docs/birth-stack.md:52 docs/standards/index.md:92 docs/standards/index.md:95
+#: docs/standards/index.md:99 docs/standards/index.md:100
 msgid "8"
 msgstr "8"
 
@@ -1761,7 +1765,7 @@ msgstr ""
 msgid "[stack/08-authority.md](stack/08-authority.md)"
 msgstr "[stack/08-authority.md](stack/08-authority.md)"
 
-#: docs/birth-stack.md:53 docs/standards/index.md:122
+#: docs/birth-stack.md:53 docs/standards/index.md:124
 msgid "9"
 msgstr "9"
 
@@ -1781,10 +1785,10 @@ msgstr ""
 msgid "[stack/09-trust.md](stack/09-trust.md)"
 msgstr "[stack/09-trust.md](stack/09-trust.md)"
 
-#: docs/birth-stack.md:54 docs/standards/index.md:119
-#: docs/standards/index.md:120 docs/standards/index.md:121
-#: docs/standards/index.md:123 docs/standards/index.md:124
-#: docs/standards/index.md:125
+#: docs/birth-stack.md:54 docs/standards/index.md:121
+#: docs/standards/index.md:122 docs/standards/index.md:123
+#: docs/standards/index.md:125 docs/standards/index.md:126
+#: docs/standards/index.md:127
 msgid "10"
 msgstr "10"
 
@@ -1940,8 +1944,8 @@ msgstr "面向客户的助手"
 msgid "1, 2 (an email the customer can reply to), 3, 4, 6, 7, 8, 10"
 msgstr "1、2（客户可以回复的电子邮箱）、3、4、6、7、8、10"
 
-#: docs/birth-stack.md:95 docs/standards/index.md:103
-#: docs/standards/index.md:104 docs/standards/index.md:108
+#: docs/birth-stack.md:95 docs/standards/index.md:105
+#: docs/standards/index.md:106 docs/standards/index.md:110
 #: docs/standards/payments.md:12 docs/standards/payments.md:13
 #: docs/standards/payments.md:17
 msgid "5, 9"
@@ -3156,7 +3160,7 @@ msgid "keys"
 msgstr "keys"
 
 #: docs/stack/01-identity.md:86 docs/stack/01-identity.md:88
-#: docs/stack/06-capabilities.md:66 docs/stack/09-trust.md:83
+#: docs/stack/06-capabilities.md:66 docs/stack/09-trust.md:85
 #: docs/lifecycle/birth.md:127
 msgid "id"
 msgstr "id"
@@ -3165,8 +3169,8 @@ msgstr "id"
 msgid "signing-2026-09"
 msgstr "signing-2026-09"
 
-#: docs/stack/01-identity.md:86 docs/stack/03-authentication.md:81
-#: docs/stack/03-authentication.md:82 docs/stack/09-trust.md:81
+#: docs/stack/01-identity.md:86 docs/stack/03-authentication.md:82
+#: docs/stack/03-authentication.md:86 docs/stack/09-trust.md:81
 #: docs/lifecycle/birth.md:128 docs/lifecycle/credential-rotation.md:40
 msgid "type"
 msgstr "type"
@@ -3199,15 +3203,15 @@ msgid "registrations"
 msgstr "registrations"
 
 #: docs/stack/01-identity.md:88 docs/stack/01-identity.md:89
-#: docs/stack/09-trust.md:83
+#: docs/stack/09-trust.md:85
 msgid "registry"
 msgstr "registry"
 
-#: docs/stack/01-identity.md:88 docs/stack/09-trust.md:83
+#: docs/stack/01-identity.md:88 docs/stack/09-trust.md:85
 msgid "erc-8004"
 msgstr "erc-8004"
 
-#: docs/stack/01-identity.md:88 docs/stack/09-trust.md:83
+#: docs/stack/01-identity.md:88 docs/stack/09-trust.md:85
 msgid "\"8453:1042\""
 msgstr "\"8453:1042\""
 
@@ -3215,15 +3219,14 @@ msgstr "\"8453:1042\""
 msgid "a2a-agent-card"
 msgstr "a2a-agent-card"
 
-#: docs/stack/01-identity.md:89 docs/stack/02-presence.md:63
-#: docs/stack/02-presence.md:64 docs/stack/09-trust.md:81
+#: docs/stack/01-identity.md:90 docs/stack/02-presence.md:63
+#: docs/stack/02-presence.md:64 docs/stack/09-trust.md:83
 msgid "url"
 msgstr "url"
 
-#: docs/stack/01-identity.md:89
+#: docs/stack/01-identity.md:90
 msgid "\"https://agents.example.com/scout/.well-known/agent-card.json\""
 msgstr "\"https://agents.example.com/scout/.well-known/agent-card.json\""
-
 
 #: docs/stack/02-presence.md:3
 msgid ""
@@ -3552,15 +3555,13 @@ msgstr "a2a"
 msgid "\"https://agents.example.com/scout/a2a\""
 msgstr "\"https://agents.example.com/scout/a2a\""
 
-
-#: docs/stack/02-presence.md:64 docs/stack/06-capabilities.md:68
+#: docs/stack/02-presence.md:64 docs/stack/06-capabilities.md:69
 msgid "mcp"
 msgstr "mcp"
 
 #: docs/stack/02-presence.md:64
 msgid "\"https://agents.example.com/scout/mcp\""
 msgstr "\"https://agents.example.com/scout/mcp\""
-
 
 #: docs/stack/03-authentication.md:3
 msgid ""
@@ -3675,14 +3676,16 @@ msgid ""
 "datatracker.ietf.org/doc/draft-oauth-transaction-tokens-for-agents/) extend "
 "the same idea; see [8. Authority](08-authority.md) for the policy side."
 msgstr ""
-"智能体特有之处在于委托授权链。当智能体代表用户访问下游 API 时，下游 API 需要同时知道<em>主体是谁</em>以及<em>谁在执行操作</"
-"em>。[RFC 8693 令牌交换](https://www.rfc-editor.org/rfc/rfc8693)通过 `act` 声明实现这一"
-"点：令牌声明 `sub` 是所有者，`act` 是智能体，嵌套的 `act` 记录子智能体。没有它，审计日志会显示所有者做了其从未做过的事情，而吊销"
-"智能体就意味着吊销所有者。IETF 的[面向 AI 智能体的 on-behalf-of 草案](https://www.ietf.org/archi"
-"ve/id/draft-oauth-ai-agents-on-behalf-of-user-00.html)（已过期的个人草案，保留作为术语）和[面"
-"向智能体的事务令牌草案](https://datatracker.ietf.org/doc/draft-oauth-transaction-toke"
-"ns-for-agents/)延伸了同一思路；策略层面见 [8. 权限](08-authority.md)。"
-
+"智能体特有之处在于委托授权链。当智能体代表用户访问下游 API 时，下游 API 需要"
+"同时知道<em>主体是谁</em>以及<em>谁在执行操作</em>。[RFC 8693 令牌交换]"
+"(https://www.rfc-editor.org/rfc/rfc8693)通过 `act` 声明实现这一点：令牌声明 "
+"`sub` 是所有者，`act` 是智能体，嵌套的 `act` 记录子智能体。没有它，审计日志会"
+"显示所有者做了其从未做过的事情，而吊销智能体就意味着吊销所有者。IETF 的[面向 "
+"AI 智能体的 on-behalf-of 草案](https://www.ietf.org/archive/id/draft-oauth-"
+"ai-agents-on-behalf-of-user-00.html)（已过期的个人草案，保留作为术语）和[面向"
+"智能体的事务令牌草案](https://datatracker.ietf.org/doc/draft-oauth-"
+"transaction-tokens-for-agents/)延伸了同一思路；策略层面见 [8. 权限](08-"
+"authority.md)。"
 
 #: docs/stack/03-authentication.md:32
 msgid ""
@@ -3930,7 +3933,7 @@ msgstr "infisical://prod/agents/scout"
 msgid "credentials"
 msgstr "credentials"
 
-#: docs/stack/03-authentication.md:81 docs/stack/03-authentication.md:82
+#: docs/stack/03-authentication.md:81 docs/stack/03-authentication.md:86
 #: docs/lifecycle/credential-rotation.md:39
 msgid "service"
 msgstr "service"
@@ -3939,55 +3942,53 @@ msgstr "service"
 msgid "github"
 msgstr "github"
 
-#: docs/stack/03-authentication.md:81 docs/lifecycle/credential-rotation.md:40
+#: docs/stack/03-authentication.md:82 docs/lifecycle/credential-rotation.md:40
 msgid "oauth2"
 msgstr "oauth2"
 
-#: docs/stack/03-authentication.md:81
+#: docs/stack/03-authentication.md:83
 msgid "scopes"
 msgstr "scopes"
 
-#: docs/stack/03-authentication.md:81
+#: docs/stack/03-authentication.md:83
 msgid "\"repo:read\""
 msgstr "\"repo:read\""
 
-
-#: docs/stack/03-authentication.md:81
+#: docs/stack/03-authentication.md:83
 msgid "\"issues:write\""
 msgstr "\"issues:write\""
 
-
-#: docs/stack/03-authentication.md:81 docs/stack/03-authentication.md:82
+#: docs/stack/03-authentication.md:84 docs/stack/03-authentication.md:86
 #: docs/lifecycle/credential-rotation.md:41
 msgid "secretRef"
 msgstr "secretRef"
 
-#: docs/stack/03-authentication.md:81 docs/lifecycle/credential-rotation.md:41
+#: docs/stack/03-authentication.md:84 docs/lifecycle/credential-rotation.md:41
 msgid "GITHUB_APP_INSTALLATION"
 msgstr "GITHUB_APP_INSTALLATION"
 
-#: docs/stack/03-authentication.md:81 docs/stack/03-authentication.md:82
+#: docs/stack/03-authentication.md:85 docs/stack/03-authentication.md:86
 #: docs/lifecycle/credential-rotation.md:42
 msgid "rotation"
 msgstr "rotation"
 
-#: docs/stack/03-authentication.md:81 docs/lifecycle/credential-rotation.md:42
+#: docs/stack/03-authentication.md:85 docs/lifecycle/credential-rotation.md:42
 msgid "P1D"
 msgstr "P1D"
 
-#: docs/stack/03-authentication.md:82
+#: docs/stack/03-authentication.md:86
 msgid "web-bot-auth"
 msgstr "web-bot-auth"
 
-#: docs/stack/03-authentication.md:82
+#: docs/stack/03-authentication.md:86
 msgid "http-signature"
 msgstr "http-signature"
 
-#: docs/stack/03-authentication.md:82
+#: docs/stack/03-authentication.md:86
 msgid "SIGNING_KEY_2026_09"
 msgstr "SIGNING_KEY_2026_09"
 
-#: docs/stack/03-authentication.md:82
+#: docs/stack/03-authentication.md:86
 msgid "P90D"
 msgstr "P90D"
 
@@ -4844,7 +4845,7 @@ msgstr "coinbase-cdp"
 msgid "cards"
 msgstr "cards"
 
-#: docs/stack/05-economy.md:81 docs/stack/09-trust.md:81
+#: docs/stack/05-economy.md:81 docs/stack/09-trust.md:82
 msgid "issuer"
 msgstr "issuer"
 
@@ -4904,7 +4905,7 @@ msgstr "perMonth"
 msgid "paymentProtocols"
 msgstr "paymentProtocols"
 
-#: docs/stack/05-economy.md:83 docs/standards/index.md:100
+#: docs/stack/05-economy.md:83 docs/standards/index.md:102
 #: docs/standards/payments.md:9 docs/standards/payments.md:22
 #: docs/standards/payments.md:53
 msgid "x402"
@@ -5304,25 +5305,24 @@ msgstr "name"
 msgid "fetch"
 msgstr "fetch"
 
-#: docs/stack/06-capabilities.md:68 docs/stack/07-memory.md:63
+#: docs/stack/06-capabilities.md:69 docs/stack/07-memory.md:63
 #: docs/stack/07-memory.md:64 docs/stack/07-memory.md:65 docs/manifest.md:27
 msgid "kind"
 msgstr "kind"
 
-#: docs/stack/06-capabilities.md:68
+#: docs/stack/06-capabilities.md:70
 msgid "source"
 msgstr "source"
 
-#: docs/stack/06-capabilities.md:68
+#: docs/stack/06-capabilities.md:70
 msgid "\"https://github.com/modelcontextprotocol/servers\""
 msgstr "\"https://github.com/modelcontextprotocol/servers\""
 
-
-#: docs/stack/06-capabilities.md:69
+#: docs/stack/06-capabilities.md:71
 msgid "skills"
 msgstr "skills"
 
-#: docs/stack/06-capabilities.md:69
+#: docs/stack/06-capabilities.md:71
 msgid "literature-review"
 msgstr "literature-review"
 
@@ -6126,21 +6126,20 @@ msgstr "action"
 msgid "\"pay:>2USD\""
 msgstr "\"pay:>2USD\""
 
-#: docs/stack/08-authority.md:81
+#: docs/stack/08-authority.md:82
 msgid "approver"
 msgstr "approver"
 
-#: docs/stack/08-authority.md:81 docs/stack/10-governance.md:74
+#: docs/stack/08-authority.md:82 docs/stack/10-governance.md:74
 #: docs/lifecycle/birth.md:133
 msgid "\"did:web:example.com:people:fernando\""
 msgstr "\"did:web:example.com:people:fernando\""
 
-
-#: docs/stack/08-authority.md:81
+#: docs/stack/08-authority.md:83
 msgid "channel"
 msgstr "channel"
 
-#: docs/stack/08-authority.md:81
+#: docs/stack/08-authority.md:83
 msgid "\"slack:#scout-approvals\""
 msgstr "\"slack:#scout-approvals\""
 
@@ -6525,25 +6524,23 @@ msgstr "trust"
 msgid "OwnerAttestation"
 msgstr "OwnerAttestation"
 
-#: docs/stack/09-trust.md:81
+#: docs/stack/09-trust.md:82
 msgid "\"did:web:example.com\""
 msgstr "\"did:web:example.com\""
 
-
-#: docs/stack/09-trust.md:81
+#: docs/stack/09-trust.md:83
 msgid "\"https://agents.example.com/scout/credentials/owner.json\""
 msgstr "\"https://agents.example.com/scout/credentials/owner.json\""
 
-
-#: docs/stack/09-trust.md:82
+#: docs/stack/09-trust.md:84
 msgid "reputation"
 msgstr "reputation"
 
-#: docs/stack/09-trust.md:84
+#: docs/stack/09-trust.md:86
 msgid "kya"
 msgstr "kya"
 
-#: docs/stack/09-trust.md:84
+#: docs/stack/09-trust.md:86
 msgid "skyfire:verified"
 msgstr "skyfire:verified"
 
@@ -6845,28 +6842,29 @@ msgstr ""
 
 #: docs/stack/10-governance.md:56
 msgid ""
-"Regulatory touchpoints, kept brief: [EU AI Act Article 12](https://"
-"artificialintelligenceact.eu/article/12/) requires high-risk systems to "
-"automatically record events over their lifetime; [NIST AI 800-4](https://"
-"doi.org/10.6028/NIST.AI.800-4) catalogues post-deployment monitoring "
-"challenges and expects a \"monitorability tax\"; Singapore's [IMDA Model AI "
-"Governance Framework for Agentic AI](https://www.imda.gov.sg/-/media/imda/"
-"files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-"
-"agentic-ai.pdf) sets out levels of human involvement and agent boundaries; "
-"[ISO/IEC 42001](https://www.iso.org/standard/81230.html) is the certifiable "
-"AI management-system standard that turns the same expectations into an "
-"auditable process. None mandate a specific mechanism; all assume a log and a "
-"stop button exist."
+"Regulatory and assurance touchpoints, kept brief: [EU AI Act Article 12]"
+"(https://artificialintelligenceact.eu/article/12/) requires high-risk "
+"systems to automatically record events over their lifetime; [NIST AI 800-4]"
+"(https://doi.org/10.6028/NIST.AI.800-4) catalogues post-deployment "
+"monitoring challenges and expects a \"monitorability tax\"; Singapore's "
+"[IMDA Model AI Governance Framework for Agentic AI](https://"
+"www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/"
+"artificial-intelligence/mgf-for-agentic-ai.pdf) sets out levels of human "
+"involvement and agent boundaries; [ISO/IEC 42001](https://www.iso.org/"
+"standard/81230.html) is the voluntary, certifiable AI management-system "
+"standard that turns the same expectations into an auditable process. The "
+"regulations assume a log and a stop button exist; ISO/IEC 42001 asks for the "
+"management system that keeps them working."
 msgstr ""
-"监管相关要点，简要列出：[EU AI Act 第 12 条](https://"
+"监管与保障要点，简要列出：[EU AI Act 第 12 条](https://"
 "artificialintelligenceact.eu/article/12/)要求高风险系统在其整个生命周期内自动"
 "记录事件；[NIST AI 800-4](https://doi.org/10.6028/NIST.AI.800-4) 归纳了部署后"
 "监控的挑战，并预期存在“可监控性成本”；新加坡的 [IMDA 智能体 AI 治理模型框架]"
 "(https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/"
 "artificial-intelligence/mgf-for-agentic-ai.pdf)规定了人类参与的层级和智能体边"
-"界；[ISO/IEC 42001](https://www.iso.org/standard/81230.html) 是可认证的 AI 管"
-"理体系标准，将这些期望转化为可审计的流程。它们都未强制要求特定机制；但都默认"
-"存在日志和停止按钮。"
+"界；[ISO/IEC 42001](https://www.iso.org/standard/81230.html) 是自愿、可认证"
+"的 AI 管理体系标准，将这些期望转化为可审计的流程。这些法规都默认日志和停止按"
+"钮已经存在；ISO/IEC 42001 则要求建立让它们持续运转的管理体系。"
 
 #: docs/stack/10-governance.md:57
 msgid ""
@@ -7003,7 +7001,7 @@ msgid ""
 "Maturity in this book means one thing only, how safe it is to depend on:"
 msgstr "本书中的成熟度只表示一件事，即依赖它的安全程度："
 
-#: docs/standards/index.md:7 docs/standards/index.md:74
+#: docs/standards/index.md:7 docs/standards/index.md:76
 #: docs/standards/identity.md:7 docs/standards/auth-and-delegation.md:7
 #: docs/standards/payments.md:7 docs/standards/discovery.md:7
 #: docs/standards/security-and-governance.md:7
@@ -7059,7 +7057,7 @@ msgstr "栈上的规范"
 #: docs/standards/index.md:17
 msgid ""
 "```mermaid\n"
-"flowchart LR\n"
+"flowchart TB\n"
 "    subgraph L1[\"1 Identity\"]\n"
 "        DID[DID Core]\n"
 "        A2A[A2A Agent Card]\n"
@@ -7083,6 +7081,7 @@ msgid ""
 "    end\n"
 "    subgraph L5[\"5 Economic Identity\"]\n"
 "        X402[x402]\n"
+"        MPP[MPP]\n"
 "        AP2[AP2]\n"
 "        CARD[Visa TAP · Mastercard Agent Pay]\n"
 "        ACP[ACP / Shared Payment Tokens]\n"
@@ -7109,12 +7108,13 @@ msgid ""
 "        OWASP[OWASP Agentic Top 10]\n"
 "        NIST[NIST CAISI · AI 800-4 · IR 8596]\n"
 "        IMDA[IMDA · EU AI Act]\n"
+"        ISO[ISO/IEC 42001]\n"
 "    end\n"
 "    L1 --> L2 --> L3 --> L4 --> L5 --> L6 --> L7 --> L8 --> L9 --> L10\n"
 "```"
 msgstr ""
 "```mermaid\n"
-"flowchart LR\n"
+"flowchart TB\n"
 "    subgraph L1[\"1 身份\"]\n"
 "        DID[DID Core]\n"
 "        A2A[A2A Agent Card]\n"
@@ -7138,6 +7138,7 @@ msgstr ""
 "    end\n"
 "    subgraph L5[\"5 经济身份\"]\n"
 "        X402[x402]\n"
+"        MPP[MPP]\n"
 "        AP2[AP2]\n"
 "        CARD[Visa TAP · Mastercard Agent Pay]\n"
 "        ACP[ACP / Shared Payment Tokens]\n"
@@ -7164,30 +7165,31 @@ msgstr ""
 "        OWASP[OWASP Agentic Top 10]\n"
 "        NIST[NIST CAISI · AI 800-4 · IR 8596]\n"
 "        IMDA[IMDA · EU AI Act]\n"
+"        ISO[ISO/IEC 42001]\n"
 "    end\n"
 "    L1 --> L2 --> L3 --> L4 --> L5 --> L6 --> L7 --> L8 --> L9 --> L10\n"
 "```"
 
-#: docs/standards/index.md:72
+#: docs/standards/index.md:74
 msgid "Master table"
 msgstr "主表"
 
-#: docs/standards/index.md:74 docs/standards/identity.md:7
+#: docs/standards/index.md:76 docs/standards/identity.md:7
 #: docs/standards/auth-and-delegation.md:7 docs/standards/payments.md:7
 #: docs/standards/discovery.md:7 docs/standards/security-and-governance.md:7
 msgid "Standard"
 msgstr "标准"
 
-#: docs/standards/index.md:76 docs/standards/identity.md:23
+#: docs/standards/index.md:78 docs/standards/identity.md:23
 msgid "W3C DID Core"
 msgstr "W3C DID Core"
 
-#: docs/standards/index.md:76 docs/standards/index.md:77
-#: docs/standards/index.md:87 docs/standards/index.md:88
-#: docs/standards/index.md:89 docs/standards/index.md:111
-#: docs/standards/index.md:116 docs/standards/index.md:117
-#: docs/standards/index.md:118 docs/standards/index.md:120
-#: docs/standards/index.md:123 docs/standards/index.md:124
+#: docs/standards/index.md:78 docs/standards/index.md:79
+#: docs/standards/index.md:89 docs/standards/index.md:90
+#: docs/standards/index.md:91 docs/standards/index.md:113
+#: docs/standards/index.md:118 docs/standards/index.md:119
+#: docs/standards/index.md:120 docs/standards/index.md:122
+#: docs/standards/index.md:125 docs/standards/index.md:126
 #: docs/standards/identity.md:9 docs/standards/identity.md:10
 #: docs/standards/auth-and-delegation.md:9
 #: docs/standards/auth-and-delegation.md:10
@@ -7198,37 +7200,37 @@ msgstr "W3C DID Core"
 msgid "Adopted"
 msgstr "已采纳"
 
-#: docs/standards/index.md:76 docs/standards/index.md:77
-#: docs/standards/index.md:80 docs/standards/index.md:81
+#: docs/standards/index.md:78 docs/standards/index.md:79
 #: docs/standards/index.md:82 docs/standards/index.md:83
 #: docs/standards/index.md:84 docs/standards/index.md:85
-#: docs/standards/index.md:86
+#: docs/standards/index.md:86 docs/standards/index.md:87
+#: docs/standards/index.md:88
 msgid "[Identity](identity.md)"
 msgstr "[身份](identity.md)"
 
-#: docs/standards/index.md:77 docs/standards/identity.md:26
+#: docs/standards/index.md:79 docs/standards/identity.md:26
 msgid "W3C Verifiable Credentials 2.0"
 msgstr "W3C Verifiable Credentials 2.0"
 
-#: docs/standards/index.md:77 docs/standards/index.md:80
-#: docs/standards/index.md:81
+#: docs/standards/index.md:79 docs/standards/index.md:82
+#: docs/standards/index.md:83
 msgid "1, 9"
 msgstr "1、9"
 
-#: docs/standards/index.md:78
+#: docs/standards/index.md:80
 msgid "A2A Agent Card / `.well-known/agent-card.json`"
 msgstr "A2A Agent Card / `.well-known/agent-card.json`"
 
-#: docs/standards/index.md:78
+#: docs/standards/index.md:80
 msgid "1, 2, 6"
 msgstr "1、2、6"
 
-#: docs/standards/index.md:78 docs/standards/index.md:83
-#: docs/standards/index.md:95 docs/standards/index.md:100
-#: docs/standards/index.md:101 docs/standards/index.md:103
-#: docs/standards/index.md:104 docs/standards/index.md:105
+#: docs/standards/index.md:80 docs/standards/index.md:85
+#: docs/standards/index.md:97 docs/standards/index.md:102
+#: docs/standards/index.md:103 docs/standards/index.md:105
 #: docs/standards/index.md:106 docs/standards/index.md:107
 #: docs/standards/index.md:108 docs/standards/index.md:109
+#: docs/standards/index.md:110 docs/standards/index.md:111
 #: docs/standards/identity.md:11 docs/standards/identity.md:16
 #: docs/standards/auth-and-delegation.md:17 docs/standards/payments.md:9
 #: docs/standards/payments.md:10 docs/standards/payments.md:12
@@ -7240,38 +7242,38 @@ msgstr "1、2、6"
 msgid "Production"
 msgstr "生产级"
 
-#: docs/standards/index.md:78 docs/standards/index.md:79
+#: docs/standards/index.md:80 docs/standards/index.md:81
 msgid "[Identity](identity.md) · [Discovery](discovery.md)"
 msgstr "[身份](identity.md) · [发现](discovery.md)"
 
-#: docs/standards/index.md:79 docs/standards/identity.md:12
+#: docs/standards/index.md:81 docs/standards/identity.md:12
 #: docs/standards/identity.md:32
 msgid "ERC-8004 Trustless Agents"
 msgstr "ERC-8004 Trustless Agents"
 
-#: docs/standards/index.md:79
+#: docs/standards/index.md:81
 msgid "1, 2, 9"
 msgstr "1、2、9"
 
-#: docs/standards/index.md:79
+#: docs/standards/index.md:81
 msgid "Production (EIP Draft)"
 msgstr "生产环境（EIP 草案）"
 
-#: docs/standards/index.md:80 docs/standards/identity.md:13
+#: docs/standards/index.md:82 docs/standards/identity.md:13
 #: docs/standards/identity.md:35
 msgid "AIMS / Agent Manifest (OpenAttribution)"
 msgstr "AIMS / Agent Manifest (OpenAttribution)"
 
-#: docs/standards/index.md:80 docs/standards/index.md:81
-#: docs/standards/index.md:82 docs/standards/index.md:84
-#: docs/standards/index.md:85 docs/standards/index.md:86
-#: docs/standards/index.md:90 docs/standards/index.md:91
+#: docs/standards/index.md:82 docs/standards/index.md:83
+#: docs/standards/index.md:84 docs/standards/index.md:86
+#: docs/standards/index.md:87 docs/standards/index.md:88
 #: docs/standards/index.md:92 docs/standards/index.md:93
-#: docs/standards/index.md:94 docs/standards/index.md:98
-#: docs/standards/index.md:99 docs/standards/index.md:110
-#: docs/standards/index.md:113 docs/standards/index.md:114
-#: docs/standards/index.md:119 docs/standards/index.md:121
-#: docs/standards/index.md:122 docs/standards/identity.md:13
+#: docs/standards/index.md:94 docs/standards/index.md:95
+#: docs/standards/index.md:96 docs/standards/index.md:100
+#: docs/standards/index.md:101 docs/standards/index.md:112
+#: docs/standards/index.md:115 docs/standards/index.md:116
+#: docs/standards/index.md:121 docs/standards/index.md:123
+#: docs/standards/index.md:124 docs/standards/identity.md:13
 #: docs/standards/identity.md:14 docs/standards/identity.md:15
 #: docs/standards/identity.md:17 docs/standards/identity.md:18
 #: docs/standards/identity.md:19 docs/standards/auth-and-delegation.md:13
@@ -7284,69 +7286,69 @@ msgstr "AIMS / Agent Manifest (OpenAttribution)"
 msgid "Draft"
 msgstr "草案"
 
-#: docs/standards/index.md:81 docs/standards/identity.md:14
+#: docs/standards/index.md:83 docs/standards/identity.md:14
 #: docs/standards/identity.md:38
 msgid "Agent Passport Standard"
 msgstr "Agent Passport Standard"
 
-#: docs/standards/index.md:82 docs/standards/identity.md:15
+#: docs/standards/index.md:84 docs/standards/identity.md:15
 #: docs/standards/identity.md:41
 msgid "HCS-14 Universal Agent ID"
 msgstr "HCS-14 通用智能体 ID"
 
-#: docs/standards/index.md:83 docs/standards/identity.md:16
+#: docs/standards/index.md:85 docs/standards/identity.md:16
 #: docs/standards/identity.md:44
 msgid "Microsoft Entra Agent ID"
 msgstr "Microsoft Entra Agent ID"
 
-#: docs/standards/index.md:83
+#: docs/standards/index.md:85
 msgid "1, 3"
 msgstr "1, 3"
 
-#: docs/standards/index.md:84 docs/standards/identity.md:17
+#: docs/standards/index.md:86 docs/standards/identity.md:17
 #: docs/standards/identity.md:47
 msgid "DIF KYA-OS"
 msgstr "DIF KYA-OS"
 
-#: docs/standards/index.md:84
+#: docs/standards/index.md:86
 msgid "1, 8, 9"
 msgstr "1, 8, 9"
 
-#: docs/standards/index.md:85 docs/standards/identity.md:18
+#: docs/standards/index.md:87 docs/standards/identity.md:18
 #: docs/standards/identity.md:50
 msgid "W3C Agent Identity Registry Protocol CG"
 msgstr "W3C Agent Identity Registry Protocol CG"
 
-#: docs/standards/index.md:86 docs/standards/identity.md:19
+#: docs/standards/index.md:88 docs/standards/identity.md:19
 #: docs/standards/identity.md:53
 msgid "A-Identity"
 msgstr "A-Identity"
 
-#: docs/standards/index.md:86
+#: docs/standards/index.md:88
 msgid "1, 5"
 msgstr "1, 5"
 
-#: docs/standards/index.md:87
+#: docs/standards/index.md:89
 msgid "MCP Authorization (OAuth 2.1, RFC 9728, RFC 8707, CIMD)"
 msgstr "MCP 授权（OAuth 2.1、RFC 9728、RFC 8707、CIMD）"
 
-#: docs/standards/index.md:87 docs/standards/index.md:88
 #: docs/standards/index.md:89 docs/standards/index.md:90
 #: docs/standards/index.md:91 docs/standards/index.md:92
 #: docs/standards/index.md:93 docs/standards/index.md:94
 #: docs/standards/index.md:95 docs/standards/index.md:96
 #: docs/standards/index.md:97 docs/standards/index.md:98
-#: docs/standards/index.md:99
+#: docs/standards/index.md:99 docs/standards/index.md:100
+#: docs/standards/index.md:101
 msgid "[Authentication & Delegation](auth-and-delegation.md)"
 msgstr "[身份验证与委托授权](auth-and-delegation.md)"
 
-#: docs/standards/index.md:88 docs/standards/auth-and-delegation.md:10
+#: docs/standards/index.md:90 docs/standards/auth-and-delegation.md:10
 msgid "RFC 8693 OAuth 2.0 Token Exchange"
 msgstr "RFC 8693 OAuth 2.0 Token Exchange"
 
-#: docs/standards/index.md:88 docs/standards/index.md:89
-#: docs/standards/index.md:91 docs/standards/index.md:92
-#: docs/standards/index.md:99 docs/standards/auth-and-delegation.md:10
+#: docs/standards/index.md:90 docs/standards/index.md:91
+#: docs/standards/index.md:93 docs/standards/index.md:94
+#: docs/standards/index.md:101 docs/standards/auth-and-delegation.md:10
 #: docs/standards/auth-and-delegation.md:11
 #: docs/standards/auth-and-delegation.md:13
 #: docs/standards/auth-and-delegation.md:14
@@ -7354,265 +7356,265 @@ msgstr "RFC 8693 OAuth 2.0 Token Exchange"
 msgid "3, 8"
 msgstr "3, 8"
 
-#: docs/standards/index.md:89
+#: docs/standards/index.md:91
 msgid "RFC 9635 / RFC 9767 GNAP"
 msgstr "RFC 9635 / RFC 9767 GNAP"
 
-#: docs/standards/index.md:90
+#: docs/standards/index.md:92
 msgid "OAuth On-Behalf-Of for AI agents (draft)"
 msgstr "面向 AI 智能体的 OAuth On-Behalf-Of（草案）"
 
-#: docs/standards/index.md:91 docs/standards/auth-and-delegation.md:37
+#: docs/standards/index.md:93 docs/standards/auth-and-delegation.md:37
 msgid "Transaction Tokens (+ for agents)"
 msgstr "Transaction Tokens（含智能体扩展）"
 
-#: docs/standards/index.md:92 docs/standards/auth-and-delegation.md:14
+#: docs/standards/index.md:94 docs/standards/auth-and-delegation.md:14
 #: docs/standards/auth-and-delegation.md:40
 msgid "draft-klrc-aiagent-auth"
 msgstr "draft-klrc-aiagent-auth"
 
-#: docs/standards/index.md:93 docs/standards/auth-and-delegation.md:15
+#: docs/standards/index.md:95 docs/standards/auth-and-delegation.md:15
 #: docs/standards/auth-and-delegation.md:43
 msgid "draft-liu-ai-agent-authorization-integration"
 msgstr "draft-liu-ai-agent-authorization-integration"
 
-#: docs/standards/index.md:94 docs/standards/auth-and-delegation.md:16
+#: docs/standards/index.md:96 docs/standards/auth-and-delegation.md:16
 msgid "IETF WIMSE WG"
 msgstr "IETF WIMSE WG"
 
-#: docs/standards/index.md:95 docs/standards/auth-and-delegation.md:17
+#: docs/standards/index.md:97 docs/standards/auth-and-delegation.md:17
 #: docs/standards/auth-and-delegation.md:49
 msgid "SPIFFE / SPIRE"
 msgstr "SPIFFE / SPIRE"
 
-#: docs/standards/index.md:96 docs/standards/auth-and-delegation.md:52
+#: docs/standards/index.md:98 docs/standards/auth-and-delegation.md:52
 msgid "Web Bot Auth + RFC 9421"
 msgstr "Web Bot Auth + RFC 9421"
 
-#: docs/standards/index.md:96
+#: docs/standards/index.md:98
 msgid "Draft / Adopted"
 msgstr "草案 / 已采纳"
 
-#: docs/standards/index.md:97 docs/standards/auth-and-delegation.md:19
+#: docs/standards/index.md:99 docs/standards/auth-and-delegation.md:19
 msgid "UCAN 1.0"
 msgstr "UCAN 1.0"
 
-#: docs/standards/index.md:97 docs/standards/auth-and-delegation.md:19
+#: docs/standards/index.md:99 docs/standards/auth-and-delegation.md:19
 msgid "Adopted (community spec)"
 msgstr "已采纳（社区规范）"
 
-#: docs/standards/index.md:98 docs/standards/auth-and-delegation.md:20
+#: docs/standards/index.md:100 docs/standards/auth-and-delegation.md:20
 msgid "ZCAP (Authorization Capabilities)"
 msgstr "ZCAP（授权能力）"
 
-#: docs/standards/index.md:99 docs/standards/auth-and-delegation.md:21
+#: docs/standards/index.md:101 docs/standards/auth-and-delegation.md:21
 #: docs/standards/auth-and-delegation.md:58
 msgid "OpenID AI Identity Management CG"
 msgstr "OpenID AI Identity Management CG"
 
-#: docs/standards/index.md:100 docs/standards/index.md:101
 #: docs/standards/index.md:102 docs/standards/index.md:103
 #: docs/standards/index.md:104 docs/standards/index.md:105
 #: docs/standards/index.md:106 docs/standards/index.md:107
-#: docs/standards/index.md:109
+#: docs/standards/index.md:108 docs/standards/index.md:109
+#: docs/standards/index.md:111
 msgid "[Payments](payments.md)"
 msgstr "[支付](payments.md)"
 
-#: docs/standards/index.md:101 docs/standards/payments.md:10
+#: docs/standards/index.md:103 docs/standards/payments.md:10
 #: docs/standards/payments.md:25 docs/standards/payments.md:54
 msgid "MPP (Tempo + Stripe)"
 msgstr "MPP（Tempo + Stripe）"
 
-#: docs/standards/index.md:102 docs/standards/payments.md:28
+#: docs/standards/index.md:104 docs/standards/payments.md:28
 #: docs/standards/payments.md:55
 msgid "Google AP2"
 msgstr "Google AP2"
 
-#: docs/standards/index.md:102 docs/standards/payments.md:11
+#: docs/standards/index.md:104 docs/standards/payments.md:11
 msgid "5, 8"
 msgstr "5, 8"
 
-#: docs/standards/index.md:102 docs/standards/payments.md:11
+#: docs/standards/index.md:104 docs/standards/payments.md:11
 msgid "Adopted (early)"
 msgstr "已采纳（早期）"
 
-#: docs/standards/index.md:103 docs/standards/payments.md:12
+#: docs/standards/index.md:105 docs/standards/payments.md:12
 msgid "Visa Trusted Agent Protocol / Intelligent Commerce"
 msgstr "Visa Trusted Agent Protocol / Intelligent Commerce"
 
-#: docs/standards/index.md:104 docs/standards/payments.md:13
+#: docs/standards/index.md:106 docs/standards/payments.md:13
 msgid "Mastercard Agent Pay (Agentic Tokens)"
 msgstr "Mastercard Agent Pay (Agentic Tokens)"
 
-#: docs/standards/index.md:105
+#: docs/standards/index.md:107
 msgid "Agentic Commerce Protocol (OpenAI + Stripe)"
 msgstr "Agentic Commerce Protocol (OpenAI + Stripe)"
 
-#: docs/standards/index.md:106 docs/standards/payments.md:15
+#: docs/standards/index.md:108 docs/standards/payments.md:15
 msgid "Stripe Shared Payment Tokens"
 msgstr "Stripe Shared Payment Tokens"
 
-#: docs/standards/index.md:107 docs/standards/payments.md:16
+#: docs/standards/index.md:109 docs/standards/payments.md:16
 #: docs/standards/payments.md:40 docs/standards/payments.md:59
 msgid "PayPal Agent Toolkit"
 msgstr "PayPal Agent Toolkit"
 
-#: docs/standards/index.md:108
+#: docs/standards/index.md:110
 msgid "Skyfire KYAPay / KYA token"
 msgstr "Skyfire KYAPay / KYA token"
 
-#: docs/standards/index.md:108
+#: docs/standards/index.md:110
 msgid ""
 "[Payments](payments.md) · [Security & Governance](security-and-governance.md)"
 msgstr "[支付](payments.md) · [安全与治理](security-and-governance.md)"
 
-#: docs/standards/index.md:109 docs/standards/payments.md:18
+#: docs/standards/index.md:111 docs/standards/payments.md:18
 #: docs/standards/payments.md:46
 msgid "Coinbase AgentKit / CDP Server Wallets"
 msgstr "Coinbase AgentKit / CDP Server Wallets"
 
-#: docs/standards/index.md:110 docs/standards/discovery.md:10
+#: docs/standards/index.md:112 docs/standards/discovery.md:10
 #: docs/standards/discovery.md:23
 msgid "agents.txt"
 msgstr "agents.txt"
 
-#: docs/standards/index.md:110 docs/standards/index.md:111
 #: docs/standards/index.md:112 docs/standards/index.md:113
 #: docs/standards/index.md:114 docs/standards/index.md:115
+#: docs/standards/index.md:116 docs/standards/index.md:117
 msgid "[Discovery](discovery.md)"
 msgstr "[发现](discovery.md)"
 
-#: docs/standards/index.md:111 docs/standards/discovery.md:11
+#: docs/standards/index.md:113 docs/standards/discovery.md:11
 #: docs/standards/discovery.md:26
 msgid "llms.txt"
 msgstr "llms.txt"
 
-#: docs/standards/index.md:112 docs/standards/discovery.md:12
+#: docs/standards/index.md:114 docs/standards/discovery.md:12
 #: docs/standards/discovery.md:29
 msgid "MCP Registry"
 msgstr "MCP Registry"
 
-#: docs/standards/index.md:112 docs/standards/discovery.md:12
+#: docs/standards/index.md:114 docs/standards/discovery.md:12
 msgid "Adopted (preview)"
 msgstr "已采纳（预览）"
 
-#: docs/standards/index.md:113 docs/standards/discovery.md:13
+#: docs/standards/index.md:115 docs/standards/discovery.md:13
 #: docs/standards/discovery.md:32
 msgid "NANDA"
 msgstr "NANDA"
 
-#: docs/standards/index.md:113
+#: docs/standards/index.md:115
 msgid "2, 9"
 msgstr "2, 9"
 
-#: docs/standards/index.md:114
+#: docs/standards/index.md:116
 msgid "Agent Name Service (paper)"
 msgstr "Agent Name Service（论文）"
 
-#: docs/standards/index.md:115
+#: docs/standards/index.md:117
 msgid "DNS-based discovery (`did:web`, SRV/TXT)"
 msgstr "基于 DNS 的发现（`did:web`、SRV/TXT）"
 
-#: docs/standards/index.md:115
+#: docs/standards/index.md:117
 msgid "Adopted / Draft"
 msgstr "已采纳 / 草案"
 
-#: docs/standards/index.md:116 docs/standards/security-and-governance.md:24
+#: docs/standards/index.md:118 docs/standards/security-and-governance.md:24
 msgid "OWASP Top 10 for Agentic Applications"
 msgstr "OWASP 智能体应用十大风险"
 
-#: docs/standards/index.md:116 docs/standards/security-and-governance.md:9
+#: docs/standards/index.md:118 docs/standards/security-and-governance.md:9
 msgid "8, 9, 10"
 msgstr "8, 9, 10"
 
-#: docs/standards/index.md:116 docs/standards/index.md:117
 #: docs/standards/index.md:118 docs/standards/index.md:119
 #: docs/standards/index.md:120 docs/standards/index.md:121
 #: docs/standards/index.md:122 docs/standards/index.md:123
 #: docs/standards/index.md:124 docs/standards/index.md:125
-#: docs/standards/index.md:126
+#: docs/standards/index.md:126 docs/standards/index.md:127
+#: docs/standards/index.md:128
 msgid "[Security & Governance](security-and-governance.md)"
 msgstr "[安全与治理](security-and-governance.md)"
 
-#: docs/standards/index.md:117 docs/standards/security-and-governance.md:10
+#: docs/standards/index.md:119 docs/standards/security-and-governance.md:10
 #: docs/standards/security-and-governance.md:42
 msgid "OWASP Agentic AI Threats and Mitigations"
 msgstr "OWASP 智能体 AI 威胁与缓解措施"
 
-#: docs/standards/index.md:117 docs/standards/security-and-governance.md:10
+#: docs/standards/index.md:119 docs/standards/security-and-governance.md:10
 msgid "8, 10"
 msgstr "8, 10"
 
-#: docs/standards/index.md:118 docs/standards/security-and-governance.md:11
+#: docs/standards/index.md:120 docs/standards/security-and-governance.md:11
 #: docs/standards/security-and-governance.md:45
 msgid "CSA Agentic AI Identity & Access Management"
 msgstr "CSA 智能体 AI 身份与访问管理"
 
-#: docs/standards/index.md:118 docs/standards/security-and-governance.md:11
+#: docs/standards/index.md:120 docs/standards/security-and-governance.md:11
 msgid "1, 3, 8"
 msgstr "1, 3, 8"
 
-#: docs/standards/index.md:119 docs/standards/security-and-governance.md:12
+#: docs/standards/index.md:121 docs/standards/security-and-governance.md:12
 #: docs/standards/security-and-governance.md:48
 msgid "NIST CAISI AI Agent Standards Initiative"
 msgstr "NIST CAISI AI 智能体标准倡议"
 
-#: docs/standards/index.md:120 docs/standards/security-and-governance.md:51
+#: docs/standards/index.md:122 docs/standards/security-and-governance.md:51
 msgid "NIST AI 800-4"
 msgstr "NIST AI 800-4"
 
-#: docs/standards/index.md:121 docs/standards/security-and-governance.md:14
+#: docs/standards/index.md:123 docs/standards/security-and-governance.md:14
 #: docs/standards/security-and-governance.md:54
 msgid "NIST IR 8596 Cyber AI Profile"
 msgstr "NIST IR 8596 Cyber AI Profile"
 
-#: docs/standards/index.md:122 docs/standards/security-and-governance.md:15
+#: docs/standards/index.md:124 docs/standards/security-and-governance.md:15
 msgid "Know Your Agent (AgentFacts)"
 msgstr "Know Your Agent（AgentFacts）"
 
-#: docs/standards/index.md:123 docs/standards/security-and-governance.md:17
+#: docs/standards/index.md:125 docs/standards/security-and-governance.md:17
 #: docs/standards/security-and-governance.md:60
 msgid "Singapore IMDA Model AI Governance Framework for Agentic AI"
 msgstr ""
 "新加坡 IMDA 智能体式 AI 治理框架（Model AI Governance Framework for Agentic "
 "AI）"
 
-#: docs/standards/index.md:124 docs/standards/security-and-governance.md:18
+#: docs/standards/index.md:126 docs/standards/security-and-governance.md:18
 #: docs/standards/security-and-governance.md:63
 msgid "ISO/IEC 42001 AI management systems"
 msgstr "ISO/IEC 42001 AI 管理体系"
 
-#: docs/standards/index.md:125 docs/standards/security-and-governance.md:66
+#: docs/standards/index.md:127 docs/standards/security-and-governance.md:66
 msgid "EU AI Act"
 msgstr "欧盟 AI 法案"
 
-#: docs/standards/index.md:125 docs/standards/security-and-governance.md:19
+#: docs/standards/index.md:127 docs/standards/security-and-governance.md:19
 msgid "Adopted (law)"
 msgstr "已采纳（法律）"
 
-#: docs/standards/index.md:126 docs/standards/security-and-governance.md:20
+#: docs/standards/index.md:128 docs/standards/security-and-governance.md:20
 #: docs/standards/security-and-governance.md:69
 msgid "Anthropic, Building effective agents"
 msgstr "Anthropic，《Building effective agents》"
 
-#: docs/standards/index.md:126 docs/standards/security-and-governance.md:20
+#: docs/standards/index.md:128 docs/standards/security-and-governance.md:20
 msgid "6, 10"
 msgstr "6, 10"
 
-#: docs/standards/index.md:126 docs/standards/security-and-governance.md:11
+#: docs/standards/index.md:128 docs/standards/security-and-governance.md:11
 #: docs/standards/security-and-governance.md:20
 msgid "Adopted (guidance)"
 msgstr "已采纳（指南）"
 
-#: docs/standards/index.md:128
+#: docs/standards/index.md:130
 msgid "Overlaps and gaps"
 msgstr "重叠与空白"
 
-#: docs/standards/index.md:130
+#: docs/standards/index.md:132
 msgid "Overlaps, where you will have to choose or publish twice:"
 msgstr "重叠之处，你必须做出选择或发布两次："
 
-#: docs/standards/index.md:132
+#: docs/standards/index.md:134
 msgid ""
 "**Three \"agent card\" formats.** The A2A Agent Card, the ERC-8004 "
 "registration file and the AIMS manifest all carry name, description and "
@@ -7623,7 +7625,7 @@ msgstr ""
 "和 AIMS 清单都包含名称、描述和端点，面向三类不同的读者（其他智能体、链上任何"
 "人、被爬取的网站）。在[身份](identity.md)中有并列对比。"
 
-#: docs/standards/index.md:133
+#: docs/standards/index.md:135
 msgid ""
 "**Two Know-Your-Agent schemes.** AgentFacts KYA (verifiable metadata) and "
 "Skyfire's `kya` token (a paying agent's verified identity) share a name and "
@@ -7633,19 +7635,19 @@ msgstr ""
 "与 Skyfire 的 `kya` 令牌（付款智能体的已验证身份）共享名称与目标，但格式不"
 "同。"
 
-#: docs/standards/index.md:134
+#: docs/standards/index.md:136
 msgid ""
 "**Four ways to say \"on behalf of\".** RFC 8693 `act` claims, the OBO "
 "draft's `requested_agent`, transaction tokens, and UCAN/ZCAP delegation "
 "chains. Only RFC 8693 is an IETF standard (UCAN is an adopted community "
 "spec), and only UCAN/ZCAP attenuate without an authorization server."
 msgstr ""
-"<strong>四种表达\"代表某方\"的方式。</strong> RFC 8693 `act` 声明、OBO 草案的 `requested_age"
-"nt`、事务令牌，以及 UCAN/ZCAP 委托授权链。只有 RFC 8693 是 IETF 标准（UCAN 是已采纳的社区规范），且只有 UCAN"
-"/ZCAP 能在无需授权服务器的情况下实现权限收窄。"
+"<strong>四种表达\"代表某方\"的方式。</strong> RFC 8693 `act` 声明、OBO 草案"
+"的 `requested_agent`、事务令牌，以及 UCAN/ZCAP 委托授权链。只有 RFC 8693 是 "
+"IETF 标准（UCAN 是已采纳的社区规范），且只有 UCAN/ZCAP 能在无需授权服务器的情"
+"况下实现权限收窄。"
 
-
-#: docs/standards/index.md:135
+#: docs/standards/index.md:137
 msgid ""
 "**Card-network agent tokens.** Visa, Mastercard and Stripe each issue an "
 "agent-scoped payment token; AP2 mandates sit above all three. A merchant "
@@ -7655,11 +7657,11 @@ msgstr ""
 "范围的支付令牌；AP2 授权指令位于三者之上。商户集成其中一种并不能获得其他两"
 "种。"
 
-#: docs/standards/index.md:137
+#: docs/standards/index.md:139
 msgid "Gaps, where no standard exists and the manifest carries the burden:"
 msgstr "空白之处，即尚无标准存在、由清单承担责任的领域："
 
-#: docs/standards/index.md:139
+#: docs/standards/index.md:141
 msgid ""
 "**Delegation depth.** No adopted spec expresses or enforces how many hops a "
 "delegation may travel; `spec.authority.delegations[].maxDelegationDepth` is "
@@ -7669,7 +7671,7 @@ msgstr ""
 "可传递的跳数；`spec.authority.delegations[].maxDelegationDepth` 属于策略，而"
 "非协议。"
 
-#: docs/standards/index.md:140
+#: docs/standards/index.md:142
 msgid ""
 "**Revocation at scale.** Killing an agent means revoking OAuth grants, API "
 "keys, wallet policies, registry entries and card tokens at many providers "
@@ -7679,7 +7681,7 @@ msgstr ""
 "权、API 密钥、钱包策略、注册表条目和卡令牌，却没有统一的撤销信号。参见[死亡]"
 "(../lifecycle/death.md)。"
 
-#: docs/standards/index.md:141
+#: docs/standards/index.md:143
 msgid ""
 "**Ephemeral agent identity.** Sub-agents spawned for one task have no "
 "registry, no reputation and usually no key of their own beyond `did:key`; "
@@ -7689,7 +7691,7 @@ msgstr ""
 "誉，通常除 `did:key` 外也没有自己的密钥；每种卡片格式都假定智能体是长期存在"
 "的。"
 
-#: docs/standards/index.md:142
+#: docs/standards/index.md:144
 msgid ""
 "**Memory integrity.** There is no standard for signing or attesting agent "
 "memory, which is why OWASP ASI06 has no protocol answer in [7 Memory](../"
@@ -7698,7 +7700,7 @@ msgstr ""
 "<strong>记忆完整性。</strong> 尚无对智能体记忆进行签名或证明的标准，这就是为"
 "什么 OWASP ASI06 在[7 记忆](../stack/07-memory.md)中没有协议层面的解答。"
 
-#: docs/standards/index.md:143
+#: docs/standards/index.md:145
 msgid ""
 "**Evidence of governance.** Regulators and KYA schemes ask whether a kill "
 "switch and audit log exist; nothing lets a counterparty verify that claim."
@@ -7706,7 +7708,7 @@ msgstr ""
 "<strong>治理证据。</strong> 监管机构和 KYA 方案会询问是否存在紧急停止开关和审"
 "计日志；但没有任何机制能让交易对手验证这一声明。"
 
-#: docs/standards/index.md:145 docs/standards/identity.md:72
+#: docs/standards/index.md:147 docs/standards/identity.md:72
 #: docs/standards/auth-and-delegation.md:81 docs/standards/payments.md:65
 #: docs/standards/discovery.md:48 docs/standards/security-and-governance.md:76
 #: docs/providers/index.md:64 docs/providers/email.md:42
@@ -7723,7 +7725,7 @@ msgstr ""
 msgid "Related"
 msgstr "相关内容"
 
-#: docs/standards/index.md:147
+#: docs/standards/index.md:149
 msgid ""
 "[The Agent Birth Stack](../birth-stack.md) · [Provider model](../providers/) "
 "· [birth.yaml](../manifest.md)"
@@ -7731,7 +7733,7 @@ msgstr ""
 "[智能体诞生栈](../birth-stack.md) · [服务提供方模型](../providers/) · "
 "[birth.yaml](../manifest.md)"
 
-#: docs/standards/index.md:148
+#: docs/standards/index.md:150
 msgid ""
 "Stack chapters: [1](../stack/01-identity.md) · [2](../stack/02-presence.md) "
 "· [3](../stack/03-authentication.md) · [4](../stack/04-compute.md) · [5](../"
@@ -8508,12 +8510,11 @@ msgstr "IETF webbotauth 工作组；Cloudflare"
 
 #: docs/standards/auth-and-delegation.md:18
 msgid ""
-"[architecture](https://datatracker.ietf.org/wg/webbotauth/about/) · [rfc9421]"
-"(https://www.rfc-editor.org/rfc/rfc9421)"
+"[architecture draft](https://datatracker.ietf.org/doc/draft-meunier-web-bot-"
+"auth-architecture/) · [rfc9421](https://www.rfc-editor.org/rfc/rfc9421)"
 msgstr ""
-"[架构](https://datatracker.ietf.org/wg/webbotauth/about/) · [rfc9421](https:"
-"//www.rfc-editor.org/rfc/rfc9421)"
-
+"[架构草案](https://datatracker.ietf.org/doc/draft-meunier-web-bot-auth-"
+"architecture/) · [rfc9421](https://www.rfc-editor.org/rfc/rfc9421)"
 
 #: docs/standards/auth-and-delegation.md:19
 msgid "UCAN WG"
@@ -8551,23 +8552,27 @@ msgstr "MCP Authorization"
 msgid ""
 "Profiles OAuth 2.1 for HTTP-transport MCP servers: the server is a resource "
 "server, publishes RFC 9728 Protected Resource Metadata, and the client must "
-"send an RFC 8707 `resource` indicator so tokens are audience-bound. Client "
-"registration has two shapes today: Client ID Metadata Documents (CIMD), "
-"where `client_id` is an HTTPS URL that resolves to the client's metadata "
-"JSON, and dynamic client registration (RFC 7591) where the server supports "
-"it. Either way an agent cannot pre-register with every server. It explicitly "
-"forbids token passthrough and says nothing about delegation chains; each MCP "
-"server is its own OAuth client to upstream APIs. This is the default for "
-"[Capabilities](../stack/06-capabilities.md) tool auth."
+"send an RFC 8707 `resource` indicator so tokens are audience-bound. The "
+"2026-07-28 revision supports three client-registration mechanisms: Client ID "
+"Metadata Documents (CIMD), where `client_id` is an HTTPS URL that resolves "
+"to the client's metadata JSON; pre-registration, where the server already "
+"knows the client; and dynamic client registration (RFC 7591). Dynamic client "
+"registration is deprecated in that revision and kept for backwards "
+"compatibility, so new clients should plan for CIMD. Either way an agent "
+"cannot pre-register with every server. It explicitly forbids token "
+"passthrough and says nothing about delegation chains; each MCP server is its "
+"own OAuth client to upstream APIs. This is the default for [Capabilities](../"
+"stack/06-capabilities.md) tool auth."
 msgstr ""
 "为基于 HTTP 传输的 MCP 服务器定义 OAuth 2.1 配置文件：服务器是资源服务器，发"
 "布 RFC 9728 受保护资源元数据，客户端必须发送 RFC 8707 `resource` 指示符，使令"
-"牌绑定到特定受众。客户端注册目前有两种形态：客户端 ID 元数据文档（CIMD），其"
-"中 `client_id` 是指向客户端元数据 JSON 的 HTTPS URL；以及在服务器支持时使用动"
-"态客户端注册（RFC 7591）。无论哪种方式，智能体都无法预先在每个服务器上注册。"
-"它明确禁止令牌透传，且未涉及委托授权链；每个 MCP 服务器面向上游 API 时都是独"
-"立的 OAuth 客户端。这是 [能力](../stack/06-capabilities.md) 层工具身份验证的"
-"默认方案。"
+"牌绑定到特定受众。2026-07-28 修订版支持三种客户端注册机制：客户端 ID 元数据文"
+"档（CIMD），其中 `client_id` 是指向客户端元数据 JSON 的 HTTPS URL；预注册，即"
+"服务器已事先知道该客户端；以及动态客户端注册（RFC 7591）。动态客户端注册在该"
+"修订版中已弃用，仅为向后兼容而保留，因此新客户端应规划使用 CIMD。无论哪种方"
+"式，智能体都无法预先在每个服务器上注册。它明确禁止令牌透传，且未涉及委托授权"
+"链；每个 MCP 服务器面向上游 API 时都是独立的 OAuth 客户端。这是 [能力](../"
+"stack/06-capabilities.md) 层工具身份验证的默认方案。"
 
 #: docs/standards/auth-and-delegation.md:28
 msgid "RFC 8693 Token Exchange"
@@ -8820,11 +8825,14 @@ msgid ""
 "existing card and issuer, and add an agent-specific token plus a signed "
 "proof of consent. **Mandate** protocols (Google AP2) sit above both: they "
 "define the signed record of what the user asked for, and let the rail "
-"underneath vary. Skyfire's KYAPay fuses identity and payment into one token. "
-"Every one of them needs an [Authority](../stack/08-authority.md) answer (who "
-"set the limit) and a [Governance](../stack/10-governance.md) answer (who can "
-"stop it); the manifest records them under `spec.economy.paymentProtocols[]` "
-"and `spec.economy.budget`."
+"underneath vary. **MPP** (Tempo + Stripe) is rail-agnostic inside the same "
+"HTTP 402 handshake: stablecoin and EVM charges paid from the agent's key, "
+"card charges authorised through the issuer, and other ledgers through "
+"extensible payment methods. Skyfire's KYAPay fuses identity and payment into "
+"one token. Every one of them needs an [Authority](../stack/08-authority.md) "
+"answer (who set the limit) and a [Governance](../stack/10-governance.md) "
+"answer (who can stop it); the manifest records them under "
+"`spec.economy.paymentProtocols[]` and `spec.economy.budget`."
 msgstr ""
 "第 5 层赋予智能体转移价值的能力；这些协议定义了由软件（而非人）发起的支付<em>"
 "如何</em>被授权与结算。它们按支付通道划分。<strong>稳定币原生</strong>协议"
@@ -8832,11 +8840,13 @@ msgstr ""
 "路。<strong>卡组织网络</strong>协议（Visa Trusted Agent Protocol、Mastercard "
 "Agent Pay、Stripe Shared Payment Tokens）保留用户现有的卡片和发卡行，并增加智"
 "能体专用令牌及签名的同意证明。<strong>授权指令</strong>协议（Google AP2）位于"
-"两者之上：它们定义用户请求内容的签名记录，并允许底层通道自由变化。Skyfire 的 "
-"KYAPay 将身份与支付融合为单一令牌。每一种协议都需要一个[权限](../stack/08-"
-"authority.md)答案（谁设定了限额）和一个[治理](../stack/10-governance.md)答案"
-"（谁能停止它）；清单在 `spec.economy.paymentProtocols[]` 和 "
-"`spec.economy.budget` 下记录它们。"
+"两者之上：它们定义用户请求内容的签名记录，并允许底层通道自由变化。"
+"<strong>MPP</strong>（Tempo + Stripe）在同一套 HTTP 402 握手内不依赖特定轨"
+"道：稳定币与 EVM 扣款由智能体密钥支付，卡片扣款经发卡行授权，其他账本通过可扩"
+"展的支付方式接入。Skyfire 的 KYAPay 将身份与支付融合为单一令牌。每一种协议都"
+"需要一个[权限](../stack/08-authority.md)答案（谁设定了限额）和一个[治理](../"
+"stack/10-governance.md)答案（谁能停止它）；清单在 "
+"`spec.economy.paymentProtocols[]` 和 `spec.economy.budget` 下记录它们。"
 
 #: docs/standards/payments.md:9 docs/standards/payments.md:10
 #: docs/standards/payments.md:14 docs/standards/payments.md:15
@@ -8989,36 +8999,44 @@ msgid ""
 "say who funded the wallet or whether the agent was allowed to spend; that is "
 "the manifest's `spec.economy.budget` and a wallet policy. Pick it for agent-"
 "to-API and agent-to-agent micropayments. MPP (below) supports x402's exact "
-"flow from its own SDK, and ERC-8004 records the agent's on-chain identity "
-"alongside the payment."
+"flow from its own SDK; ERC-8004 is orthogonal — its registration file can "
+"advertise x402 support and a payment can reference the agent's registry "
+"entry, but the identity standard does not define payment."
 msgstr ""
 "复活了 HTTP 402：服务器返回 `402 Payment Required` 并附带价格和链上信息，客户"
 "端签署一笔稳定币转账（Base 及其他 EVM 链上的 USDC、Solana），携带支付头重试请"
 "求，由结算方（facilitator）完成清算。无需账户、无需 API 密钥、支持低于一美分"
 "的金额。它并不说明钱包由谁注资，也不说明智能体是否被允许消费；这属于清单中的 "
 "`spec.economy.budget` 和钱包策略的范畴。适用于智能体对 API 以及智能体对智能体"
-"的微支付。MPP（见下文）可从其自有 SDK 复现 x402 的完整流程，ERC-8004 还会在支"
-"付之外记录智能体的链上身份。"
+"的微支付。MPP（见下文）可从其自有 SDK 复现 x402 的完整流程；ERC-8004 与之正交"
+"——其注册文件可以声明支持 x402，支付也可以引用智能体的注册表条目，但该身份标准"
+"并不规定支付。"
 
 #: docs/standards/payments.md:26
 msgid ""
 "Machine Payments Protocol, designed by Tempo and Stripe around the same HTTP "
 "402 handshake: the server states a price, the client's SDK signs a payment "
-"authorization, and the payment settles from the agent's wallet. It supports "
-"x402's exact flow from one SDK, adds session-based billing (a pay-as-you-go "
-"hold that covers repeated calls), extensible payment methods including "
-"generic EVM rails, and agent-identity support in `mppx`. SDKs exist for "
-"TypeScript (`mppx`), Go, Rust and Python (Tempo) and Ruby (Stripe); the "
-"specification, currently an individual IETF draft, is at `paymentauth.org`. "
-"Pick it when you want per-request and session billing across x402 and EVM "
-"rails behind one interface."
+"authorization, and the payment settles. It supports x402's exact flow from "
+"one SDK, adds session-based billing (a pay-as-you-go hold that covers "
+"repeated calls), and several charge types behind one interface: stablecoin/"
+"EVM charges paid from the agent's key, card charges (`draft-card-charge-00`, "
+"`draft-stripe-charge-00`) authorised through the issuer and the user's card "
+"credential, and further ledgers (Lightning, Hedera, Solana, Stellar, XRPL) "
+"through extensible payment methods. `mppx` also carries agent identity. SDKs "
+"exist for TypeScript (`mppx`), Python, Rust, Go and Ruby; the specification "
+"is a set of individual IETF drafts at `paymentauth.org`. Pick it when you "
+"want per-request and session billing across several rails behind one "
+"interface."
 msgstr ""
-"由 Tempo 和 Stripe 围绕同一套 HTTP 402 握手设计的机器支付协议：服务器给出价格，客户端的 SDK 签署支付授权，款项从智能体"
-"的钱包结算。它可在一个 SDK 内支持 x402 的完整流程，并增加了基于会话的计费（覆盖重复调用的按量付费预留）、可扩展的支付方式（包括通用 EV"
-"M 轨道），以及在 `mppx` 中支持智能体身份。SDK 涵盖 TypeScript（`mppx`）、Go、Rust 和 Python（Tempo"
-"）以及 Ruby（Stripe）；该规范目前仍是一份个人 IETF 草案，位于 `paymentauth.org`。当你希望在一个接口背后同时支持按"
-"请求和按会话计费、覆盖 x402 与 EVM 轨道时，选择它。"
-
+"由 Tempo 和 Stripe 围绕同一套 HTTP 402 握手设计的机器支付协议：服务器给出价"
+"格，客户端的 SDK 签署支付授权，随后完成结算。它可在一个 SDK 内支持 x402 的完"
+"整流程，增加基于会话的计费（覆盖重复调用的按量付费预留），并在同一接口背后提"
+"供多种扣款类型：由智能体密钥支付的稳定币/EVM 扣款，经发卡行和用户卡片凭证授权"
+"的卡片扣款（`draft-card-charge-00`、`draft-stripe-charge-00`），以及通过可扩"
+"展支付方式接入的其他账本（Lightning、Hedera、Solana、Stellar、XRPL）。`mppx` "
+"还承载智能体身份。SDK 涵盖 TypeScript（`mppx`）、Python、Rust、Go 和 Ruby；该"
+"规范是 `paymentauth.org` 上的一组个人 IETF 草案。当你希望在一个接口背后跨多种"
+"轨道支持按请求和按会话计费时，选择它。"
 
 #: docs/standards/payments.md:29
 msgid ""
@@ -9143,11 +9161,11 @@ msgstr "支持微支付？"
 msgid "stablecoin"
 msgstr "稳定币"
 
-#: docs/standards/payments.md:53 docs/standards/payments.md:54
+#: docs/standards/payments.md:53
 msgid "agent key"
 msgstr "智能体密钥"
 
-#: docs/standards/payments.md:53 docs/standards/payments.md:54
+#: docs/standards/payments.md:53
 msgid "Yes (sub-cent)"
 msgstr "是（低于一美分）"
 
@@ -9156,8 +9174,16 @@ msgid "x402 Foundation"
 msgstr "x402 Foundation"
 
 #: docs/standards/payments.md:54
-msgid "stablecoin / EVM"
-msgstr "稳定币 / EVM"
+msgid "card / stablecoin / any"
+msgstr "卡 / 稳定币 / 任意"
+
+#: docs/standards/payments.md:54
+msgid "agent key (stablecoin, EVM) · issuer (cards)"
+msgstr "智能体密钥（稳定币、EVM）· 发卡行（卡片）"
+
+#: docs/standards/payments.md:54
+msgid "Yes (sub-cent on stablecoin)"
+msgstr "是（稳定币可低于一美分）"
 
 #: docs/standards/payments.md:55
 msgid "any"
@@ -14500,11 +14526,10 @@ msgstr "[Lakera 文档](https://docs.lakera.ai) - Guard API。"
 
 #: docs/providers/observability-and-hitl.md:44
 msgid ""
-"[Guardrails AI docs](https://docs.guardrailsai.com/) · [guardrails "
-"repository](https://github.com/guardrails-ai/guardrails) - Validators."
+"[guardrails repository](https://github.com/guardrails-ai/guardrails) - "
+"Validators."
 msgstr ""
-"[Guardrails AI 文档](https://docs.guardrailsai.com/) · [guardrails 代码仓"
-"库](https://github.com/guardrails-ai/guardrails) - 校验器。"
+"[guardrails 代码仓库](https://github.com/guardrails-ai/guardrails) - 校验器。"
 
 #: docs/providers/observability-and-hitl.md:45
 msgid ""
@@ -14770,13 +14795,15 @@ msgstr "[Moltbook](https://www.moltbook.com)"
 #: docs/providers/accounts-and-legal-entity.md:26
 msgid ""
 "Social network built for agents as posters and humans as observers; "
-"ownership verified through the owner's X account. Launched in 2026; acquired "
-"by Meta in March 2026, with the team joining a Meta AI research lab, so its "
-"future as a neutral agent-only network is uncertain."
+"ownership verified through the owner's X account. Launched in 2026; "
+"[acquired by Meta in March 2026](https://www.cnbctv18.com/business/meta-"
+"acquires-ai-agent-social-network-moltbook-ws-l-19866025.htm), so its future "
+"as a neutral agent-only network is uncertain."
 msgstr ""
-"为智能体发帖、人类观看而构建的社交网络；通过所有者的 X 账户验证所有权。2026 年推出；2026 年 3 月被 Meta 收购，团队加入 Met"
-"a 的 AI 研究实验室，因此其作为中立、仅面向智能体的社交网络的未来尚不确定。"
-
+"为智能体发帖、人类观看而构建的社交网络；通过所有者的 X 账户验证所有权。2026 "
+"年推出；[2026 年 3 月被 Meta 收购](https://www.cnbctv18.com/business/meta-"
+"acquires-ai-agent-social-network-moltbook-ws-l-19866025.htm)，因此其作为中"
+"立、仅面向智能体的社交网络的未来尚不确定。"
 
 #: docs/providers/accounts-and-legal-entity.md:27
 msgid "[OtoCo](https://otoco.io)"
@@ -16629,12 +16656,13 @@ msgstr ""
 
 #: docs/manifest.md:21
 msgid ""
-"**Owner is mandatory.** `metadata.owner` is the only field besides `name` "
-"that is required. An agent without a responsible party is not born, it is "
-"loose."
+"**Owner is mandatory.** Within `metadata`, `name` and `owner` are required, "
+"and `apiVersion`, `kind`, `metadata` and `spec` are required at the top "
+"level. An agent without a responsible party is not born, it is loose."
 msgstr ""
-"<strong>所有者是必填项。</strong> `metadata.owner` 是除 `name` 之外唯一必需的"
-"字段。没有责任方的智能体不是诞生，而是失控。"
+"<strong>所有者是必填项。</strong> 在 `metadata` 内，`name` 和 `owner` 为必"
+"填；在顶层，`apiVersion`、`kind`、`metadata` 和 `spec` 为必填。没有责任方的智"
+"能体不是诞生，而是失控。"
 
 #: docs/manifest.md:22
 msgid ""
