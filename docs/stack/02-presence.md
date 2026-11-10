@@ -40,7 +40,7 @@ Endpoints are the easy part. An agent that speaks A2A publishes its card at `/.w
 
 ## Standards
 
-- [Discovery](../standards/discovery.md): A2A agent card at `/.well-known/agent-card.json`, agents.txt / agents.json, llms.txt, MCP Registry.
+- [Discovery](../standards/discovery.md): A2A agent card at `/.well-known/agent-card.json`, agents.txt, llms.txt, MCP Registry.
 - [Identity](../standards/identity.md): `did:web` resolution over the same domain.
 - [Authentication & Delegation](../standards/auth-and-delegation.md): RFC 9728 Protected Resource Metadata for MCP endpoints.
 
@@ -60,6 +60,6 @@ spec:
     email: scout@agents.example.com
     domain: agents.example.com
     endpoints:
-      - { protocol: a2a, url: https://agents.example.com/scout/a2a }
-      - { protocol: mcp, url: https://agents.example.com/scout/mcp }
+      - { protocol: a2a, url: "https://agents.example.com/scout/a2a" }
+      - { protocol: mcp, url: "https://agents.example.com/scout/mcp" }
 ```

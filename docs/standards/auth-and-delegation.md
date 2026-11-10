@@ -6,7 +6,7 @@ Layer 3 is about the credentials an agent presents to other systems; layer 8 is 
 
 | Standard | Layer | Maturity | Backed by | Link |
 |---|---|---|---|---|
-| MCP Authorization (OAuth 2.1 + RFC 9728 + RFC 8707) | 3 Authentication | Adopted | MCP project (Anthropic-originated) | [modelcontextprotocol.io](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization) |
+| MCP Authorization (OAuth 2.1 + RFC 9728 + RFC 8707 + CIMD) | 3 Authentication | Adopted | MCP project (Anthropic-originated) | [modelcontextprotocol.io](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization) |
 | RFC 8693 OAuth 2.0 Token Exchange | 3, 8 | Adopted | IETF | [rfc8693](https://www.rfc-editor.org/rfc/rfc8693) |
 | RFC 9635 GNAP / RFC 9767 GNAP Resource Servers | 3, 8 | Adopted | IETF | [rfc9635](https://www.rfc-editor.org/rfc/rfc9635) · [rfc9767](https://www.rfc-editor.org/rfc/rfc9767) |
 | OAuth On-Behalf-Of User Authorization for AI Agents | 8 Authority | Draft (expired individual) | individual | [datatracker](https://datatracker.ietf.org/doc/draft-oauth-ai-agents-on-behalf-of-user/) |
@@ -15,15 +15,15 @@ Layer 3 is about the credentials an agent presents to other systems; layer 8 is 
 | draft-liu-ai-agent-authorization-integration | 8 Authority | Draft (individual) | individual | [datatracker](https://datatracker.ietf.org/doc/draft-liu-ai-agent-authorization-integration/) |
 | IETF WIMSE WG | 3 Authentication | Draft | IETF | [datatracker.ietf.org/wg/wimse](https://datatracker.ietf.org/wg/wimse/about/) |
 | SPIFFE / SPIRE | 3 Authentication | Production | CNCF | [spiffe.io](https://spiffe.io/) |
-| Web Bot Auth + RFC 9421 HTTP Message Signatures | 3 Authentication | Draft (WG) / Adopted (9421) | IETF webbotauth WG; Cloudflare | [draft](https://datatracker.ietf.org/doc/draft-meunier-web-bot-auth-architecture/) · [rfc9421](https://www.rfc-editor.org/rfc/rfc9421) |
-| UCAN 1.0 | 8 Authority | Adopted | UCAN WG | [github.com/ucan-wg/spec](https://github.com/ucan-wg/spec) |
+| Web Bot Auth + RFC 9421 HTTP Message Signatures | 3 Authentication | Draft (WG) / Adopted (9421) | IETF webbotauth WG; Cloudflare | [architecture](https://datatracker.ietf.org/wg/webbotauth/about/) · [rfc9421](https://www.rfc-editor.org/rfc/rfc9421) |
+| UCAN 1.0 | 8 Authority | Adopted (community spec) | UCAN WG | [github.com/ucan-wg/spec](https://github.com/ucan-wg/spec) |
 | ZCAP (Authorization Capabilities) | 8 Authority | Draft | W3C CCG | [w3c-ccg.github.io/zcap-spec](https://w3c-ccg.github.io/zcap-spec/) |
 | OpenID AI Identity Management CG | 3, 8 | Draft | OpenID Foundation | [openid.net/cg](https://openid.net/cg/artificial-intelligence-identity-management-community-group/) |
 
 ## Notes per standard
 
 ### MCP Authorization
-Profiles OAuth 2.1 for HTTP-transport MCP servers: the server is a resource server, publishes RFC 9728 Protected Resource Metadata, and the client must send an RFC 8707 `resource` indicator so tokens are audience-bound. Dynamic client registration (RFC 7591) is recommended because an agent cannot pre-register with every server. It explicitly forbids token passthrough and says nothing about delegation chains; each MCP server is its own OAuth client to upstream APIs. This is the default for [Capabilities](../stack/06-capabilities.md) tool auth.
+Profiles OAuth 2.1 for HTTP-transport MCP servers: the server is a resource server, publishes RFC 9728 Protected Resource Metadata, and the client must send an RFC 8707 `resource` indicator so tokens are audience-bound. Client registration has two shapes today: Client ID Metadata Documents (CIMD), where `client_id` is an HTTPS URL that resolves to the client's metadata JSON, and dynamic client registration (RFC 7591) where the server supports it. Either way an agent cannot pre-register with every server. It explicitly forbids token passthrough and says nothing about delegation chains; each MCP server is its own OAuth client to upstream APIs. This is the default for [Capabilities](../stack/06-capabilities.md) tool auth.
 
 ### RFC 8693 Token Exchange
 Lets a party trade one token for another at the authorization server, producing a token whose `act` claim records the chain of actors (delegation) or which simply impersonates the subject. It is the only *adopted* RFC that can express "agent A, acting for user U, calling resource R". It does not define how the agent got the first token or how deep the chain may go.

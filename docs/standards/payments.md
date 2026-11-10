@@ -7,7 +7,8 @@ Layer 5 gives the agent the ability to move value; these protocols define *how* 
 | Standard | Layer | Maturity | Backed by | Link |
 |---|---|---|---|---|
 | x402 | 5 Economic Identity | Production | x402 Foundation (Coinbase, Cloudflare; Google, Visa, AWS, Circle, Anthropic among contributors) | [x402.org](https://www.x402.org/) · [github](https://github.com/coinbase/x402) |
-| Google Agent Payments Protocol (AP2) | 5, 8 | Production (early) | Google + 60 partners | [ap2-protocol.org](https://ap2-protocol.org/) · [github](https://github.com/google-agentic-commerce/AP2) |
+| MPP (Tempo + Stripe) | 5 Economic Identity | Production | Tempo, Stripe | [mpp.dev](https://mpp.dev/) · [spec](https://paymentauth.org/) |
+| Google Agent Payments Protocol (AP2) | 5, 8 | Adopted (early) | Google + 60 partners | [ap2-protocol.org](https://ap2-protocol.org/) · [github](https://github.com/google-agentic-commerce/AP2) |
 | Visa Trusted Agent Protocol / Intelligent Commerce | 5, 9 | Production | Visa | [developer.visa.com](https://developer.visa.com/capabilities/trusted-agent-protocol) · [github](https://github.com/visa/trusted-agent-protocol) |
 | Mastercard Agent Pay (Agentic Tokens) | 5, 9 | Production | Mastercard | [mastercard.com](https://www.mastercard.com/us/en/news-and-trends/press/2025/april/mastercard-unveils-agent-pay-pioneering-agentic-payments-technology-to-power-commerce-in-the-age-of-ai.html) |
 | Agentic Commerce Protocol (ACP) | 5 Economic Identity | Production | OpenAI + Stripe | [agenticcommerce.dev](https://www.agenticcommerce.dev/) · [github](https://github.com/agentic-commerce-protocol/agentic-commerce-protocol) |
@@ -19,7 +20,10 @@ Layer 5 gives the agent the ability to move value; these protocols define *how* 
 ## Notes per standard
 
 ### x402
-Revives HTTP 402: a server replies `402 Payment Required` with price and chain details, the client signs a stablecoin transfer (USDC on Base and other EVM chains, Solana), retries with the payment header, and a facilitator settles. No accounts, no API keys, sub-cent amounts. It does not say who funded the wallet or whether the agent was allowed to spend; that is the manifest's `spec.economy.budget` and a wallet policy. Pick it for agent-to-API and agent-to-agent micropayments. Stripe's machine payments and ERC-8004 both interoperate with it.
+Revives HTTP 402: a server replies `402 Payment Required` with price and chain details, the client signs a stablecoin transfer (USDC on Base and other EVM chains, Solana), retries with the payment header, and a facilitator settles. No accounts, no API keys, sub-cent amounts. It does not say who funded the wallet or whether the agent was allowed to spend; that is the manifest's `spec.economy.budget` and a wallet policy. Pick it for agent-to-API and agent-to-agent micropayments. MPP (below) supports x402's exact flow from its own SDK, and ERC-8004 records the agent's on-chain identity alongside the payment.
+
+### MPP (Tempo + Stripe)
+Machine Payments Protocol, designed by Tempo and Stripe around the same HTTP 402 handshake: the server states a price, the client's SDK signs a payment authorization, and the payment settles from the agent's wallet. It supports x402's exact flow from one SDK, adds session-based billing (a pay-as-you-go hold that covers repeated calls), extensible payment methods including generic EVM rails, and agent-identity support in `mppx`. SDKs exist for TypeScript (`mppx`), Go, Rust and Python (Tempo) and Ruby (Stripe); the specification, currently an individual IETF draft, is at `paymentauth.org`. Pick it when you want per-request and session billing across x402 and EVM rails behind one interface.
 
 ### Google AP2
 Defines **mandates**: signed verifiable credentials capturing the user's intent (Intent Mandate), the agreed cart (Cart Mandate) and payment authorisation, so a merchant can prove afterwards what the human asked for. Rail-agnostic (cards, real-time bank, stablecoins via an x402 extension). Built on A2A and MCP. It does not move money itself; it is the audit and consent layer. Pick it when a *human's* purchase is being delegated and disputes need a paper trail.
@@ -47,6 +51,7 @@ An implementation, not a standard: server-side custodied wallets with policy con
 | Protocol | Rail (card / stablecoin / any) | Who authorises (user mandate / agent key / issuer token) | Micropayments? | Backed by |
 |---|---|---|---|---|
 | x402 | stablecoin | agent key | Yes (sub-cent) | x402 Foundation |
+| MPP (Tempo + Stripe) | stablecoin / EVM | agent key | Yes (sub-cent) | Tempo, Stripe |
 | Google AP2 | any | user mandate | No (per-purchase) | Google + partners |
 | Visa Trusted Agent Protocol | card | issuer token + user passkey | No | Visa |
 | Mastercard Agent Pay | card | issuer token + verifiable intent | No | Mastercard |
@@ -55,7 +60,7 @@ An implementation, not a standard: server-side custodied wallets with policy con
 | Skyfire KYAPay | stablecoin / fiat ledger | agent key within owner-set budget | Yes | Skyfire |
 | Coinbase AgentKit (x402) | stablecoin | agent key under wallet policy | Yes | Coinbase |
 
-Read the table as two questions. *Who holds the key?* If the agent does (x402, KYAPay, AgentKit), the spending limit must be enforced by the wallet policy and `spec.economy.budget`, because the protocol will happily sign anything. If the issuer does (Visa, Mastercard, Stripe), the limit is in the token and the human's card controls still apply, but the agent cannot pay a machine that has no card acceptance. AP2 is orthogonal: it records the consent whichever rail moves the money. Most real deployments in 2026 combine one of each: a card token for buying from merchants, x402 for buying from APIs, and AP2-style mandates in the audit log.
+Read the table as two questions. *Who holds the key?* If the agent does (x402, KYAPay, AgentKit), the spending limit must be enforced by the wallet policy and `spec.economy.budget`, because the protocol will happily sign anything. If the issuer does (Visa, Mastercard, Stripe), the limit is in the token and the human's card controls still apply, but the agent cannot pay a machine that has no card acceptance. AP2 is orthogonal: it records the consent whichever rail moves the money. Most real deployments in 2026 combine one of each: a card token for buying from merchants, x402 or MPP for buying from APIs, and AP2-style mandates in the audit log.
 
 ## Related
 

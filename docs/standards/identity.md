@@ -8,8 +8,8 @@ These standards answer the question layer 1 asks: *who is this agent and who is 
 |---|---|---|---|---|
 | W3C DID Core 1.0 | 1 Identity | Adopted | W3C | [w3.org/TR/did-core](https://www.w3.org/TR/did-core/) |
 | W3C Verifiable Credentials Data Model 2.0 | 1 Identity, 9 Trust | Adopted | W3C | [w3.org/TR/vc-data-model-2.0](https://www.w3.org/TR/vc-data-model-2.0/) |
-| A2A Agent Card | 1 Identity, 2 Presence | Production | Linux Foundation (Google-originated) | [a2a-protocol.org](https://a2a-protocol.org/latest/specification/) |
-| ERC-8004 Trustless Agents | 1 Identity, 9 Trust | Production (EIP status: Draft) | Ethereum community; MetaMask, EF, Google, Coinbase contributors | [eips.ethereum.org/EIPS/eip-8004](https://eips.ethereum.org/EIPS/eip-8004) |
+| A2A Agent Card | 1 Identity, 2 Presence, 6 Capabilities | Production | Linux Foundation (Google-originated) | [a2a-protocol.org](https://a2a-protocol.org/latest/specification/) |
+| ERC-8004 Trustless Agents | 1 Identity, 2 Presence, 9 Trust | Production (EIP status: Draft) | Ethereum community; MetaMask, EF, Google, Coinbase contributors | [eips.ethereum.org/EIPS/eip-8004](https://eips.ethereum.org/EIPS/eip-8004) |
 | AIMS / Agent Manifest (OpenAttribution) | 1 Identity, 9 Trust | Draft | OpenAttribution | [SPECIFICATION.md](https://github.com/openattribution-org/aims/blob/main/SPECIFICATION.md) |
 | Agent Passport Standard | 1 Identity, 9 Trust | Draft | community | [github.com/cezexPL/agent-passport-standard](https://github.com/cezexPL/agent-passport-standard) |
 | HCS-14 Universal Agent ID | 1 Identity | Draft | Hashgraph Online / Hedera | [hol.org/docs/standards/hcs-14](https://hol.org/docs/standards/hcs-14/) |

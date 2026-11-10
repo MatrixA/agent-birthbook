@@ -13,7 +13,7 @@ Three uses, in order of how soon they are realistic:
 
 1. **A checklist that cannot be skipped.** Writing the profile forces every layer to be answered, including the ones teams forget (who holds the kill switch, what the daily budget is, when keys rotate). An empty section is a finding.
 2. **An audit artifact.** A profile plus an audit log is enough to answer "what could this agent do, and what did it do" after an incident.
-3. **Provisioning input.** Eventually a tool can read a profile and drive [Birth Providers](providers/README.md) to create the inbox, the sandbox, the wallet and the limits. Nothing in this repo does that yet.
+3. **Provisioning input.** Eventually a tool can read a profile and drive [Birth Providers](providers/) to create the inbox, the sandbox, the wallet and the limits. Nothing in this repo does that yet.
 
 ## Rules
 
@@ -74,11 +74,17 @@ Enumerations worth knowing:
 ## Validating
 
 ```sh
-python3 -c "import json,yaml,jsonschema; jsonschema.validate(
-  yaml.safe_load(open('manifests/examples/research-agent.birth.yaml')),
-  json.load(open('manifests/schema.json')),
-  format_checker=jsonschema.FormatChecker()); print('ok')"
+python3 -m pip install 'jsonschema[format]' pyyaml
+python3 -c "import json,yaml,jsonschema
+validator = jsonschema.Draft202012Validator(
+    json.load(open('manifests/schema.json')),
+    format_checker=jsonschema.FormatChecker(),
+)
+validator.validate(yaml.safe_load(open('manifests/examples/research-agent.birth.yaml')))
+print('ok')"
 ```
+
+The `[format]` extra installs the URI and date-time checkers; with plain `jsonschema` those two formats are silently skipped.
 
 Quote timestamps in YAML (`"2026-09-10T00:00:00Z"`); unquoted, most YAML parsers turn them into native datetimes and the `date-time` string check fails.
 

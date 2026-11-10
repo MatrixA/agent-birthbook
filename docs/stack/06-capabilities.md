@@ -60,10 +60,11 @@ Capabilities are what the agent can actually do: which models it can call, which
 `spec.capabilities.models[]` records `id`, `via` (the gateway, if any) and `role`; `spec.capabilities.tools[]` records `name`, `kind` (`mcp | cli | http | sdk | skill`) and `source`; `spec.capabilities.skills[]` lists skill names. The `source` field is the supply-chain anchor: it should be a URL you could pin a hash against.
 
 ```yaml
-capabilities:
-  models:
-    - { id: anthropic/claude-sonnet-4-6, via: openrouter, role: primary }
-  tools:
-    - { name: fetch, kind: mcp, source: https://github.com/modelcontextprotocol/servers }
-  skills: [literature-review]
+spec:
+  capabilities:
+    models:
+      - { id: anthropic/claude-sonnet-4-6, via: openrouter, role: primary }
+    tools:
+      - { name: fetch, kind: mcp, source: "https://github.com/modelcontextprotocol/servers" }
+    skills: [literature-review]
 ```

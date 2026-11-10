@@ -104,6 +104,8 @@ sequenceDiagram
 | 9 Trust | Attestations issued; public registrations made. |
 | 10 Governance | Audit and kill switch verified; Birth Profile written; agent starts. |
 
+<a id="sec-gotchas"></a>
+
 ## Gotchas
 
 - **Compute before secret store.** The runtime gets built with credentials baked into environment files or images. They end up in snapshots and logs, and the first rotation becomes a redeploy. Create the store, then build the runtime to read from it.
@@ -128,7 +130,7 @@ spec:
   authentication:
     secretStore: infisical://prod/agents/scout
   governance:
-    killSwitch: { controller: did:web:example.com:people:fernando, mechanism: all }
+    killSwitch: { controller: "did:web:example.com:people:fernando", mechanism: all }
 ```
 
 ## Related

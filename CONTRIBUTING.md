@@ -27,7 +27,7 @@ Comparison tables use the columns already present in the file you are editing. K
 
 ## Adding a standard
 
-Add a row to the relevant `docs/standards/*.md` table with **Layer**, **Maturity** (`Draft` = not yet stable / no production users, `Adopted` = published RFC or equivalent, `Production` = shipped and in real use) and **Backed by**. If it does not fit any layer of the [Birth Stack](docs/birth-stack.md), open an issue first — it may not belong, or the stack may need a change.
+Add a row to the relevant `docs/standards/*.md` table with **Layer**, **Maturity** (`Draft` = not yet stable / no production users, `Adopted` = published RFC, standard or equivalent spec — add a short parenthetical for guidance, reports, laws and community specs, `Production` = shipped and in real use) and **Backed by**. If it does not fit any layer of the [Birth Stack](docs/birth-stack.md), open an issue first — it may not belong, or the stack may need a change.
 
 ## Adding a provider
 
@@ -38,14 +38,19 @@ Add a row to the relevant `docs/providers/*.md` table. Mark **Agent-native** `Ye
 Every PR runs a link check (`lychee`). Locally:
 
 ```sh
-cargo install mdbook mdbook-mermaid lychee
-cargo install mdbook-i18n-helpers --version 0.4.0
+cargo install --locked mdbook --version 0.5.4
+cargo install --locked mdbook-mermaid --version 0.17.1
+cargo install --locked mdbook-i18n-helpers --version 0.4.0
+cargo install --locked lychee
+python3 -m pip install 'jsonschema[format]' pyyaml
 mdbook build            # docs must build with zero warnings
-lychee --exclude-mail './**/*.md'
-python3 -c "import json,yaml,jsonschema; jsonschema.validate(yaml.safe_load(open('manifests/examples/research-agent.birth.yaml')), json.load(open('manifests/schema.json')))"
+lychee --no-progress --max-concurrency 8 --include-fragments './**/*.md'
+python3 -c "import json,yaml,jsonschema; jsonschema.Draft202012Validator(json.load(open('manifests/schema.json')), format_checker=jsonschema.FormatChecker()).validate(yaml.safe_load(open('manifests/examples/research-agent.birth.yaml'))); print('ok')"
 ```
 
-Every chapter must be reachable from `docs/SUMMARY.md`.
+The `[format]` extra pulls in the URI and date-time checkers; with plain `jsonschema` the `format: uri` and `format: date-time` constraints in the schema are silently ignored.
+
+Every chapter must be reachable from `docs/SUMMARY.md`. Mermaid diagrams are translated only when the block starts with the `%% "i18n"` directive; add it to any new diagram whose labels are worth translating.
 
 ## Translations
 

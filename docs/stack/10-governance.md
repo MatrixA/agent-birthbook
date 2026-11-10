@@ -53,7 +53,7 @@ flowchart TB
 ## Standards
 
 - [Security & Governance](../standards/security-and-governance.md) - OWASP Top 10 for Agentic Applications (ASI08, ASI10); [OpenTelemetry GenAI semantic conventions](https://github.com/open-telemetry/semantic-conventions-genai); NIST and CSA guidance.
-- Regulatory touchpoints, kept brief: [EU AI Act Article 12](https://artificialintelligenceact.eu/article/12/) requires high-risk systems to automatically record events over their lifetime; [NIST AI 800-4](https://doi.org/10.6028/NIST.AI.800-4) catalogues post-deployment monitoring challenges and expects a "monitorability tax"; Singapore's [IMDA Model AI Governance Framework for Agentic AI](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf) sets out levels of human involvement and agent boundaries. None mandate a specific mechanism; all assume a log and a stop button exist.
+- Regulatory touchpoints, kept brief: [EU AI Act Article 12](https://artificialintelligenceact.eu/article/12/) requires high-risk systems to automatically record events over their lifetime; [NIST AI 800-4](https://doi.org/10.6028/NIST.AI.800-4) catalogues post-deployment monitoring challenges and expects a "monitorability tax"; Singapore's [IMDA Model AI Governance Framework for Agentic AI](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf) sets out levels of human involvement and agent boundaries; [ISO/IEC 42001](https://www.iso.org/standard/81230.html) is the certifiable AI management-system standard that turns the same expectations into an auditable process. None mandate a specific mechanism; all assume a log and a stop button exist.
 - [Authentication & Delegation](../standards/auth-and-delegation.md) - revocation semantics of OAuth grants and short-lived tokens.
 
 ## Providers
@@ -68,10 +68,11 @@ flowchart TB
 `spec.governance.auditLog` names where traces go; `spec.governance.killSwitch` names the `controller` and the `mechanism` (`revoke-keys | suspend-runtime | freeze-wallet | all`); `spec.governance.limits` is free-form for anything not already in [`spec.economy.budget`](05-economy.md); `spec.governance.recovery` describes how control is regained; `spec.governance.reviewCadence` is an ISO 8601 duration.
 
 ```yaml
-governance:
-  auditLog: langfuse://project/scout
-  killSwitch: { controller: did:web:example.com:people:fernando, mechanism: all }
-  limits: { maxRuntimeHoursPerDay: 8, maxEmailsPerDay: 5 }
-  recovery: Owner holds provider recovery share; second share in company password vault.
-  reviewCadence: P30D
+spec:
+  governance:
+    auditLog: langfuse://project/scout
+    killSwitch: { controller: "did:web:example.com:people:fernando", mechanism: all }
+    limits: { maxRuntimeHoursPerDay: 8, maxEmailsPerDay: 5 }
+    recovery: Owner holds provider recovery share; second share in company password vault.
+    reviewCadence: P30D
 ```

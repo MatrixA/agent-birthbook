@@ -68,14 +68,15 @@ flowchart LR
 `spec.authority.principal` names who the agent acts for. `spec.authority.delegations[]` carries `scope`, `grantedBy`, `expires`, `canSubDelegate` and `maxDelegationDepth`. `spec.authority.approvals[]` carries `action`, `approver` and `channel`. Scopes are free-form strings today; use a consistent `verb:object:bound` shape so they can be compared.
 
 ```yaml
-authority:
-  principal: did:web:example.com:people:fernando
-  delegations:
-    - scope: pay:x402:<=2USD
-      grantedBy: did:web:example.com:people:fernando
-      expires: "2027-09-10T00:00:00Z"
-      canSubDelegate: false
-      maxDelegationDepth: 0
-  approvals:
-    - { action: "pay:>2USD", approver: did:web:example.com:people:fernando, channel: "slack:#scout-approvals" }
+spec:
+  authority:
+    principal: did:web:example.com:people:fernando
+    delegations:
+      - scope: pay:x402:<=2USD
+        grantedBy: did:web:example.com:people:fernando
+        expires: "2027-09-10T00:00:00Z"
+        canSubDelegate: false
+        maxDelegationDepth: 0
+    approvals:
+      - { action: "pay:>2USD", approver: "did:web:example.com:people:fernando", channel: "slack:#scout-approvals" }
 ```

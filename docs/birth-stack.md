@@ -4,7 +4,7 @@ The Birth Stack is the concept model behind this book. It answers one question i
 
 > What must an autonomous agent be given in order to exist and act in the digital world?
 
-Each layer is a *kind of thing an agent needs*, not a product or a protocol. Products and protocols live one level down, as [providers](providers/README.md) and [standards](standards/README.md) that satisfy a layer.
+Each layer is a *kind of thing an agent needs*, not a product or a protocol. Products and protocols live one level down, as [providers](providers/) and [standards](standards/) that satisfy a layer.
 
 ```mermaid
 flowchart TB
@@ -83,6 +83,8 @@ flowchart LR
 - **Authority gates Capabilities and Economy.** A tool or a wallet the agent *has* is not a tool or wallet it may *use*. The permission model sits above both.
 - **Governance observes everything.** Audit logging, limits, and the kill switch have to reach into compute, money, credentials, and trust registries — which is why it is the top layer and the last one provisioned.
 
+<a id="sec-minimum-viable-birth"></a>
+
 ## Minimum viable birth
 
 Not every agent needs all ten layers fully built out. A useful way to think about it:
@@ -95,6 +97,8 @@ Not every agent needs all ten layers fully built out. A useful way to think abou
 | Agent that transacts with strangers' agents | all ten — this is what the Trust and Governance layers exist for | — |
 
 The [Birth Procedure](lifecycle/birth.md) turns this into a checklist. The [Agent Birth Manifest](manifest.md) turns it into a file.
+
+<a id="sec-from-requirement-to-provider"></a>
 
 ## From requirement to provider
 
@@ -110,7 +114,7 @@ flowchart LR
     I --> P4[self-hosted]
 ```
 
-The provider chapters follow this shape: state the requirement, name the interfaces, list the providers. See [Provider model](providers/README.md).
+The provider chapters follow this shape: state the requirement, name the interfaces, list the providers. See [Provider model](providers/).
 
 ## Lifecycle
 

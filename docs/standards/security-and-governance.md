@@ -1,6 +1,6 @@
 # Security & governance standards
 
-These documents answer the Safety band's question: what can go wrong once an agent exists, and what a responsible owner is expected to have in place. They are of three kinds. **Threat taxonomies** (OWASP Top 10 for Agentic Applications, OWASP Agentic Threats & Mitigations) name the failure modes. **Control frameworks** (CSA Agentic AI IAM, NIST Cyber AI Profile, Singapore's agentic framework) say which controls to apply. **Assurance schemes** (Know Your Agent, NIST's agent standards initiative) try to make those controls verifiable to third parties. None is a wire protocol; they shape what goes into `spec.governance`, `spec.authority.approvals[]` and `spec.trust.kya`, and they are the checklists the [Birth Procedure](../lifecycle/birth.md) is audited against.
+These documents answer the Safety band's question: what can go wrong once an agent exists, and what a responsible owner is expected to have in place. They are of three kinds. **Threat taxonomies** (OWASP Top 10 for Agentic Applications, OWASP Agentic Threats & Mitigations) name the failure modes. **Control frameworks** (CSA Agentic AI IAM, NIST Cyber AI Profile, Singapore's agentic framework, ISO/IEC 42001) say which controls to apply. **Assurance schemes** (Know Your Agent, NIST's agent standards initiative) try to make those controls verifiable to third parties. None is a wire protocol; they shape what goes into `spec.governance`, `spec.authority.approvals[]` and `spec.trust.kya`, and they are the checklists the [Birth Procedure](../lifecycle/birth.md) is audited against.
 
 ## At a glance
 
@@ -15,6 +15,7 @@ These documents answer the Safety band's question: what can go wrong once an age
 | Know Your Agent (AgentFacts) | 9 Trust | Draft | NANDA / AgentFacts | [agentfacts.org/kya](https://agentfacts.org/kya/) |
 | Know Your Agent (Skyfire KYA token) | 9 Trust | Production | Skyfire | [docs.skyfire.xyz](https://docs.skyfire.xyz/docs/kyapay-tokens) |
 | Singapore IMDA Model AI Governance Framework for Agentic AI | 10 Governance | Adopted (v1.5, May 2026) | IMDA | [imda.gov.sg](https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2026/new-model-ai-governance-framework-for-agentic-ai) · [PDF](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf) |
+| ISO/IEC 42001 AI management systems | 10 Governance | Adopted | ISO/IEC | [iso.org/standard/81230.html](https://www.iso.org/standard/81230.html) |
 | EU AI Act (Regulation 2024/1689) | 10 Governance | Adopted (law) | European Union | [eur-lex.europa.eu](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) · [explorer](https://artificialintelligenceact.eu/) |
 | Anthropic, Building effective agents | 6, 10 | Adopted (guidance) | Anthropic | [anthropic.com](https://www.anthropic.com/research/building-effective-agents) |
 
@@ -59,6 +60,9 @@ Two things share the name. **AgentFacts KYA** (from the NANDA orbit) proposes si
 ### Singapore IMDA Model AI Governance Framework for Agentic AI
 Launched January 2026, updated to v1.5 in May 2026. Four dimensions: bound risks up front, keep humans accountable, apply lifecycle technical controls (baseline testing, allow-listed services), enable end-user responsibility. The most concrete government checklist for agent deployers; short and readable.
 
+### ISO/IEC 42001 AI management systems
+The certifiable AI management-system standard: Plan-Do-Check-Act process requirements plus Annex A controls (impact assessment, data governance, logging, incident response, supplier management, competence). Unlike the OWASP and IMDA material it is auditable and certifiable, so it is the right answer when a counterparty asks for third-party assurance. Map the Governance layer to Annex A and it produces the evidence for `spec.governance.auditLog`, `reviewCadence` and `recovery`.
+
 ### EU AI Act
 Regulation (EU) 2024/1689. Touchpoints for agents: general-purpose model obligations on the model provider (layer 6), transparency duties when an agent interacts with people (layer 2/9), high-risk obligations if the agent's *use case* falls in Annex III (layers 8 and 10: human oversight, logging, record-keeping). Whether an autonomous agent is a "deployer" or part of a "system" is unsettled; log everything and keep a human principal named in `spec.authority.principal`.
 
@@ -67,7 +71,7 @@ Engineering guidance (December 2024): prefer simple composable workflows, add au
 
 ## How they fit together
 
-OWASP tells you what to defend against; CSA and the IETF/OAuth work in [Authentication & Delegation](auth-and-delegation.md) tell you how to build the identity and permission controls; NIST and IMDA tell you what monitoring and accountability a regulator or auditor will expect; KYA schemes let a counterparty check you did it. In manifest terms: ASI03/ASI07 controls land in `spec.authentication` and `spec.trust`; ASI01/02/09 in `spec.authority` (scopes and approvals); ASI04/05/06 in `spec.capabilities`, `spec.compute.isolation` and `spec.memory`; ASI08/10 in `spec.governance` (limits, `killSwitch`, `recovery`). The unsolved parts are shared with the other chapters: revoking a compromised agent's credentials across many providers at once, and standardised evidence that a kill switch actually works.
+OWASP tells you what to defend against; CSA and the IETF/OAuth work in [Authentication & Delegation](auth-and-delegation.md) tell you how to build the identity and permission controls; NIST, IMDA and ISO/IEC 42001 tell you what monitoring and accountability a regulator or auditor will expect; KYA schemes let a counterparty check you did it. In manifest terms: ASI03/ASI07 controls land in `spec.authentication` and `spec.trust`; ASI01/02/09 in `spec.authority` (scopes and approvals); ASI04/05/06 in `spec.capabilities`, `spec.compute.isolation` and `spec.memory`; ASI08/10 in `spec.governance` (limits, `killSwitch`, `recovery`). The unsolved parts are shared with the other chapters: revoking a compromised agent's credentials across many providers at once, and standardised evidence that a kill switch actually works.
 
 ## Related
 

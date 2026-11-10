@@ -146,7 +146,7 @@ Delegations should attenuate: a delegation can only grant permissions the granto
 
 Why a third party should believe the agent is what it claims: verifiable credentials, attestations, reputation, Know-Your-Agent (KYA) checks.
 
-Registrations — in a DID registry, an on-chain identity system, a signed A2A agent card published at `/.well-known/agent-card.json` — provide verifiable evidence that the agent is who it says it is (a card with a JWS operator signature is verifiable; an unsigned self-published card proves only domain control). These public registrations should be made *after* the kill switch (layer 10) is wired and tested, because strangers may start relying on the agent as soon as a registration is live, so a tested way to stop it must already exist. The [Birth Procedure's gotcha](lifecycle/birth.md#gotchas) makes this dependency explicit; layer numbers describe resource categories, not a strict execution order.
+Registrations — in a DID registry, an on-chain identity system, a signed A2A agent card published at `/.well-known/agent-card.json` — provide verifiable evidence that the agent is who it says it is (a card with a JWS operator signature is verifiable; an unsigned self-published card proves only domain control). These public registrations should be made *after* the kill switch (layer 10) is wired and tested, because strangers may start relying on the agent as soon as a registration is live, so a tested way to stop it must already exist. The [Birth Procedure's gotcha](lifecycle/birth.md#sec-gotchas) makes this dependency explicit; layer numbers describe resource categories, not a strict execution order.
 
 → [9. Trust](stack/09-trust.md)
 

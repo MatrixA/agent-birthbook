@@ -13,11 +13,11 @@ Repositories whose *structure* Birthbook borrows from.
 
 ## Neighbouring standards and projects
 
-Things that fill one or more layers of the stack. Each is placed in context in the [standards chapters](standards/README.md); listed here so the boundary is clear.
+Things that fill one or more layers of the stack. Each is placed in context in the [standards chapters](standards/); listed here so the boundary is clear.
 
 - [AIMS — Agent Identity and Manifest Standard](https://github.com/openattribution-org/aims) - Agent identity, manifest, discovery and verification so a website knows which agent is calling. Layers 1 and 9.
-- [ERC-8004 Trustless Agents](https://eips.ethereum.org/EIPS/eip-8004) - On-chain identity, reputation and validation registries. Layers 1 and 9.
-- [A2A Protocol](https://a2a-protocol.org/) - Agent-to-agent discovery and task exchange, including the Agent Card. Layers 2 and 6.
+- [ERC-8004 Trustless Agents](https://eips.ethereum.org/EIPS/eip-8004) - On-chain identity, reputation and validation registries. Layers 1, 2 and 9.
+- [A2A Protocol](https://a2a-protocol.org/) - Agent-to-agent discovery and task exchange, including the Agent Card. Layers 1, 2 and 6.
 - [Model Context Protocol](https://modelcontextprotocol.io/) - Tool connectivity and the authorization profile agents use to reach tools. Layers 3 and 6.
 - [Agent Passport Standard](https://github.com/cezexPL/agent-passport-standard) - Signed identity and provenance documents for agents. Layers 1 and 9.
 - [A-Identity](https://github.com/getA-Identity/A-Identity) - Passport plus wallet plus human-set spending limit; an early implementation of the identity → wallet → budget → authority chain. Layers 1, 5, 8.
