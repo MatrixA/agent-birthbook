@@ -35,7 +35,7 @@ jobs:
         with:
           fetch-depth: 0
       - uses: cargo-bins/cargo-binstall@main
-      - run: cargo binstall -y mdbook mdbook-mermaid mdbook-i18n-helpers@0.4.0
+      - run: cargo binstall -y mdbook@0.5.4 mdbook-mermaid@0.17.1 mdbook-i18n-helpers@0.4.0
       - run: npx -y playwright install --with-deps chromium
       - run: npm i -g @anthropic-ai/claude-code
 
@@ -52,7 +52,7 @@ jobs:
           CLAUDE_CODE_SUBAGENT_MODEL: deepseek-flash
         run: |
           claude -p "$(cat .github/docs-review.md)" \
-            --allowedTools "Bash,Read,Write,Glob,Grep,WebFetch" \
+            --allowedTools "Bash" "Read" "Write" "Glob" "Grep" "WebFetch" \
             --output-format text
           [ -s review.md ] || { echo "agent produced no review.md"; exit 1; }
           cat review.md
@@ -61,7 +61,7 @@ jobs:
         run: |
           if [ -n "$PR" ]; then
             gh pr comment "$PR" --body-file review.md --edit-last --create-if-none
-            TARGET="PR #$PR"; LINK=${{ github.event.pull_request.html_url }}
+            TARGET="PR #$PR"; LINK="${{ github.event.pull_request.html_url }}"
           else
             LINK=$(gh issue create --title "Docs review: ${{ inputs.path }} ($(date -u +%F))" --body-file review.md)
             TARGET="${{ inputs.path }}"
@@ -71,5 +71,6 @@ jobs:
       - name: Notify ntfy
         if: env.NTFY_URL != ''
         run: |
-          curl -sSf -H "Title: Docs review: $TARGET" -H "Click: $LINK" \
+          curl -sSf --retry 3 --retry-delay 5 --max-time 30 \
+            -H "Title: Docs review: $TARGET" -H "Click: $LINK" \
             --data-binary "$(head -c 800 review.md)" "$NTFY_URL"
